@@ -1,16 +1,11 @@
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { SideBarProvider, config, configState } from "../components/SideBar/SideBarContext";
-import SideBar from "../components/SideBar/SideBar";
+import { SideBarProvider, config, configState } from "../../components/SideBar/SideBarContext";
+import SideBar from "../../components/SideBar/SideBar";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate, { Source } from "next-mdx-remote/hydrate";
-import { ChildFriendly } from "@material-ui/icons";
-import { Draft } from "immer";
-
 const yaml = require("js-yaml");
 
-
-// console.log(json)
 async function getConfig() {
   const yamlText = await(
     await fetch(
@@ -25,7 +20,6 @@ async function getConfig() {
 function formatConfig(config: any) {
   for (let child of config) {
     if (!(child.type === "file")) {
-      console.log(child.route)
       delete child.route
     }
     if(child.children){
@@ -33,8 +27,6 @@ function formatConfig(config: any) {
     }
   }
 }
-
-
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
   const path = params!.pid as string[]
@@ -50,11 +42,11 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
   ).text();
   const mdxSource = await renderToString(source)
   return {
-    props: { json, mdxSource }, // will be passed to the page component as props
+    props: { json, mdxSource, par: path }, // will be passed to the page component as props
   };
 };
 
-function Post({ json, mdxSource }: {json: any, mdxSource: Source}) {
+function Post({ json, mdxSource, par }: {json: any, mdxSource: Source, par: string[]}) {
   const router = useRouter();
   const { pid } = router.query;
   const content = hydrate(mdxSource);
@@ -97,14 +89,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const json = await getConfig();
   let goodPaths = getPathForNext(json);
   let addedPaths = goodPaths.map(path => ({params: {pid: path}}))
-
   return {
-    paths: [
-      { params: {pid: ["1"]}  },
-      { params: {pid: ["2"]}  },
-      ...addedPaths
-    ],
-    fallback: true
+    paths: addedPaths,
+    fallback: false
   };
 }
 

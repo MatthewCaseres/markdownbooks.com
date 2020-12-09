@@ -51,7 +51,7 @@ export default function Home({ source }: InferGetStaticPropsType<typeof getStati
   const content = hydrate(source, {components});
   return (
     <div className="container">
-      <div>{content}</div>
+      <div>lol</div>
       {/* <MCQ
         {...{
           promptText: "hei",
