@@ -1,46 +1,13 @@
 import {useReducer, createContext, useContext, useState, SetStateAction, Dispatch} from "react";
 import produce, {Draft} from 'immer'
+import {Node} from "edtech"
 
-
-export type configNode = {
-  readonly path?: string;
-  readonly route?: string
-  readonly type?: string
-  readonly title: string;
-  readonly open?: boolean;
-  readonly children?: ReadonlyArray<configNode>;
-};
-export type config = ReadonlyArray<configNode>
-export const configState: config = [
-  {
-    title: "Basics",
-    children: [
-      {
-        title: "Path",
-        path: "dfsdfs",
-        children: [
-          { title: "Values" },
-          { title: "Declaring Variables" },
-          { title: "Assigning Variables" },
-        ],
-      },
-      {
-        title: "Variables",
-        children: [
-          { title: "Values" },
-          { title: "Declaring Variables" },
-          { title: "Assigning Variables" },
-        ],
-      },
-      {
-        title: "Strings, Numbers, Booleans, Operators, and Coercion",
-      },
-      {
-        title: "Strings, Numbers,",
-      },
-    ],
-  },
-];
+export type StatefulNode = Readonly<Omit<Node, "children">> & Readonly<{
+  open?: boolean
+  completion?: undefined | "yellow" | "green"
+  children?: ReadonlyArray<StatefulNode>
+}>
+type StatefulNodes = ReadonlyArray<StatefulNode>
 
 type Action =
   | { type: "open"; path: number[] }
@@ -49,11 +16,11 @@ type SideBarDispatch = (action: Action) => void;
 const SideBarVisibleContext = createContext<
   [boolean, Dispatch<SetStateAction<boolean>>] | undefined
 >(undefined);
-const SideBarStateContext = createContext<config | undefined>(undefined);
+const SideBarStateContext = createContext<StatefulNodes | undefined>(undefined);
 const SideBarDispatchContext = createContext<SideBarDispatch | undefined>(
   undefined
 );
-const sideBarReducer = produce((draft: Draft<config>, action: Action) => {
+const sideBarReducer = produce((draft: Draft<StatefulNodes>, action: Action) => {
   switch (action.type) {
     case "open":
       let pathOpen = [...action.path];
@@ -75,7 +42,7 @@ const sideBarReducer = produce((draft: Draft<config>, action: Action) => {
   }
 });
 
-const SideBarProvider: React.FC<{config: config}> = ({children, config}) => {
+const SideBarProvider: React.FC<{config: StatefulNodes}> = ({children, config}) => {
   const [state, dispatch] = useReducer(sideBarReducer, config);
   const [visible, setVisible] = useState(true)
   return (
