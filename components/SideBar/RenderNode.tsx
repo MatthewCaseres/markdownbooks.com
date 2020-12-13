@@ -1,4 +1,4 @@
-import { useSideBarState, configNode } from "./SideBarContext";
+import { useSideBarState, StatefulNode } from "./SideBarContext";
 import Node from "./Node";
 
 const RenderNode = ({
@@ -6,7 +6,7 @@ const RenderNode = ({
   depth = 0,
   path,
 }: {
-  node:configNode;
+  node: StatefulNode;
   depth?: number;
   path: number[];
 }) => {
@@ -38,4 +38,4 @@ const RenderNode = ({
   );
 };
 
-export default RenderNode
+export default RenderNode;

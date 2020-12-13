@@ -1,4 +1,4 @@
-import { configNode, useSideBarDispatch } from "./SideBarContext";
+import { StatefulNode, useSideBarDispatch } from "./SideBarContext";
 import { useRouter } from "next/router";
 import Chevron from "./Chevron";
 import Link from "next/link";
@@ -37,7 +37,7 @@ export default function Node({
   node,
   path,
 }: {
-  node: configNode;
+  node: StatefulNode;
   path: number[];
 }) {
   const route = useRouter()
