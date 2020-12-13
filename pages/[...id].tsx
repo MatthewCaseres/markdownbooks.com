@@ -11,6 +11,7 @@ import hydrate, { Source } from "next-mdx-remote/hydrate";
 
 const yamlUrls = [
   "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/urlTree.yml",
+  "https://raw.githubusercontent.com/Open-EdTech/probability/main/urlTree.yml",
 ];
 const allRawRoutes = await getAllRawRoutes(yamlUrls);
 const routeUrlTree = await getYamlUrlTree(yamlUrls);
