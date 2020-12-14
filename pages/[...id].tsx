@@ -5,29 +5,53 @@ import {
   StatefulNode,
 } from "../components/SideBar/SideBarContext";
 import SideBar from "../components/SideBar/SideBar";
-import { getMdSource, getAllRawRoutes, getYamlUrlTree, Node } from "edtech"
+import { getMdSource, getAllRawRoutes, getYamlUrlTree, UrlNode } from "edtech"
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate, { Source } from "next-mdx-remote/hydrate";
+import { useEffect } from "react";
+var slug = require("remark-slug")
 
 const yamlUrls = [
   "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/urlTree.yml",
   "https://raw.githubusercontent.com/Open-EdTech/probability/main/urlTree.yml",
+  "https://raw.githubusercontent.com/Open-EdTech/probability/main/urlTree.yml",
 ];
-const allRawRoutes = await getAllRawRoutes(yamlUrls);
-const routeUrlTree = await getYamlUrlTree(yamlUrls);
-const remote = true;
+const localUrls = [
+  "C:\\Users\\matth\\OneDrive\\Documents\\GitHub\\probability\\urlTree.yml",
+  "C:\\Users\\matth\\OneDrive\\Documents\\GitHub\\AWS-exam\\urlTree.yml",
+  "C:\\Users\\matth\\OneDrive\\Documents\\GitHub\\functional-programming-interactive\\urlTree.yml",
+];
+const remote = false
+const allRawRoutes = await getAllRawRoutes(remote ? yamlUrls : localUrls, remote);
+const routeUrlTree = await getYamlUrlTree(
+  remote ? yamlUrls : localUrls,
+  remote
+);
 
-function Post({ urlTree, mdxSource }: { urlTree: Node; mdxSource: Source }) {
+function Post({ urlTree, mdxSource }: { urlTree: UrlNode; mdxSource: Source }) {
   const router = useRouter();
   const { id } = router.query;
   const content = hydrate(mdxSource);
-  urlTree
+  console.log(id, router.pathname)
+  useEffect(() => {
+    const handleRouteChangeError = (err:any, url:any) => {
+      if (err.cancelled) {
+        console.log(`Route to ${url} was cancelled!`);
+      }
+    };
 
+    router.events.on("routeChangeError", handleRouteChangeError);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off("routeChangeError", handleRouteChangeError);
+    };
+  }, []);
   return (
     <SideBarProvider config={urlTree.children as StatefulNode[]}>
       <SideBar>
-        <div className="prose lg:max-w-3xl m-auto px-2 flex-1">
-          <p>Post: {id}</p>
+        <div className="prose max-w-sm sm:max-w-md lg:max-w-xl m-auto px-2 flex-1">
           <div>{content}</div>
         </div>
       </SideBar>
@@ -36,8 +60,6 @@ function Post({ urlTree, mdxSource }: { urlTree: Node; mdxSource: Source }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(routeUrlTree)
-  
   const stringRoute = (params!.id as string[]).join("/")
   console.log(allRawRoutes[stringRoute].yamlUrl);
   const source = await getMdSource(
@@ -45,7 +67,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     allRawRoutes,
     remote
   );
-  const mdxSource = await renderToString(source);
+  const mdxSource = await renderToString(source, {mdxOptions: {
+    remarkPlugins: [slug]
+  }});
   const urlTree = routeUrlTree[allRawRoutes[stringRoute].yamlUrl];
   return {
     props: { urlTree, mdxSource }, // will be passed to the page component as props

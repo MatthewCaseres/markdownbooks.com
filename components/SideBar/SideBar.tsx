@@ -7,14 +7,14 @@ import MenuIcon from "@material-ui/icons/Menu";
 const SideBar: React.FC = (props) => {
   const sideBarState = useSideBarState();
   const [visible, setVisible] = useState<boolean | undefined>(undefined)
-  const width = 250;
+  const width = 300;
   return (
     <div className="flex">
       {visible ? (
         <div>
           <div
-            className="flex flex-col border-r-2 border-gray-300 pl-4 h-screen"
-            style={{ width: width }}
+            className="flex fixed overflow-y-scroll flex-col border-r-2 border-gray-300  h-screen"
+            style={{ width: width, minWidth: width }}
           >
             <ArrowBackIcon
               style={{ color: "red" }}
