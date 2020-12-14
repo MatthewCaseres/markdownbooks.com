@@ -30,37 +30,12 @@ const routeUrlTree = await getYamlUrlTree(
 );
 
 function Post({ urlTree, mdxSource, hashRoute }: { urlTree: UrlNode; mdxSource: Source; hashRoute: string }) {
-  console.log(hashRoute)
   const router = useRouter();
   const { id } = router.query;
   const content = hydrate(mdxSource);
-  useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      console.log("App is changing to: ", url);
-    };
-
-    router.events.on("routeChangeComplete", handleRouteChange);
-
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method:
-    return () => {
-      router.events.off("routeChangeStart", handleRouteChange);
-    };
-  }, []);
   return (
     <SideBarProvider config={urlTree.children as StatefulNode[]}>
       <SideBar>
-        <button
-          onClick={() =>
-            {router.push(
-              "/Open-EdTech/functional-programming-interactive/ch02.md#why-favor-first-class"
-            ); router.push(
-              "/Open-EdTech/functional-programming-interactive/ch02.md#why-favor-first-class"
-            );}
-          }
-        >
-          lol
-        </button>
         <div className="prose max-w-sm sm:max-w-md lg:max-w-xl m-auto px-2 flex-1">
           <div>{content}</div>
         </div>

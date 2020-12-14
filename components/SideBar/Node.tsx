@@ -10,7 +10,7 @@ export default function Node({
   node: StatefulNode;
   path: number[];
 }) {
-  const route = useRouter()
+  const router = useRouter()
   const dispatch = useSideBarDispatch();
   if (node.children && !node.route) {
     return (
@@ -53,13 +53,14 @@ export default function Node({
         >
           <Chevron expanded={node.open ?? false} />
         </div>
-        <Link href={node.route}>
+        {/* <Link href={node.route}> */}
           <a
             className="no-underline hover:text-blue-400 hover:underline"
+            onClick={()=>node.route && router.push(node.route)}
           >
             {node.title}
           </a>
-        </Link>
+        {/* </Link> */}
       </div>
     );
   } else if (node.route){
