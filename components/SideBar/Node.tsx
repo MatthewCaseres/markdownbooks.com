@@ -65,9 +65,8 @@ export default function Node({
   } else if (node.route){
     return (
       <div className="flex flex-row relative">
-        <Link href={node.route}>
+        <Link href={node.route} passHref>
           <a
-            href="#"
             className="no-underline hover:underline hover:text-blue-400"
           >
             {node.title}
