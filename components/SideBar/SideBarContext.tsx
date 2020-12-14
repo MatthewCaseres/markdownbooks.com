@@ -1,8 +1,8 @@
 import {useReducer, createContext, useContext, useState, SetStateAction, Dispatch} from "react";
 import produce, {Draft} from 'immer'
-import {Node} from "edtech"
+import {UrlNode} from "edtech"
 
-export type StatefulNode = Readonly<Omit<Node, "children">> & Readonly<{
+export type StatefulNode = Readonly<Omit<UrlNode, "children">> & Readonly<{
   open?: boolean
   completion?: undefined | "yellow" | "green"
   children?: ReadonlyArray<StatefulNode>
