@@ -53,14 +53,13 @@ export default function Node({
         >
           <Chevron expanded={node.open ?? false} />
         </div>
-        {/* <Link href={node.route}> */}
+        <Link href={node.route} scroll={false}>
           <a
             className="no-underline hover:text-blue-400 hover:underline"
-            onClick={()=>node.route && router.push(node.route)}
           >
             {node.title}
           </a>
-        {/* </Link> */}
+        </Link>
       </div>
     );
   } else if (node.route){
