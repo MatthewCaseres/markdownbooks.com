@@ -3,7 +3,11 @@ import { useEffect } from "react";
 
 const Fool = () => {
   useEffect(() => {
-    const handleRouteChange = () => router.push(router.asPath);
+    const handleRouteChange = () => {
+      setTimeout(() => {
+      router.push(router.asPath);
+      }, 300);
+    };
     router.events.on("routeChangeComplete", handleRouteChange);
     // If the component is unmounted, unsubscribe
     // from the event with the `off` method:

@@ -9,7 +9,7 @@ import router from "next/router";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    {/* <Fool /> */}
+    <Fool />
   <Component {...pageProps} />
     </>
   )
