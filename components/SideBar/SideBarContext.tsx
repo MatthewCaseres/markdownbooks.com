@@ -45,11 +45,14 @@ const sideBarReducer = produce((draft: Draft<StatefulNodes>, action: Action) => 
 const SideBarProvider: React.FC<{config: StatefulNodes}> = ({children, config}) => {
   const [state, dispatch] = useReducer(sideBarReducer, config);
   const [visible, setVisible] = useState(true)
+  // const [hashRoute, setHashRoute] = useState("")
   return (
     <SideBarStateContext.Provider value={state}>
       <SideBarDispatchContext.Provider value={dispatch}>
         <SideBarVisibleContext.Provider value={[visible, setVisible]}>
-          {children}
+          {/* <SideBarHashRouteContext.Provider value={[hashRoute, setHashRoute]}> */}
+            {children}
+          {/* <SideBarHashRouteContext.Provider> */}
         </SideBarVisibleContext.Provider>
       </SideBarDispatchContext.Provider>
     </SideBarStateContext.Provider>

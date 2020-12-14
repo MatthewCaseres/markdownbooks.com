@@ -9,6 +9,7 @@ import { getMdSource, getAllRawRoutes, getYamlUrlTree, UrlNode } from "edtech"
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate, { Source } from "next-mdx-remote/hydrate";
 import { useEffect } from "react";
+import { Refresh } from "@material-ui/icons";
 var slug = require("remark-slug")
 
 const yamlUrls = [
@@ -28,28 +29,38 @@ const routeUrlTree = await getYamlUrlTree(
   remote
 );
 
-function Post({ urlTree, mdxSource }: { urlTree: UrlNode; mdxSource: Source }) {
+function Post({ urlTree, mdxSource, hashRoute }: { urlTree: UrlNode; mdxSource: Source; hashRoute: string }) {
+  console.log(hashRoute)
   const router = useRouter();
   const { id } = router.query;
   const content = hydrate(mdxSource);
   useEffect(() => {
-    const handleRouteChangeError = (err:any, url:any) => {
-      if (err.cancelled) {
-        console.log(`Route to ${url} was cancelled!`);
-      }
+    const handleRouteChange = (url: string) => {
+      console.log("App is changing to: ", url);
     };
 
-    router.events.on("routeChangeError", handleRouteChangeError);
+    router.events.on("routeChangeComplete", handleRouteChange);
 
     // If the component is unmounted, unsubscribe
     // from the event with the `off` method:
     return () => {
-      router.events.off("routeChangeError", handleRouteChangeError);
+      router.events.off("routeChangeStart", handleRouteChange);
     };
   }, []);
   return (
     <SideBarProvider config={urlTree.children as StatefulNode[]}>
       <SideBar>
+        <button
+          onClick={() =>
+            {router.push(
+              "/Open-EdTech/functional-programming-interactive/ch02.md#why-favor-first-class"
+            ); router.push(
+              "/Open-EdTech/functional-programming-interactive/ch02.md#why-favor-first-class"
+            );}
+          }
+        >
+          lol
+        </button>
         <div className="prose max-w-sm sm:max-w-md lg:max-w-xl m-auto px-2 flex-1">
           <div>{content}</div>
         </div>
@@ -60,7 +71,7 @@ function Post({ urlTree, mdxSource }: { urlTree: UrlNode; mdxSource: Source }) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const stringRoute = (params!.id as string[]).join("/")
-  console.log(allRawRoutes[stringRoute].yamlUrl);
+  const hashRoute = allRawRoutes[stringRoute].route;
   const source = await getMdSource(
     stringRoute,
     allRawRoutes,
@@ -71,7 +82,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }});
   const urlTree = routeUrlTree[allRawRoutes[stringRoute].yamlUrl];
   return {
-    props: { urlTree, mdxSource }, // will be passed to the page component as props
+    props: { urlTree, mdxSource, hashRoute }, // will be passed to the page component as props
   };
 };
 
