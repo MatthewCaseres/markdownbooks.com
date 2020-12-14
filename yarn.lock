@@ -1265,6 +1265,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/js-yaml@^3.12.5":
+  version "3.12.5"
+  resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.5.tgz#136d5e6a57a931e1cce6f9d8126aa98a9c92a6bb"
+  integrity sha512-JCcp6J0GV66Y4ZMDAQCXot4xprYB+Zfd3meK9+INSJeVZwJmHAW30BBEEkPzXswMXuiyReUGOP3GxrADc9wPww==
+
 "@types/json-schema@*", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
@@ -2545,6 +2550,20 @@ domutils@^2.0.0, domutils@^2.4.2:
     dom-serializer "^1.0.1"
     domelementtype "^2.0.1"
     domhandler "^4.0.0"
+
+edtech@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/edtech/-/edtech-0.1.1.tgz#a8f7b89603c2fc2dfccf1a855659e8ed84f5ba4d"
+  integrity sha512-AofnsXZ/1jDAdEiYQQK9b3RNj7xLNN+nU+dU0meeHrGCSKBya3EKRad1oT9dMyh6cwOPsuo9VZ+T+uxceEvuwg==
+  dependencies:
+    "@types/js-yaml" "^3.12.5"
+    axios "^0.21.0"
+    immer "^8.0.0"
+    js-yaml "^3.14.1"
+    remark-parse "^9.0.0"
+    to-vfile "^6.1.0"
+    unified "^9.2.0"
+    unist-util-visit "^2.0.3"
 
 electron-to-chromium@^1.3.585, electron-to-chromium@^1.3.612:
   version "1.3.615"
@@ -5512,6 +5531,14 @@ to-regex-range@^5.0.1:
   integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
   dependencies:
     is-number "^7.0.0"
+
+to-vfile@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/to-vfile/-/to-vfile-6.1.0.tgz#5f7a3f65813c2c4e34ee1f7643a5646344627699"
+  integrity sha512-BxX8EkCxOAZe+D/ToHdDsJcVI4HqQfmw0tCkp31zf3dNP/XWIAjU4CmeuSwsSoOzOTqHPOL0KUzyZqJplkD0Qw==
+  dependencies:
+    is-buffer "^2.0.0"
+    vfile "^4.0.0"
 
 toidentifier@1.0.0:
   version "1.0.0"
