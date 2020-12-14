@@ -14,14 +14,14 @@ var slug = require("remark-slug")
 const yamlUrls = [
   "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/urlTree.yml",
   "https://raw.githubusercontent.com/Open-EdTech/probability/main/urlTree.yml",
-  "https://raw.githubusercontent.com/Open-EdTech/probability/main/urlTree.yml",
+  "https://raw.githubusercontent.com/Open-EdTech/functional-programming-interactive/master/urlTree.yml",
 ];
 const localUrls = [
   "C:\\Users\\matth\\OneDrive\\Documents\\GitHub\\probability\\urlTree.yml",
   "C:\\Users\\matth\\OneDrive\\Documents\\GitHub\\AWS-exam\\urlTree.yml",
   "C:\\Users\\matth\\OneDrive\\Documents\\GitHub\\functional-programming-interactive\\urlTree.yml",
 ];
-const remote = false
+const remote = true
 const allRawRoutes = await getAllRawRoutes(remote ? yamlUrls : localUrls, remote);
 const routeUrlTree = await getYamlUrlTree(
   remote ? yamlUrls : localUrls,
@@ -32,7 +32,6 @@ function Post({ urlTree, mdxSource }: { urlTree: UrlNode; mdxSource: Source }) {
   const router = useRouter();
   const { id } = router.query;
   const content = hydrate(mdxSource);
-  console.log(id, router.pathname)
   useEffect(() => {
     const handleRouteChangeError = (err:any, url:any) => {
       if (err.cancelled) {
