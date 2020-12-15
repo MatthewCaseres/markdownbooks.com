@@ -49,9 +49,8 @@ export default function DarkToggle() {
     console.log(isDarkMode);
   }, [isDarkMode]);
   return (
-    <div className="ml-5">
+    <div className="fixed right-0 top-2">
       <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={80}/>
-      <div className="dark:text-green-700">LOLLLLLLLLLLLLLL</div>
     </div>
   );
 }

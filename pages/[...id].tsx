@@ -25,11 +25,7 @@ const localUrls = [
   "C:\\Users\\matth\\OneDrive\\Documents\\GitHub\\functional-programming-interactive\\urlTree.yml",
 ];
 const remote = true
-const allRawRoutes = await getAllRawRoutes(remote ? yamlUrls : localUrls, remote);
-const routeUrlTree = await getYamlUrlTree(
-  remote ? yamlUrls : localUrls,
-  remote
-);
+
 
 function Post({ urlTree, mdxSource, hashRoute }: { urlTree: UrlNode; mdxSource: Source; hashRoute: string }) {
   const router = useRouter();
@@ -50,6 +46,14 @@ function Post({ urlTree, mdxSource, hashRoute }: { urlTree: UrlNode; mdxSource: 
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const allRawRoutes = await getAllRawRoutes(
+    remote ? yamlUrls : localUrls,
+    remote
+  );
+  const routeUrlTree = await getYamlUrlTree(
+    remote ? yamlUrls : localUrls,
+    remote
+  );
   const stringRoute = (params!.id as string[]).join("/")
   const hashRoute = allRawRoutes[stringRoute].route;
   const source = await getMdSource(
@@ -67,6 +71,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+    const allRawRoutes = await getAllRawRoutes(
+      remote ? yamlUrls : localUrls,
+      remote
+    );
   return {
     paths: Object.keys(allRawRoutes).map((routeString) => ({
       params: {

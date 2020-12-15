@@ -76,7 +76,7 @@ module.exports = {
               color: theme("colors.gray.500"),
             },
             blockquote: {
-              color: "white"
+              color: "white",
             },
 
             "::selection": {
@@ -90,5 +90,5 @@ module.exports = {
   variants: {
     typography: ["dark"],
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
 };
