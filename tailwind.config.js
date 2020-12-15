@@ -1,9 +1,5 @@
 module.exports = {
   darkMode: "class",
-  purge: {
-    mode: "all",
-    content: ["./_site/**/*.html"],
-  },
   theme: {
     extend: {
       colors: {
