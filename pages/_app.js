@@ -6,18 +6,27 @@ import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    const handleRouteChange = () => {
+    const handleRouteChange = (url) => {
       setTimeout(() => {
-        if (router.asPath.includes("#")) {
+        if (url.includes("#")) {
           router.push(router.asPath);
         } else {
           window.scrollTo(0, 0);
         }
       }, 300);
     };
+    const handleHashChange = (url) => {
+      if (!url.includes("#")) {
+        window.scrollTo(0, 0);
+      }
+    }
     router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on("hashChangeComplete", handleHashChange);
+
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
+    router.events.off("hashChangeComplete", handleHashChange);
+
     };
   }, []);
   return (
