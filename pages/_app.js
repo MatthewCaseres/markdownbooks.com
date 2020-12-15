@@ -1,18 +1,30 @@
 import "../styles/globals.css";
 import "../styles/tailwind.css";
 import "katex/dist/katex.css";
-import { SideBarProvider } from "../components/SideBar/SideBarContext";
-import SideBar from "../components/SideBar/SideBar";
-import Fool from "../components/Fool";
 import router from "next/router";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setTimeout(() => {
+        if (router.asPath.includes("#")) {
+          router.push(router.asPath);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }, 300);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
   return (
-    <>
-    <Fool />
-  <Component {...pageProps} />
-    </>
-  )
+    <div className="dark:bg-black">
+        <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default MyApp;

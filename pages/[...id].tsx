@@ -11,6 +11,8 @@ import hydrate, { Source } from "next-mdx-remote/hydrate";
 import { useEffect } from "react";
 import { Refresh } from "@material-ui/icons";
 var slug = require("remark-slug")
+import DarkToggle, { DarkProvider } from "../components/DarkToggle";
+
 
 const yamlUrls = [
   "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/urlTree.yml",
@@ -34,13 +36,16 @@ function Post({ urlTree, mdxSource, hashRoute }: { urlTree: UrlNode; mdxSource: 
   const { id } = router.query;
   const content = hydrate(mdxSource);
   return (
-    <SideBarProvider config={urlTree.children as StatefulNode[]}>
-      <SideBar>
-        <div className="prose max-w-sm sm:max-w-md lg:max-w-xl m-auto px-2 flex-1">
-          <div>{content}</div>
-        </div>
-      </SideBar>
-    </SideBarProvider>
+    <DarkProvider>
+      <SideBarProvider config={urlTree.children as StatefulNode[]}>
+        <SideBar>
+          <DarkToggle />
+          <div className="prose dark:prose-dark max-w-sm sm:max-w-md lg:max-w-xl xl:max-w-2xl m-auto px-2 flex-1 ">
+            <div>{content}</div>
+          </div>
+        </SideBar>
+      </SideBarProvider>
+    </DarkProvider>
   );
 }
 

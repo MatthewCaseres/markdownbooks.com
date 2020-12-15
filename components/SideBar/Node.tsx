@@ -25,7 +25,7 @@ export default function Node({
         <div>
           <Chevron expanded={node.open ?? false} />
         </div>
-        {node.title}
+        <span className="dark:text-gray-300">{node.title}</span>
         {/* </button> */}
       </div>
     );
@@ -54,9 +54,7 @@ export default function Node({
           <Chevron expanded={node.open ?? false} />
         </div>
         <Link href={node.route} scroll={false}>
-          <a
-            className="no-underline hover:text-blue-400 hover:underline"
-          >
+          <a className="no-underline hover:text-blue-400 hover:underline dark:text-gray-300">
             {node.title}
           </a>
         </Link>
@@ -67,7 +65,7 @@ export default function Node({
       <div className="flex flex-row relative">
         <Link href={node.route} passHref>
           <a
-            className="no-underline hover:underline hover:text-blue-400"
+            className="no-underline hover:underline hover:text-blue-400 dark:text-gray-300"
           >
             {node.title}
           </a>
