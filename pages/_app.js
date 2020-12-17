@@ -3,6 +3,9 @@ import "../styles/tailwind.css";
 import "katex/dist/katex.css";
 import router from "next/router";
 import { useEffect } from "react";
+import Logo from "../components/logo/Logo";
+import DarkToggle, { DarkProvider } from "../components/DarkToggle";
+import TopNav from '../components/TopNav/TopNav'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -19,20 +22,22 @@ function MyApp({ Component, pageProps }) {
       if (!url.includes("#")) {
         window.scrollTo(0, 0);
       }
-    }
+    };
     router.events.on("routeChangeComplete", handleRouteChange);
     router.events.on("hashChangeComplete", handleHashChange);
 
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
-    router.events.off("hashChangeComplete", handleHashChange);
-
+      router.events.off("hashChangeComplete", handleHashChange);
     };
   }, []);
   return (
-    <div className="dark:bg-black">
+    <DarkProvider>
+      <div className="dark:bg-black min-h-screen">
+        <TopNav />
         <Component {...pageProps} />
-    </div>
+      </div>
+    </DarkProvider>
   );
 }
 

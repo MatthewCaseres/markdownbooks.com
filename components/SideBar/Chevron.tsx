@@ -7,7 +7,7 @@ const Chevron = ({ expanded }: { expanded: boolean }) => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-4 h-4 text-gray-400 parent-hover:text-blue"
+            className="w-4 h-4 text-gray-400 parent-hover:text-blue hover:text-blue-500"
           >
             <path
               strokeLinecap="round"
@@ -26,7 +26,7 @@ const Chevron = ({ expanded }: { expanded: boolean }) => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          className="w-4 h-4 text-gray-400 parent-hover:text-blue"
+          className="w-4 h-4 text-gray-400 parent-hover:text-blue hover:text-blue-500"
         >
           <path
             strokeLinecap="round"

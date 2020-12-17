@@ -1,0 +1,758 @@
+[
+  {
+    "type": "directory",
+    "children": [
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch01.md",
+        "title": "Chapter 01: What Ever Are We Doing?",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch01.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch01.md",
+        "children": [
+          {
+            "title": "Introductions",
+            "route": "Open-EdTech/mostly-adequate-guide/ch01.md/#introductions",
+            "type": "heading"
+          },
+          {
+            "title": "A Brief Encounter",
+            "route": "Open-EdTech/mostly-adequate-guide/ch01.md/#a-brief-encounter",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch02.md",
+        "title": "Chapter 02: First Class Functions",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch02.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch02.md",
+        "children": [
+          {
+            "title": "A Quick Review",
+            "route": "Open-EdTech/mostly-adequate-guide/ch02.md/#a-quick-review",
+            "type": "heading"
+          },
+          {
+            "title": "Why Favor First Class?",
+            "route": "Open-EdTech/mostly-adequate-guide/ch02.md/#why-favor-first-class",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch03.md",
+        "title": "Chapter 03: Pure Happiness with Pure Functions",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch03.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch03.md",
+        "children": [
+          {
+            "title": "Oh to Be Pure Again",
+            "route": "Open-EdTech/mostly-adequate-guide/ch03.md/#oh-to-be-pure-again",
+            "type": "heading"
+          },
+          {
+            "title": "Side Effects May Include...",
+            "route": "Open-EdTech/mostly-adequate-guide/ch03.md/#side-effects-may-include",
+            "type": "heading"
+          },
+          {
+            "title": "8th Grade Math",
+            "route": "Open-EdTech/mostly-adequate-guide/ch03.md/#8th-grade-math",
+            "type": "heading"
+          },
+          {
+            "title": "The Case for Purity",
+            "route": "Open-EdTech/mostly-adequate-guide/ch03.md/#the-case-for-purity",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch03.md/#in-summary",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch04.md",
+        "title": "Chapter 04: Currying",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch04.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch04.md",
+        "children": [
+          {
+            "title": "Can't Live If Livin' Is without You",
+            "route": "Open-EdTech/mostly-adequate-guide/ch04.md/#cant-live-if-livin-is-without-you",
+            "type": "heading"
+          },
+          {
+            "title": "More Than a Pun / Special Sauce",
+            "route": "Open-EdTech/mostly-adequate-guide/ch04.md/#more-than-a-pun--special-sauce",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch04.md/#in-summary",
+            "type": "heading"
+          },
+          {
+            "title": "Exercises",
+            "route": "Open-EdTech/mostly-adequate-guide/ch04.md/#exercises",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch05.md",
+        "title": "Chapter 05: Coding by Composing",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch05.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch05.md",
+        "children": [
+          {
+            "title": "Functional Husbandry",
+            "route": "Open-EdTech/mostly-adequate-guide/ch05.md/#functional-husbandry",
+            "type": "heading"
+          },
+          {
+            "title": "Pointfree",
+            "route": "Open-EdTech/mostly-adequate-guide/ch05.md/#pointfree",
+            "type": "heading"
+          },
+          {
+            "title": "Debugging",
+            "route": "Open-EdTech/mostly-adequate-guide/ch05.md/#debugging",
+            "type": "heading"
+          },
+          {
+            "title": "Category Theory",
+            "route": "Open-EdTech/mostly-adequate-guide/ch05.md/#category-theory",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch05.md/#in-summary",
+            "type": "heading"
+          },
+          {
+            "title": "Exercises",
+            "route": "Open-EdTech/mostly-adequate-guide/ch05.md/#exercises",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch06.md",
+        "title": "Chapter 06: Example Application",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch06.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch06.md",
+        "children": [
+          {
+            "title": "Declarative Coding",
+            "route": "Open-EdTech/mostly-adequate-guide/ch06.md/#declarative-coding",
+            "type": "heading"
+          },
+          {
+            "title": "A Flickr of Functional Programming",
+            "route": "Open-EdTech/mostly-adequate-guide/ch06.md/#a-flickr-of-functional-programming",
+            "type": "heading"
+          },
+          {
+            "title": "A Principled Refactor",
+            "route": "Open-EdTech/mostly-adequate-guide/ch06.md/#a-principled-refactor",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch06.md/#in-summary",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch07.md",
+        "title": "Chapter 07: Hindley-Milner and Me",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch07.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch07.md",
+        "children": [
+          {
+            "title": "What's Your Type?",
+            "route": "Open-EdTech/mostly-adequate-guide/ch07.md/#whats-your-type",
+            "type": "heading"
+          },
+          {
+            "title": "Tales from the Cryptic",
+            "route": "Open-EdTech/mostly-adequate-guide/ch07.md/#tales-from-the-cryptic",
+            "type": "heading"
+          },
+          {
+            "title": "Narrowing the Possibility",
+            "route": "Open-EdTech/mostly-adequate-guide/ch07.md/#narrowing-the-possibility",
+            "type": "heading"
+          },
+          {
+            "title": "Free as in Theorem",
+            "route": "Open-EdTech/mostly-adequate-guide/ch07.md/#free-as-in-theorem",
+            "type": "heading"
+          },
+          {
+            "title": "Constraints",
+            "route": "Open-EdTech/mostly-adequate-guide/ch07.md/#constraints",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch07.md/#in-summary",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch08.md",
+        "title": "Chapter 08: Tupperware",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch08.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch08.md",
+        "children": [
+          {
+            "title": "The Mighty Container",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#the-mighty-container",
+            "type": "heading"
+          },
+          {
+            "title": "My First Functor",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#my-first-functor",
+            "type": "heading"
+          },
+          {
+            "title": "Schrödinger's Maybe",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#schrödingers-maybe",
+            "type": "heading"
+          },
+          {
+            "title": "Use Cases",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#use-cases",
+            "type": "heading"
+          },
+          {
+            "title": "Releasing the Value",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#releasing-the-value",
+            "type": "heading"
+          },
+          {
+            "title": "Pure Error Handling",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#pure-error-handling",
+            "type": "heading"
+          },
+          {
+            "title": "Old McDonald Had Effects...",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#old-mcdonald-had-effects",
+            "type": "heading"
+          },
+          {
+            "title": "Asynchronous Tasks",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#asynchronous-tasks",
+            "type": "heading"
+          },
+          {
+            "title": "A Spot of Theory",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#a-spot-of-theory",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#in-summary",
+            "type": "heading"
+          },
+          {
+            "title": "Exercises",
+            "route": "Open-EdTech/mostly-adequate-guide/ch08.md/#exercises",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch09.md",
+        "title": "Chapter 09: Monadic Onions",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch09.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch09.md",
+        "children": [
+          {
+            "title": "Pointy Functor Factory",
+            "route": "Open-EdTech/mostly-adequate-guide/ch09.md/#pointy-functor-factory",
+            "type": "heading"
+          },
+          {
+            "title": "Mixing Metaphors",
+            "route": "Open-EdTech/mostly-adequate-guide/ch09.md/#mixing-metaphors",
+            "type": "heading"
+          },
+          {
+            "title": "My Chain Hits My Chest",
+            "route": "Open-EdTech/mostly-adequate-guide/ch09.md/#my-chain-hits-my-chest",
+            "type": "heading"
+          },
+          {
+            "title": "Power Trip",
+            "route": "Open-EdTech/mostly-adequate-guide/ch09.md/#power-trip",
+            "type": "heading"
+          },
+          {
+            "title": "Theory",
+            "route": "Open-EdTech/mostly-adequate-guide/ch09.md/#theory",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch09.md/#in-summary",
+            "type": "heading"
+          },
+          {
+            "title": "Exercises",
+            "route": "Open-EdTech/mostly-adequate-guide/ch09.md/#exercises",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch10.md",
+        "title": "Chapter 10: Applicative Functors",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch10.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch10.md",
+        "children": [
+          {
+            "title": "Applying Applicatives",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#applying-applicatives",
+            "type": "heading"
+          },
+          {
+            "title": "Ships in Bottles",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#ships-in-bottles",
+            "type": "heading"
+          },
+          {
+            "title": "Coordination Motivation",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#coordination-motivation",
+            "type": "heading"
+          },
+          {
+            "title": "Bro, Do You Even Lift?",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#bro-do-you-even-lift",
+            "type": "heading"
+          },
+          {
+            "title": "Operators",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#operators",
+            "type": "heading"
+          },
+          {
+            "title": "Free Can Openers",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#free-can-openers",
+            "type": "heading"
+          },
+          {
+            "title": "Laws",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#laws",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#in-summary",
+            "type": "heading"
+          },
+          {
+            "title": "Exercises",
+            "route": "Open-EdTech/mostly-adequate-guide/ch10.md/#exercises",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch11.md",
+        "title": "Chapter 11: Transform Again, Naturally",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch11.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch11.md",
+        "children": [
+          {
+            "title": "Curse This Nest",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#curse-this-nest",
+            "type": "heading"
+          },
+          {
+            "title": "A Situational Comedy",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#a-situational-comedy",
+            "type": "heading"
+          },
+          {
+            "title": "All Natural",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#all-natural",
+            "type": "heading"
+          },
+          {
+            "title": "Principled Type Conversions",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#principled-type-conversions",
+            "type": "heading"
+          },
+          {
+            "title": "Feature Envy",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#feature-envy",
+            "type": "heading"
+          },
+          {
+            "title": "Isomorphic JavaScript",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#isomorphic-javascript",
+            "type": "heading"
+          },
+          {
+            "title": "A Broader Definition",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#a-broader-definition",
+            "type": "heading"
+          },
+          {
+            "title": "One Nesting Solution",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#one-nesting-solution",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#in-summary",
+            "type": "heading"
+          },
+          {
+            "title": "Exercises",
+            "route": "Open-EdTech/mostly-adequate-guide/ch11.md/#exercises",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/ch12.md",
+        "title": "Chapter 12: Traversing the Stone",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/ch12.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/ch12.md",
+        "children": [
+          {
+            "title": "Types n' Types",
+            "route": "Open-EdTech/mostly-adequate-guide/ch12.md/#types-n-types",
+            "type": "heading"
+          },
+          {
+            "title": "Type Feng Shui",
+            "route": "Open-EdTech/mostly-adequate-guide/ch12.md/#type-feng-shui",
+            "type": "heading"
+          },
+          {
+            "title": "Effect Assortment",
+            "route": "Open-EdTech/mostly-adequate-guide/ch12.md/#effect-assortment",
+            "type": "heading"
+          },
+          {
+            "title": "Waltz of the Types",
+            "route": "Open-EdTech/mostly-adequate-guide/ch12.md/#waltz-of-the-types",
+            "type": "heading"
+          },
+          {
+            "title": "No Law and Order",
+            "route": "Open-EdTech/mostly-adequate-guide/ch12.md/#no-law-and-order",
+            "type": "heading"
+          },
+          {
+            "title": "In Summary",
+            "route": "Open-EdTech/mostly-adequate-guide/ch12.md/#in-summary",
+            "type": "heading"
+          },
+          {
+            "title": "Exercises",
+            "route": "Open-EdTech/mostly-adequate-guide/ch12.md/#exercises",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md",
+        "title": "Appendix A: Essential Functions Support",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/appendix_a.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/appendix_a.md",
+        "children": [
+          {
+            "title": "always",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#always",
+            "type": "heading"
+          },
+          {
+            "title": "compose",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#compose",
+            "type": "heading"
+          },
+          {
+            "title": "curry",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#curry",
+            "type": "heading"
+          },
+          {
+            "title": "either",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#either",
+            "type": "heading"
+          },
+          {
+            "title": "identity",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#identity",
+            "type": "heading"
+          },
+          {
+            "title": "inspect",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#inspect",
+            "type": "heading"
+          },
+          {
+            "title": "left",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#left",
+            "type": "heading"
+          },
+          {
+            "title": "liftA2",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#lifta2",
+            "type": "heading"
+          },
+          {
+            "title": "liftA3",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#lifta3",
+            "type": "heading"
+          },
+          {
+            "title": "maybe",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#maybe",
+            "type": "heading"
+          },
+          {
+            "title": "nothing",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#nothing",
+            "type": "heading"
+          },
+          {
+            "title": "reject",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_a.md/#reject",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md",
+        "title": "Appendix B: Algebraic Structures Support",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/appendix_b.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/appendix_b.md",
+        "children": [
+          {
+            "title": "Compose",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#compose",
+            "type": "heading"
+          },
+          {
+            "title": "Either",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#either",
+            "type": "heading"
+          },
+          {
+            "title": "Identity",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#identity",
+            "type": "heading"
+          },
+          {
+            "title": "IO",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#io",
+            "type": "heading"
+          },
+          {
+            "title": "List",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#list",
+            "type": "heading"
+          },
+          {
+            "title": "Map",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#map",
+            "type": "heading"
+          },
+          {
+            "title": "Maybe",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#maybe",
+            "type": "heading"
+          },
+          {
+            "title": "Task",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_b.md/#task",
+            "type": "heading"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md",
+        "title": "Appendix C: Pointfree Utilities",
+        "rawUrl": "https://gitcdn.xyz/repo/Open-EdTech/mostly-adequate-guide/master/appendix_c.md",
+        "ghUrl": "https://github.com/Open-EdTech/mostly-adequate-guide/blob/master/appendix_c.md",
+        "children": [
+          {
+            "title": "add",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#add",
+            "type": "heading"
+          },
+          {
+            "title": "append",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#append",
+            "type": "heading"
+          },
+          {
+            "title": "chain",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#chain",
+            "type": "heading"
+          },
+          {
+            "title": "concat",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#concat",
+            "type": "heading"
+          },
+          {
+            "title": "eq",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#eq",
+            "type": "heading"
+          },
+          {
+            "title": "filter",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#filter",
+            "type": "heading"
+          },
+          {
+            "title": "flip",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#flip",
+            "type": "heading"
+          },
+          {
+            "title": "forEach",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#foreach",
+            "type": "heading"
+          },
+          {
+            "title": "head",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#head",
+            "type": "heading"
+          },
+          {
+            "title": "intercalate",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#intercalate",
+            "type": "heading"
+          },
+          {
+            "title": "join",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#join",
+            "type": "heading"
+          },
+          {
+            "title": "last",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#last",
+            "type": "heading"
+          },
+          {
+            "title": "map",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#map",
+            "type": "heading"
+          },
+          {
+            "title": "match",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#match",
+            "type": "heading"
+          },
+          {
+            "title": "prop",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#prop",
+            "type": "heading"
+          },
+          {
+            "title": "reduce",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#reduce",
+            "type": "heading"
+          },
+          {
+            "title": "replace",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#replace",
+            "type": "heading"
+          },
+          {
+            "title": "reverse",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#reverse",
+            "type": "heading"
+          },
+          {
+            "title": "safeHead",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#safehead",
+            "type": "heading"
+          },
+          {
+            "title": "safeLast",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#safelast",
+            "type": "heading"
+          },
+          {
+            "title": "safeProp",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#safeprop",
+            "type": "heading"
+          },
+          {
+            "title": "sequence",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#sequence",
+            "type": "heading"
+          },
+          {
+            "title": "sortBy",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#sortby",
+            "type": "heading"
+          },
+          {
+            "title": "split",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#split",
+            "type": "heading"
+          },
+          {
+            "title": "take",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#take",
+            "type": "heading"
+          },
+          {
+            "title": "toLowerCase",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#tolowercase",
+            "type": "heading"
+          },
+          {
+            "title": "toString",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#tostring",
+            "type": "heading"
+          },
+          {
+            "title": "toUpperCase",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#touppercase",
+            "type": "heading"
+          },
+          {
+            "title": "traverse",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#traverse",
+            "type": "heading"
+          },
+          {
+            "title": "unsafePerformIO",
+            "route": "Open-EdTech/mostly-adequate-guide/appendix_c.md/#unsafeperformio",
+            "type": "heading"
+          }
+        ]
+      }
+    ],
+    "title": "GitBook"
+  }
+]

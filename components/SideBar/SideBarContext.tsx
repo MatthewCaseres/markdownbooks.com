@@ -1,6 +1,6 @@
 import {useReducer, createContext, useContext, useState, SetStateAction, Dispatch} from "react";
 import produce, {Draft} from 'immer'
-import {UrlNode} from "edtech"
+import {UrlNode} from "next-mdx-books"
 
 export type StatefulNode = Readonly<Omit<UrlNode, "children">> & Readonly<{
   open?: boolean

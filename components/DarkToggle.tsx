@@ -28,7 +28,7 @@ export function useDarkToggle() {
 }
 
 export default function DarkToggle() {
-  const [isDarkMode, setIsDarkMode] = useDarkToggle()!
+  const [isDarkMode, setIsDarkMode] = useDarkToggle()!;
   useEffect(() => {
     if (isDarkMode === undefined) {
       if (
@@ -36,9 +36,9 @@ export default function DarkToggle() {
         (!("theme" in localStorage) &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
-        setIsDarkMode(true)
+        setIsDarkMode(true);
       } else {
-        setIsDarkMode(false)
+        setIsDarkMode(false);
       }
     }
     if (isDarkMode) {
@@ -49,10 +49,8 @@ export default function DarkToggle() {
     console.log(isDarkMode);
   }, [isDarkMode]);
   return (
-    <div className="fixed right-0 top-2">
-      <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={80}/>
+    <div className="flex flex-col justify-center">
+      <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={80} />
     </div>
   );
 }
-
-

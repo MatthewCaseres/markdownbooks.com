@@ -37,10 +37,7 @@ export default function Node({
           paddingBottom: 2,
           paddingTop: 2,
         }}
-        onClick={() => {
-          node.open
-            ? dispatch({ type: "close", path: path })
-            : dispatch({ type: "open", path: path });
+        onClick={() => {dispatch({ type: "open", path: path });
         }}
       >
         <div
@@ -65,7 +62,7 @@ export default function Node({
       <div className="flex flex-row relative">
         <Link href={node.route} passHref>
           <a
-            className="no-underline hover:underline hover:text-blue-400 dark:text-gray-300"
+            className="no-underline pl-3 hover:underline hover:text-blue-400 dark:text-gray-300"
           >
             {node.title}
           </a>
