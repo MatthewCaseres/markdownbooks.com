@@ -1,8 +1,19 @@
-import Image from "next/image";
 import Link from 'next/link'
 import Padlock from "./Padlock"
 
-export default function Logo({ scale }: { scale: string }) {
+export default function LogoWrapper({scale, isLink}: { scale: string, isLink: boolean }) {
+  if (isLink) {
+    return (<Link href='/'>
+    <a>
+    <Logo scale={scale} isLink={isLink}/>
+    </a>
+    </Link>)
+  } else {
+    return  <Logo scale={scale} isLink={isLink}/>
+  }
+}
+
+function Logo({ scale, isLink}: { scale: string, isLink: boolean }) {
   const scaleCss = `scale(${scale},${scale})`;
   return (
       <div
@@ -11,6 +22,7 @@ export default function Logo({ scale }: { scale: string }) {
           msTransform: scaleCss,
           WebkitTransform: scaleCss,
           transform: scaleCss,
+          cursor: isLink ? "pointer" : "auto"
         }}
       >
         <div
@@ -28,10 +40,10 @@ export default function Logo({ scale }: { scale: string }) {
         </div>
         <div className="relative">
           <Link href="/">
-          <h3 style={{ margin: 0, cursor: "pointer" }}>Open</h3>
+          <h3 style={{ margin: 0 }}>Open</h3>
           </Link>
           <Link href="/">
-          <h3 style={{ marginTop: -10, marginLeft: 12 , cursor: "pointer", zIndex: 2, position: "relative"}}>EdTech</h3>
+          <h3 style={{ marginTop: -10, marginLeft: 12 , zIndex: 2, position: "relative"}}>EdTech</h3>
           </Link>
         </div>
       </div>
