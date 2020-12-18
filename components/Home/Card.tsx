@@ -1,3 +1,4 @@
+import Image from 'next/image'
 type CardType = { title: string, content: string, ghLink?: string, medLink?: string}
 export default function Card({title, content, ghLink, medLink}: CardType) {
 return (
@@ -7,7 +8,7 @@ return (
       <p style={{ marginTop: -20 }}>{content}</p>
       {(
         <a className="ml-2" target="_blank" rel="noopener noreferrer" href={ghLink}>
-          <img src="/012-github.png" width={40} height={40} />
+          <Image src="/012-github.png" layout="fixed" width={40} height={40} />
         </a>
       )}
       {medLink && <a
@@ -16,8 +17,9 @@ return (
         rel="noopener noreferrer"
         href={medLink}
       >
-        <img
+        <Image
           src="/019-medium.png"
+          layout="fixed"
           width={40}
           height={40}
         />
