@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from 'next/link'
+import Padlock from "./Padlock"
 
 export default function Logo({ scale }: { scale: string }) {
   const scaleCss = `scale(${scale},${scale})`;
@@ -22,13 +23,8 @@ export default function Logo({ scale }: { scale: string }) {
             overflow: "hidden",
           }}
         >
-          <Image
-            src="/padlock.svg"
-            alt="Picture of the author"
-            width={45}
-            height={45}
-            layout="fixed"
-          />
+          <Padlock width={45}
+            height={45} />
         </div>
         <div className="relative">
           <Link href="/">
