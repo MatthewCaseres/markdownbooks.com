@@ -14,7 +14,7 @@ const SideBar: React.FC<{ghUrl: string}> = ({children, ghUrl}) => {
       {visible ? (
         <div className="">
           <div
-            className="flex h-screen flex-col fixed md:sticky border-r-2 border-gray-500 top-0 overflow-y-auto z-10 dark:bg-black scrollbar-thumb-gray-700 scrollbar-thin scrollbar-track-gray-400"
+            className="flex h-screen flex-col fixed md:sticky border-r-2 border-gray-500 top-0 overflow-y-auto z-10 dark:bg-black bg-white scrollbar-thumb-gray-700 scrollbar-thin scrollbar-track-gray-400"
             style={{ width: width, minWidth: width }}
           >
             <SideBarTop setVisible={setVisible} ghUrl={ghUrl} />

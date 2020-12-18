@@ -33,8 +33,8 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <DarkProvider>
-      <div className="dark:bg-black min-h-screen">
-        <TopNav />
+      <div className="dark:bg-black min-h-screen flex flex-col">
+        <TopNav className="dark:bg-black" />
         <Component {...pageProps} />
       </div>
     </DarkProvider>
