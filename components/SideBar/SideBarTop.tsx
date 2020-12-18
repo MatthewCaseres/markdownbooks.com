@@ -21,7 +21,6 @@ export default function SideBarTop({
       <a target="_blank" rel="noopener noreferrer" href={ghUrl}>
         <Edit />
       </a>
-      <button onClick={() => console.log(ghUrl)}>lol</button>
     </div>
   );
 }
