@@ -14,7 +14,7 @@ const DarkToggleContext = createContext<
 >(undefined);
 
 export const DarkProvider: React.FC = ({ children }) => {
-  const [dark, setDark] = useState<boolean>(true);
+  const [dark, setDark] = useState<boolean>(false);
   return (
     <DarkToggleContext.Provider value={[dark, setDark]}>
       {children}
