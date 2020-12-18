@@ -1,5 +1,6 @@
 module.exports = {
   darkMode: "class",
+  purge: ["./pages/**/*.js", "./pages/**/*.tsx", "./components/**/*.tsx", "./components/**/*.js"],
   theme: {
     extend: {
       colors: {
@@ -86,7 +87,7 @@ module.exports = {
   variants: {
     extend: {
       typography: ["dark"],
-    }
+    },
   },
   plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
 };
