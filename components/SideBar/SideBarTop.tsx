@@ -5,12 +5,12 @@ export default function SideBarTop({
   setVisible,
   ghUrl,
 }: {
-  setVisible: Dispatch<SetStateAction<boolean | undefined>>;
+  setVisible: Dispatch<SetStateAction<boolean>>;
   ghUrl: string;
 }) {
   return (
     <div className="flex flex-row my-2">
-      <div onClick={() => setVisible(false)} className="cursor-pointer">
+      <div onClick={() => setVisible(mdVisible => !mdVisible)} className="cursor-pointer">
         <Close />
       </div>
       <Link href="/">
