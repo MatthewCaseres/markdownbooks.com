@@ -1,18 +1,29 @@
 import { motion } from "framer-motion";
 import Card from "./Card";
 import BookList from "./BookList";
-const cards = [
+import {CardType} from './Card'
+const cards: CardType[] = [
   {
-    title: "Free Content",
-    content: "Educational content available for commercial use.",
+    title: "AWS CSA",
+    content: "Public domain educational content for AWS CSA exam.",
+    externalLink: "https://www.youtube.com/channel/UCsYqPH99FkUNKF1v5A8uIvQ",
+    external: "YouTube",
+    internal: "Book",
+    internalLink: "Open-EdTech/AWS-CSA/S3.md",
+  },
+  {
+    title: "This Website!",
+    content: "An educational platform in progress.",
+    externalLink: "https://github.com/Open-EdTech/openedtech.dev",
+    external: "GitHub",
   },
   {
     title: "next-mdx-books",
     content: "An NPM package to build books with NextJS and MDX.",
-  },
-  {
-    title: "react-run-code",
-    content: "An embeddable JavaScript and TypeScript code runner.",
+    external: "GitHub",
+    externalLink: "https://github.com/Open-EdTech/next-mdx-books",
+    internal: "Docs",
+    internalLink: "Open-EdTech/next-mdx-books/about.md",
   },
 ];
 const books = [
@@ -42,8 +53,9 @@ export default function Home() {
         <h1 style={{ fontSize: 50 }}>Knowledge Unlocked </h1>
         <div className="relative hidden sm:block">
           <motion.div
+          style={{top: -180}}
             className="absolute z-20"
-            animate={{ y: [-180, -180, 30, 0] }}
+            animate={{ y: [0,0,210,180] }}
             transition={{
               ease: ["circIn", "circIn", "easeInOut"],
               duration: 4,

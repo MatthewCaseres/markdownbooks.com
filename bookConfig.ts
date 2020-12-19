@@ -3,6 +3,11 @@ import { summariesToTrees } from "next-mdx-books";
 (async () => {
   await summariesToTrees(
     [
+      {url: "https://github.com/Open-EdTech/AWS-CSA/blob/main/DOCS.md"},
+      {
+        url:
+          "https://github.com/Open-EdTech/next-mdx-books/blob/main/DOCS/DOCS.md",
+      },
       {
         url:
           "https://github.com/MatthewCaseres/mostly-adequate-guide/blob/master/SUMMARY.md",
