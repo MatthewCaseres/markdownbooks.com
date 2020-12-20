@@ -3,7 +3,6 @@ import {
   SideBarProvider,
   StatefulNode,
 } from "../components/SideBar/SideBarContext";
-import Link from "next/link";
 import SideBar from "../components/SideBar/SideBar";
 import { getMdSource, getAllRoutesInfo } from "next-mdx-books";
 import renderToString from "next-mdx-remote/render-to-string";
@@ -31,6 +30,7 @@ function Post({ urlTree, mdxSource, ghUrl }: { urlTree: UrlNode; mdxSource: Sour
 const components = {
   CustomLink,
 };
+
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allRoutesInfo = await getAllRoutesInfo(bookConfig);
