@@ -58,7 +58,7 @@ export default function Home() {
             animate={{ y: [0,0,210,180] }}
             transition={{
               ease: ["circIn", "circIn", "easeInOut"],
-              duration: 4,
+              duration: 3,
               times: [0, 0.25, 0.5, 0.6],
             }}
           >
@@ -73,7 +73,7 @@ export default function Home() {
             }}
             transition={{
               ease: "circOut",
-              duration: 4,
+              duration: 3,
               times: [0.5, 0.75, 1],
             }}
           >
