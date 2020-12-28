@@ -99,8 +99,7 @@ export default function Home() {
         <h1 className="text-center">Books</h1>
         <BookList books={books} />
         <div>
-          These books are hosted to demonstrate the next-mdx-books package. They are also hosted on 
-          GitBook, our software is compatible with GitBook. Some GitBook plugins are likely broken in these books.
+          These books are hosted using the next-mdx-books package. Books ported from GitBook may have some broken plugins.
         </div>
       </div>
     </div>
