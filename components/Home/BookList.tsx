@@ -1,5 +1,5 @@
 import Link from 'next/link'
-type BookListType = {books:{title: string, author: string, authorLink: string, bookLink: string}[]}
+type BookListType = {books:{title: string, author?: string, authorLink?: string, bookLink: string}[]}
 export default function BookList({books}: BookListType) {
   return (
     <ul>
@@ -10,7 +10,7 @@ export default function BookList({books}: BookListType) {
               {title}
             </a>
           </Link>
-          <em className="ml-2">
+          {author && <em className="ml-2">
             by
             <a
               target="_blank"
@@ -20,7 +20,7 @@ export default function BookList({books}: BookListType) {
             >
               {author}
             </a>
-          </em>
+          </em>}
         </li>
       ))}
     </ul>

@@ -28,6 +28,10 @@ const cards: CardType[] = [
 ];
 const books = [
   {
+    title: "King James Bible",
+    bookLink: 'Open-EdTech/kjv-markdown/01-Genesis-KJV.md'
+  },
+  {
     title: "Guide to Functional Programming",
     author: "Mostly Adequate",
     authorLink: "https://github.com/MostlyAdequate",
