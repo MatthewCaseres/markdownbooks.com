@@ -33,7 +33,7 @@ const components = {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const allRoutesInfo = await getAllRoutesInfo(bookConfig);
+  const allRoutesInfo = await getAllRoutesInfo(bookConfig as UrlNode[]);
   const stringRoute = (params!.id as string[]).join("/");
   const nodeIndex = allRoutesInfo[stringRoute].index;
   const ghUrl = allRoutesInfo[stringRoute].ghUrl;
@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allRoutesInfo = await getAllRoutesInfo(bookConfig);
+  const allRoutesInfo = await getAllRoutesInfo(bookConfig as UrlNode[]);
   return {
     paths: Object.keys(allRoutesInfo).map((routeString) => ({
       params: {
