@@ -3,6 +3,7 @@ import { summariesToTrees } from "next-mdx-books";
 (async () => {
   await summariesToTrees(
     [
+      {url: "https://raw.githubusercontent.com/MatthewCaseres/scrape-bibles/main/CPDV/00-Index.md"}, 
       {url: "https://github.com/Open-EdTech/kjv-markdown/blob/master/TOC.md"},
       {url: "https://github.com/Open-EdTech/AWS-CSA/blob/main/DOCS.md"},
       {
