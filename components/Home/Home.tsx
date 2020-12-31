@@ -33,7 +33,7 @@ const books = [
   },
   {
     title: "Public Domain Catholic Version Bible",
-    bookLink: 'MatthewCaseres/scrape-bibles/main/CPDV/00-Index.md/Genesis.md'
+    bookLink: 'MatthewCaseres/scrape-bibles/Genesis.md'
   },
   {
     title: "Guide to Functional Programming",
