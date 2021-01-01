@@ -1,13 +1,17 @@
-import { useState } from "react";
-import { useSideBarState } from "./SideBarContext";
+import { useEffect, useState } from "react";
+import { useSideBarState, useSideBarDispatch } from "./SideBarContext";
 import RenderNode from "./RenderNode";
 import MenuIcon from "@material-ui/icons/Menu";
 import SideBarTop from "./SideBarTop";
 
-const SideBar: React.FC<{ ghUrl: string }> = ({ children, ghUrl }) => {
+const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ children, ghUrl, treePath }) => {
+  const sideBarDispatch = useSideBarDispatch();
   const sideBarState = useSideBarState();
   const [mdVisible, setVisible] = useState<boolean>(true);
   const width = 300;
+  useEffect(()=> {
+    sideBarDispatch({type: 'open', path: treePath.slice(0,treePath.length-1)})
+  }, [treePath])
   return (
     <div className="flex">
       <div
@@ -20,7 +24,7 @@ const SideBar: React.FC<{ ghUrl: string }> = ({ children, ghUrl }) => {
         >
           <SideBarTop setVisible={setVisible} ghUrl={ghUrl} />
           {sideBarState.map((node, index) => (
-            <RenderNode key={`0-${index}`} node={node} path={[index]} />
+            <RenderNode key={`0-${index}`} node={node} pagePath={treePath} />
           ))}
         </div>
       </div>

@@ -13,12 +13,12 @@ import {UrlNode} from 'next-mdx-books'
 var slug = require("remark-slug");
 
 const remote = true;
-
-function Post({ urlTree, mdxSource, ghUrl }: { urlTree: UrlNode; mdxSource: Source, ghUrl: string }) {
+type PostProps = { urlTree: UrlNode; mdxSource: Source, ghUrl: string, treePath: ReadonlyArray<number> }
+function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
   const content = hydrate(mdxSource);
   return (
       <SideBarProvider config={urlTree.children as StatefulNode[]}>
-        <SideBar ghUrl={ghUrl}>
+        <SideBar ghUrl={ghUrl} treePath={treePath}>
           <div className="prose dark:prose-dark max-w-sm sm:max-w-md lg:max-w-xl xl:max-w-2xl m-auto px-2 flex-1 ">
             <div>{content}</div>
           </div>
@@ -35,8 +35,7 @@ const components = {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allRoutesInfo = await getAllRoutesInfo(bookConfig as UrlNode[]);
   const stringRoute = (params!.id as string[]).join("/");
-  const nodeIndex = allRoutesInfo[stringRoute].index;
-  const ghUrl = allRoutesInfo[stringRoute].ghUrl;
+  const {index: nodeIndex, ghUrl, treePath} = allRoutesInfo[stringRoute]
   const urlTree = bookConfig[nodeIndex];
   const source = await getMdSource(stringRoute, allRoutesInfo, remote);
   const mdxSource = await renderToString(source, {
@@ -48,7 +47,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     components,
   });
   return {
-    props: { urlTree, mdxSource, stringRoute, ghUrl }, // will be passed to the page component as props
+    props: { urlTree, mdxSource, stringRoute, ghUrl, treePath }, // will be passed to the page component as props
   };
 };
 

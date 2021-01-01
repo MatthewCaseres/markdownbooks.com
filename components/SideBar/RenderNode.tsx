@@ -4,15 +4,15 @@ import Node from "./Node";
 const RenderNode = ({
   node,
   depth = 0,
-  path,
+  pagePath
 }: {
   node: StatefulNode;
   depth?: number;
-  path: number[];
+  pagePath: readonly number[]
 }) => {
   return (
     <div className={`${depth === 0 && "ml-1"}`}>
-      <Node node={node} path={path} />
+      <Node node={node} pagePath={pagePath}/>
       {node.children && node.open && (
         <div
           style={{
@@ -21,14 +21,13 @@ const RenderNode = ({
             borderLeft: "1px dashed gray",
           }}
         >
-          {node.children.map((node, index) => {
-            const nextPath = [...path, index];
+          {node.children.map((nodeChild, index) => {
             return (
               <RenderNode
                 key={`${depth + 1}-${index}`}
-                node={node}
+                node={nodeChild}
                 depth={depth + 1}
-                path={nextPath}
+                pagePath={pagePath}
               />
             );
           })}

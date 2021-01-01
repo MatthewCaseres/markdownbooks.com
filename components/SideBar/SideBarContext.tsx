@@ -2,16 +2,17 @@ import {useReducer, createContext, useContext, useState, SetStateAction, Dispatc
 import produce, {Draft} from 'immer'
 import {UrlNode} from "next-mdx-books"
 
-export type StatefulNode = Readonly<Omit<UrlNode, "children">> & Readonly<{
+export type StatefulNode = Readonly<Omit<UrlNode, "children" | "treePath">> & Readonly<{
   open?: boolean
+  treePath: ReadonlyArray<number>
   completion?: undefined | "yellow" | "green"
   children?: ReadonlyArray<StatefulNode>
 }>
 type StatefulNodes = ReadonlyArray<StatefulNode>
 
 type Action =
-  | { type: "open"; path: number[] }
-  | { type: "close"; path: number[] };
+  | { type: "open"; path: readonly number[] }
+  | { type: "close"; path: readonly number[] };
 type SideBarDispatch = (action: Action) => void;
 const SideBarVisibleContext = createContext<
   [boolean, Dispatch<SetStateAction<boolean>>] | undefined
@@ -23,12 +24,17 @@ const SideBarDispatchContext = createContext<SideBarDispatch | undefined>(
 const sideBarReducer = produce((draft: Draft<StatefulNodes>, action: Action) => {
   switch (action.type) {
     case "open":
-      let pathOpen = [...action.path];
-      let nodeOpen = draft[pathOpen.shift()!];
-      nodeOpen.open = true;
-      while (pathOpen.length > 0) {
-        nodeOpen = nodeOpen.children![pathOpen.shift()!];
+      if(action.path.length) {
+        let pathOpen = [...action.path];
+        let nodeOpen = draft[pathOpen.shift()!];
         nodeOpen.open = true;
+        while (pathOpen.length > 0) {
+          nodeOpen = nodeOpen.children![pathOpen.shift()!];
+          //Don't open leaf on click
+          if(nodeOpen.children){
+            nodeOpen.open = true;
+          }
+        }
       }
       break
     case "close":
