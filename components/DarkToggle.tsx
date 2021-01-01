@@ -35,7 +35,6 @@ export default function DarkToggle() {
     } else {
       document.querySelector("html")?.classList.remove("dark");
     }
-    console.log(isDarkMode);
   }, [isDarkMode]);
   return (
     <div className="flex flex-col justify-center">

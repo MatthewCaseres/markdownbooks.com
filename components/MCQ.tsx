@@ -13,7 +13,6 @@ function MCQ({
   solutionText: solution,
   correctIndex,
 }: MCQType) {
-  console.log(answers)
   const [graded, setGraded] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
   function changeSelection(idx: number) {

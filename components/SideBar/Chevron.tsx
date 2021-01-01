@@ -1,7 +1,7 @@
 const Chevron = ({ expanded }: { expanded: boolean }) => {
   if (!expanded) {
     return (
-        <div className="rounded py-1 px-1 mr-1 select-none cursor-pointer">
+        <div className="rounded py-1 px-1 select-none cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -20,7 +20,7 @@ const Chevron = ({ expanded }: { expanded: boolean }) => {
     );
   } else {
     return (
-      <div className="rounded py-1 px-1 mr-1 select-none cursor-pointer">
+      <div className="rounded py-1 px-1 select-none cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
