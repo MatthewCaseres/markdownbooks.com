@@ -1,17 +1,15 @@
-import { useSideBarState, StatefulNode } from "./SideBarContext";
+import { StatefulNode } from "./SideBarContext";
 import Node from "./Node";
 
 const RenderNode = ({
   node,
-  depth = 0,
   pagePath
 }: {
   node: StatefulNode;
-  depth?: number;
   pagePath: readonly number[]
 }) => {
   return (
-    <div className={`${depth === 0 && "ml-1"}`}>
+    <div>
       <Node node={node} pagePath={pagePath}/>
       {node.children && node.open && (
         <div
@@ -24,9 +22,8 @@ const RenderNode = ({
           {node.children.map((nodeChild, index) => {
             return (
               <RenderNode
-                key={`${depth + 1}-${index}`}
+                key={index}
                 node={nodeChild}
-                depth={depth + 1}
                 pagePath={pagePath}
               />
             );

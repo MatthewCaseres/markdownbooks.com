@@ -33,7 +33,7 @@ const components = {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const allRoutesInfo = await getAllRoutesInfo(bookConfig as UrlNode[]);
+  const allRoutesInfo = getAllRoutesInfo(bookConfig as UrlNode[]);
   const stringRoute = (params!.id as string[]).join("/");
   const {index: nodeIndex, ghUrl, treePath} = allRoutesInfo[stringRoute]
   const urlTree = bookConfig[nodeIndex];
@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     components,
   });
   return {
-    props: { urlTree, mdxSource, stringRoute, ghUrl, treePath }, // will be passed to the page component as props
+    props: { urlTree, mdxSource, ghUrl, treePath }, // will be passed to the page component as props
   };
 };
 

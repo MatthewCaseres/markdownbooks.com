@@ -23,9 +23,11 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
           style={{ width: width, minWidth: width }}
         >
           <SideBarTop setVisible={setVisible} ghUrl={ghUrl} />
+          <div className="ml-1">
           {sideBarState.map((node, index) => (
-            <RenderNode key={`0-${index}`} node={node} pagePath={treePath} />
+            <RenderNode key={index} node={node} pagePath={treePath} />
           ))}
+          </div>
         </div>
       </div>
       <div
