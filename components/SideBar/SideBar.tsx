@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useSideBarState, useSideBarDispatch } from "./SideBarContext";
+import { useSideBarState, useSideBarDispatch, Tracked, useIdToPath } from "./SideBarContext";
 import RenderNode from "./RenderNode";
 import MenuIcon from "@material-ui/icons/Menu";
 import SideBarTop from "./SideBarTop";
 
 const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ children, ghUrl, treePath }) => {
+  const [filter, setFilter] = useState<Tracked[]>([Tracked.Completed])
+  const idToPath = useIdToPath()
   const sideBarDispatch = useSideBarDispatch();
   const sideBarState = useSideBarState();
   const [mdVisible, setVisible] = useState<boolean>(true);
@@ -12,6 +14,10 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
   useEffect(()=> {
     sideBarDispatch({type: 'open', path: treePath.slice(0,treePath.length-1)})
   }, [treePath])
+  useEffect(()=> {
+    sideBarDispatch({type: 'filter', filter})
+  }, [filter])
+  console.log(idToPath)
   return (
     <div className="flex">
       <div

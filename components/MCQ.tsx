@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import Markdown from "./Markdown";
 
 type MCQType = {
-  promptText: string;
-  solutionText: string;
-  answersArray: string[];
-  correctIndex: number;
+  prompt: string;
+  solution: string;
+  answers: string[];
+  correct_idx: number;
 };
 function MCQ({
-  promptText: prompt,
-  answersArray: answers,
-  solutionText: solution,
-  correctIndex,
+  prompt,
+  answers,
+  solution,
+  correct_idx,
 }: MCQType) {
   const [graded, setGraded] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
@@ -27,7 +27,7 @@ function MCQ({
         <div className="py-2 mt-2">
           <Markdown content={prompt} />
           {graded &&
-            (selectedIdx === correctIndex ? (
+            (selectedIdx === correct_idx ? (
               <div className="bg-green-300 border-2 rounded-xl border-green-400 px-2 py-1 mt-2 ">
                 <Markdown content={solution} />
               </div>
@@ -37,7 +37,6 @@ function MCQ({
               </div>
             ))}
         </div>
-
         {answers.map((answer, index) => (
           <div
             key={index}

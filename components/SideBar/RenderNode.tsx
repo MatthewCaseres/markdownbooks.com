@@ -10,7 +10,7 @@ const RenderNode = ({
 }) => {
   return (
     <div>
-      <Node node={node} pagePath={pagePath}/>
+      {!node.hidden && <Node node={node} pagePath={pagePath}/>}
       {node.children && node.open && (
         <div
           style={{

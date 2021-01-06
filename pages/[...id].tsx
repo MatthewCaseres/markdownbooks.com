@@ -9,13 +9,22 @@ import renderToString from "next-mdx-remote/render-to-string";
 import hydrate, { Source } from "next-mdx-remote/hydrate";
 import CustomLink from "../components/CustomLink";
 import bookConfig from '../bookConfig.json'
+import withSmartHeading from '../remark/withSmartHeading'
 import {UrlNode} from 'next-mdx-books'
+import SmartHeading from '../components/SmartHeading'
+import MCQ from '../components/MCQ'
+import withMCQ from '../remark/withMCQ'
 var slug = require("remark-slug");
 
-const remote = true;
+
+const components = {
+  CustomLink, SmartHeading, MCQ
+};
+const remote = false;
+
 type PostProps = { urlTree: UrlNode; mdxSource: Source, ghUrl: string, treePath: ReadonlyArray<number> }
 function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
-  const content = hydrate(mdxSource);
+  const content = hydrate(mdxSource, {components});
   return (
       <SideBarProvider config={urlTree.children as StatefulNode[]}>
         <SideBar ghUrl={ghUrl} treePath={treePath}>
@@ -27,9 +36,8 @@ function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
   );
 }
 
-const components = {
-  CustomLink,
-};
+
+
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -38,10 +46,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const {index: nodeIndex, ghUrl, treePath} = allRoutesInfo[stringRoute]
   const urlTree = bookConfig[nodeIndex];
   const source = await getMdSource(stringRoute, allRoutesInfo, remote);
+
   const mdxSource = await renderToString(source, {
     mdxOptions: {
       remarkPlugins: [
+        withSmartHeading,
         slug,
+        withMCQ
       ],
     },
     components,
@@ -52,7 +63,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allRoutesInfo = await getAllRoutesInfo(bookConfig as UrlNode[]);
+  const allRoutesInfo = getAllRoutesInfo(bookConfig as UrlNode[]);
   return {
     paths: Object.keys(allRoutesInfo).map((routeString) => ({
       params: {
