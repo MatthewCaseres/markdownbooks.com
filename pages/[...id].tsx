@@ -6,7 +6,8 @@ import {
 import SideBar from "../components/SideBar/SideBar";
 import { getMdSource, getAllRoutesInfo } from "next-mdx-books";
 import renderToString from "next-mdx-remote/render-to-string";
-import hydrate, { Source } from "next-mdx-remote/hydrate";
+import hydrate from "next-mdx-remote/hydrate";
+import {MdxRemote} from "next-mdx-remote/types";
 import CustomLink from "../components/CustomLink";
 import bookConfig from '../bookConfig.json'
 import withSmartHeading from '../remark/withSmartHeading'
@@ -14,17 +15,22 @@ import {UrlNode} from 'next-mdx-books'
 import SmartHeading from '../components/SmartHeading'
 import MCQ from '../components/MCQ'
 import withMCQ from '../remark/withMCQ'
+import { useApollo, initializeApollo } from "../lib/apolloClient";
+import { ApolloClient, ApolloProvider, gql, useQuery } from "@apollo/client";
 var slug = require("remark-slug");
-
 
 const components = {
   CustomLink, SmartHeading, MCQ
 };
+const provider = {
+  component: ApolloProvider,
+  props: {client: initializeApollo()}
+}
 const remote = false;
 
-type PostProps = { urlTree: UrlNode; mdxSource: Source, ghUrl: string, treePath: ReadonlyArray<number> }
+type PostProps = { urlTree: UrlNode; mdxSource: MdxRemote.Source, ghUrl: string, treePath: ReadonlyArray<number> }
 function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
-  const content = hydrate(mdxSource, {components});
+  const content = hydrate(mdxSource, {components, provider});
   return (
       <SideBarProvider config={urlTree.children as StatefulNode[]}>
         <SideBar ghUrl={ghUrl} treePath={treePath}>
@@ -35,10 +41,6 @@ function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
       </SideBarProvider>
   );
 }
-
-
-
-
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allRoutesInfo = getAllRoutesInfo(bookConfig as UrlNode[]);
@@ -56,6 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ],
     },
     components,
+    provider
   });
   return {
     props: { urlTree, mdxSource, ghUrl, treePath }, // will be passed to the page component as props
