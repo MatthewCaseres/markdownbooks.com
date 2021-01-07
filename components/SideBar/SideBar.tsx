@@ -5,7 +5,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SideBarTop from "./SideBarTop";
 
 const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ children, ghUrl, treePath }) => {
-  const [filter, setFilter] = useState<Tracked[]>([Tracked.Completed])
+  const [filter, setFilter] = useState<Tracked[]>([])
   const idToPath = useIdToPath()
   const sideBarDispatch = useSideBarDispatch();
   const sideBarState = useSideBarState();
