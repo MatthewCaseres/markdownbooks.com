@@ -1,5 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import SideBarFilters from './SideBarFilters'
 import Link from "next/link";
+import FilterDropdown from './FilterDropdown'
 
 export default function SideBarTop({
   setVisible,
@@ -9,6 +11,7 @@ export default function SideBarTop({
   ghUrl: string;
 }) {
   return (
+    <div>
       <div className="flex flex-shrink-0 flex-row py-1 z-10 bg-white dark:bg-black sticky top-0">
         <div
           onClick={() => setVisible((mdVisible) => !mdVisible)}
@@ -19,12 +22,8 @@ export default function SideBarTop({
         <a target="_blank" rel="noopener noreferrer" href={ghUrl}>
           <img src="/github.png" className="h-6 w-6 mx-2"></img>
         </a>
-        <Link href="/">
-          <a>
-            <Home />
-          </a>
-        </Link>
       </div>
+    </div>
   );
 }
 

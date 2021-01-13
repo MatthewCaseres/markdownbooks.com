@@ -1,0 +1,14 @@
+overwrite: true
+schema: "pages/api/schema.graphql"
+documents: "graphql/**/*.graphql"
+config: 
+  withRefetchFn: true
+generates:
+  graphql/generated.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typed-document-node"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

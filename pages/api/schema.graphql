@@ -7,12 +7,19 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 """
 scalar Date
 
+type Mutation {
+  completeProblem(id: String!): Problem
+  flagProblem(flag: Int!, id: String!): Problem
+}
+
 type Problem {
-  completed: Boolean
-  id: String
+  completed: Boolean!
+  flagged: Int!
+  id: String!
 }
 
 type Query {
   hello: String
   problem(id: String!): Problem
+  problems: [Problem!]!
 }

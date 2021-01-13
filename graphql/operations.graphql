@@ -1,0 +1,31 @@
+mutation CompleteProblem($id: String!){
+  completeProblem(id: $id) {
+    id
+    completed
+    flagged
+  }
+}
+
+query GetProblem($id: String!){
+  problem(id: $id) {
+    id
+    flagged
+    completed
+  }
+}
+
+query GetProblems {
+    problems {
+      id
+      completed
+      flagged
+    }
+  }
+
+mutation FlagProblem($id: String!, $flag: Int!) {
+  flagProblem(id: $id, flag: $flag) {
+    id
+    completed
+    flagged
+  }
+}

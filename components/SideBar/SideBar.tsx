@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useSideBarState, useSideBarDispatch, Tracked, useIdToPath } from "./SideBarContext";
+import { useSideBarState, useSideBarDispatch } from "./SideBarContext";
 import RenderNode from "./RenderNode";
 import MenuIcon from "@material-ui/icons/Menu";
 import SideBarTop from "./SideBarTop";
+import SideBarFilters from "./SideBarFilters";
 
 const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ children, ghUrl, treePath }) => {
-  const [filter, setFilter] = useState<Tracked[]>([])
-  const idToPath = useIdToPath()
   const sideBarDispatch = useSideBarDispatch();
   const sideBarState = useSideBarState();
   const [mdVisible, setVisible] = useState<boolean>(true);
@@ -14,10 +13,6 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
   useEffect(()=> {
     sideBarDispatch({type: 'open', path: treePath.slice(0,treePath.length-1)})
   }, [treePath])
-  useEffect(()=> {
-    sideBarDispatch({type: 'filter', filter})
-  }, [filter])
-  console.log(idToPath)
   return (
     <div className="flex">
       <div
@@ -29,6 +24,9 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
           style={{ width: width, minWidth: width }}
         >
           <SideBarTop setVisible={setVisible} ghUrl={ghUrl} />
+          <div className="flex flex-row justify-center border-t border-b border-gray-400 py-1 bg-gray-200 dark:bg-gray-800">
+          <SideBarFilters />
+          </div>
           <div className="ml-1">
           {sideBarState.map((node, index) => (
             <RenderNode key={index} node={node} pagePath={treePath} />
@@ -41,7 +39,7 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
           }`}
       >
         <div
-          className="bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-800 rounded p-2 cursor-pointer self-start md:sticky md:top-2 md:ml-2 fixed bottom-3 right-3"
+          className="bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-800 rounded p-2 cursor-pointer self-start md:sticky md:top-2 md:mt-2 md:ml-2 fixed bottom-3 right-3"
           onClick={() => setVisible(mdVisible => !mdVisible)}
         >
           <MenuIcon className="dark:text-gray-400 text-gray-500" />

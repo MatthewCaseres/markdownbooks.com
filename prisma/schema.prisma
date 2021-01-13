@@ -12,7 +12,8 @@ generator client {
 
 model Problem {
   id   String @default(cuid()) @id
-  completed Boolean
+  completed Boolean @default(false)
+  flagged Int @default(0)
 }
 
 

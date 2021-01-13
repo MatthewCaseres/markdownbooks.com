@@ -4,90 +4,67 @@
     "children": [
       {
         "type": "file",
-        "route": "Open-EdTech/AWS-CSA/S3.md",
+        "route": "Open-EdTech/AWS-CSA/S3-Content.md",
         "title": "Amazon S3",
-        "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/S3.md",
-        "rawUrl": "https://raw.githubusercontent.com//Open-EdTech/AWS-CSA/main/S3.md",
-        "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/S3.md",
+        "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/S3-Content.md",
+        "rawUrl": "https://raw.githubusercontent.com//Open-EdTech/AWS-CSA/main/S3-Content.md",
+        "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/S3-Content.md",
         "children": [
           {
-            "title": "What is S3?!",
-            "route": "Open-EdTech/AWS-CSA/S3.md/#what-is-s3",
+            "id": "1",
+            "title": "What is S3?! ",
+            "route": "Open-EdTech/AWS-CSA/S3-Content.md/#what-is-s3",
             "type": "heading",
-            "treePath": [
-              0,
-              0
-            ]
+            "treePath": [0, 0]
           },
           {
-            "title": "more",
-            "route": "Open-EdTech/AWS-CSA/S3.md/#more",
+            "id": "2",
+            "title": "more ",
+            "route": "Open-EdTech/AWS-CSA/S3-Content.md/#more",
             "type": "heading",
-            "treePath": [
-              0,
-              1
-            ]
+            "treePath": [0, 1]
           },
           {
-            "title": "lolol sampletext",
-            "route": "Open-EdTech/AWS-CSA/S3.md/#lolol-sampletext",
+            "id": "4",
+            "title": "lolol sampletext ",
+            "route": "Open-EdTech/AWS-CSA/S3-Content.md/#lolol-sampletext",
             "type": "heading",
-            "treePath": [
-              0,
-              2
-            ]
-          },
-          {
-            "id": "032893249",
-            "title": "problems ",
-            "route": "Open-EdTech/AWS-CSA/S3.md/#problems",
-            "type": "heading",
-            "treePath": [
-              0,
-              3
-            ]
-          },
-          {
-            "type": "heading",
-            "title": "Problems",
-            "children": [
-              {
-                "type": "edtech-mcq",
-                "id": "63bde698-7dc5-4f25-9703-b01b8041e029",
-                "treePath": [
-                  0,
-                  4,
-                  0
-                ]
-              },
-              {
-                "type": "edtech-mcq",
-                "id": "63bde698-7dc5-4f25-9703-b01b804de023",
-                "treePath": [
-                  0,
-                  4,
-                  1
-                ]
-              },
-              {
-                "type": "edtech-mcq",
-                "id": "63bde698-7dc5-4f25-9703-b01b804de095",
-                "treePath": [
-                  0,
-                  4,
-                  2
-                ]
-              }
-            ],
-            "treePath": [
-              0,
-              4
-            ]
+            "treePath": [0, 2]
           }
         ],
-        "treePath": [
-          0
-        ]
+        "treePath": [0]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/AWS-CSA/S3-Problems.md",
+        "title": "S3 Problems",
+        "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/S3-Problems.md",
+        "rawUrl": "https://raw.githubusercontent.com//Open-EdTech/AWS-CSA/main/S3-Problems.md",
+        "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/S3-Problems.md",
+        "children": [
+          {
+            "type": "edtech-mcq",
+            "title": "problem 1",
+            "id": "63bde698-7dc5-4f25-9703-b01b8041e029",
+            "route": "Open-EdTech/AWS-CSA/S3-Problems.md/#63bde698-7dc5-4f25-9703-b01b8041e029",
+            "treePath": [1, 0]
+          },
+          {
+            "type": "edtech-mcq",
+            "title": "problem 2",
+            "id": "63bde698-7dc5-4f25-9703-b01b804de023",
+            "route": "Open-EdTech/AWS-CSA/S3-Problems.md/#63bde698-7dc5-4f25-9703-b01b804de023",
+            "treePath": [1, 1]
+          },
+          {
+            "type": "edtech-mcq",
+            "title": "problem 3",
+            "id": "63bde698-7dc5-4f25-9703-b01b804de095",
+            "route": "Open-EdTech/AWS-CSA/S3-Problems.md/#63bde698-7dc5-4f25-9703-b01b804de095",
+            "treePath": [1, 2]
+          }
+        ],
+        "treePath": [1]
       },
       {
         "type": "file",
@@ -96,9 +73,7 @@
         "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/RDS.md",
         "rawUrl": "https://raw.githubusercontent.com//Open-EdTech/AWS-CSA/main/RDS.md",
         "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/RDS.md",
-        "treePath": [
-          1
-        ]
+        "treePath": [2]
       },
       {
         "type": "file",
@@ -109,46 +84,28 @@
         "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/Lambda.md",
         "children": [
           {
-            "title": "Clipped",
+            "id": "89042089342",
+            "title": "Clipped ",
             "route": "Open-EdTech/AWS-CSA/Lambda.md/#clipped",
             "type": "heading",
-            "treePath": [
-              2,
-              0
-            ]
+            "treePath": [3, 0]
           },
           {
-            "type": "heading",
-            "title": "Problems",
-            "children": [
-              {
-                "type": "edtech-mcq",
-                "id": "63bde698-7dc5-4f25-9703-b01b804de129",
-                "treePath": [
-                  2,
-                  1,
-                  0
-                ]
-              },
-              {
-                "type": "edtech-mcq",
-                "id": "63bde698-7dc5-4f25-9703-b01b804de029",
-                "treePath": [
-                  2,
-                  1,
-                  1
-                ]
-              }
-            ],
-            "treePath": [
-              2,
-              1
-            ]
+            "type": "edtech-mcq",
+            "title": "problem 1",
+            "id": "63bde698-7dc5-4f25-9703-b01b804de129",
+            "route": "Open-EdTech/AWS-CSA/Lambda.md/#63bde698-7dc5-4f25-9703-b01b804de129",
+            "treePath": [3, 1]
+          },
+          {
+            "type": "edtech-mcq",
+            "title": "problem 2",
+            "id": "63bde698-7dc5-4f25-9703-b01b804de029",
+            "route": "Open-EdTech/AWS-CSA/Lambda.md/#63bde698-7dc5-4f25-9703-b01b804de029",
+            "treePath": [3, 2]
           }
         ],
-        "treePath": [
-          2
-        ]
+        "treePath": [3]
       }
     ],
     "title": "Docs",
@@ -168,10 +125,7 @@
             "title": "Comments",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/basics/comments.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/basics/comments.md",
-            "treePath": [
-              0,
-              0
-            ]
+            "treePath": [0, 0]
           },
           {
             "type": "file",
@@ -179,10 +133,7 @@
             "title": "Variables",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/basics/variables.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/basics/variables.md",
-            "treePath": [
-              0,
-              1
-            ]
+            "treePath": [0, 1]
           },
           {
             "type": "file",
@@ -190,10 +141,7 @@
             "title": "Types",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/basics/types.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/basics/types.md",
-            "treePath": [
-              0,
-              2
-            ]
+            "treePath": [0, 2]
           },
           {
             "type": "file",
@@ -201,17 +149,12 @@
             "title": "Equality",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/basics/equality.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/basics/equality.md",
-            "treePath": [
-              0,
-              3
-            ]
+            "treePath": [0, 3]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/basics/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/basics/README.md",
-        "treePath": [
-          0
-        ]
+        "treePath": [0]
       },
       {
         "type": "file",
@@ -224,10 +167,7 @@
             "title": "Creation",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/numbers/create.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/numbers/create.md",
-            "treePath": [
-              1,
-              0
-            ]
+            "treePath": [1, 0]
           },
           {
             "type": "file",
@@ -235,10 +175,7 @@
             "title": "Basic Operators",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/numbers/operators.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/numbers/operators.md",
-            "treePath": [
-              1,
-              1
-            ]
+            "treePath": [1, 1]
           },
           {
             "type": "file",
@@ -246,17 +183,12 @@
             "title": "Advanced Operators",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/numbers/advanced.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/numbers/advanced.md",
-            "treePath": [
-              1,
-              2
-            ]
+            "treePath": [1, 2]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/numbers/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/numbers/README.md",
-        "treePath": [
-          1
-        ]
+        "treePath": [1]
       },
       {
         "type": "file",
@@ -269,10 +201,7 @@
             "title": "Creation",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/strings/create.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/strings/create.md",
-            "treePath": [
-              2,
-              0
-            ]
+            "treePath": [2, 0]
           },
           {
             "type": "file",
@@ -280,10 +209,7 @@
             "title": "Concatenation",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/strings/concat.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/strings/concat.md",
-            "treePath": [
-              2,
-              1
-            ]
+            "treePath": [2, 1]
           },
           {
             "type": "file",
@@ -291,17 +217,12 @@
             "title": "Length",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/strings/length.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/strings/length.md",
-            "treePath": [
-              2,
-              2
-            ]
+            "treePath": [2, 2]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/strings/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/strings/README.md",
-        "treePath": [
-          2
-        ]
+        "treePath": [2]
       },
       {
         "type": "file",
@@ -314,10 +235,7 @@
             "title": "If",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/conditional/if.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/conditional/if.md",
-            "treePath": [
-              3,
-              0
-            ]
+            "treePath": [3, 0]
           },
           {
             "type": "file",
@@ -325,10 +243,7 @@
             "title": "Else",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/conditional/else.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/conditional/else.md",
-            "treePath": [
-              3,
-              1
-            ]
+            "treePath": [3, 1]
           },
           {
             "type": "file",
@@ -336,10 +251,7 @@
             "title": "Comparators",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/conditional/comparators.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/conditional/comparators.md",
-            "treePath": [
-              3,
-              2
-            ]
+            "treePath": [3, 2]
           },
           {
             "type": "file",
@@ -347,17 +259,12 @@
             "title": "Concatenate",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/conditional/concatenate.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/conditional/concatenate.md",
-            "treePath": [
-              3,
-              3
-            ]
+            "treePath": [3, 3]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/conditional/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/conditional/README.md",
-        "treePath": [
-          3
-        ]
+        "treePath": [3]
       },
       {
         "type": "file",
@@ -370,10 +277,7 @@
             "title": "Indices",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/arrays/indices.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/arrays/indices.md",
-            "treePath": [
-              4,
-              0
-            ]
+            "treePath": [4, 0]
           },
           {
             "type": "file",
@@ -381,17 +285,12 @@
             "title": "Length",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/arrays/length.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/arrays/length.md",
-            "treePath": [
-              4,
-              1
-            ]
+            "treePath": [4, 1]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/arrays/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/arrays/README.md",
-        "treePath": [
-          4
-        ]
+        "treePath": [4]
       },
       {
         "type": "file",
@@ -404,10 +303,7 @@
             "title": "For",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/loops/for.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/loops/for.md",
-            "treePath": [
-              5,
-              0
-            ]
+            "treePath": [5, 0]
           },
           {
             "type": "file",
@@ -415,10 +311,7 @@
             "title": "While",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/loops/while.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/loops/while.md",
-            "treePath": [
-              5,
-              1
-            ]
+            "treePath": [5, 1]
           },
           {
             "type": "file",
@@ -426,17 +319,12 @@
             "title": "Do...While",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/loops/dowhile.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/loops/dowhile.md",
-            "treePath": [
-              5,
-              2
-            ]
+            "treePath": [5, 2]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/loops/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/loops/README.md",
-        "treePath": [
-          5
-        ]
+        "treePath": [5]
       },
       {
         "type": "file",
@@ -449,10 +337,7 @@
             "title": "Declare",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/functions/declare.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/functions/declare.md",
-            "treePath": [
-              6,
-              0
-            ]
+            "treePath": [6, 0]
           },
           {
             "type": "file",
@@ -460,17 +345,12 @@
             "title": "Higher order",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/functions/higher_order.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/functions/higher_order.md",
-            "treePath": [
-              6,
-              1
-            ]
+            "treePath": [6, 1]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/functions/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/functions/README.md",
-        "treePath": [
-          6
-        ]
+        "treePath": [6]
       },
       {
         "type": "file",
@@ -483,10 +363,7 @@
             "title": "Creation",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/creation.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/creation.md",
-            "treePath": [
-              7,
-              0
-            ]
+            "treePath": [7, 0]
           },
           {
             "type": "file",
@@ -494,10 +371,7 @@
             "title": "Properties",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/properties.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/properties.md",
-            "treePath": [
-              7,
-              1
-            ]
+            "treePath": [7, 1]
           },
           {
             "type": "file",
@@ -505,10 +379,7 @@
             "title": "Mutable",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/mutable.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/mutable.md",
-            "treePath": [
-              7,
-              2
-            ]
+            "treePath": [7, 2]
           },
           {
             "type": "file",
@@ -516,10 +387,7 @@
             "title": "Reference",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/reference.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/reference.md",
-            "treePath": [
-              7,
-              3
-            ]
+            "treePath": [7, 3]
           },
           {
             "type": "file",
@@ -527,10 +395,7 @@
             "title": "Prototype",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/prototype.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/prototype.md",
-            "treePath": [
-              7,
-              4
-            ]
+            "treePath": [7, 4]
           },
           {
             "type": "file",
@@ -538,10 +403,7 @@
             "title": "Delete",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/delete.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/delete.md",
-            "treePath": [
-              7,
-              5
-            ]
+            "treePath": [7, 5]
           },
           {
             "type": "file",
@@ -549,10 +411,7 @@
             "title": "Enumeration",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/enumeration.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/enumeration.md",
-            "treePath": [
-              7,
-              6
-            ]
+            "treePath": [7, 6]
           },
           {
             "type": "file",
@@ -560,17 +419,12 @@
             "title": "Global footprint",
             "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/global_footprint.md",
             "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/global_footprint.md",
-            "treePath": [
-              7,
-              7
-            ]
+            "treePath": [7, 7]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//GitbookIO/javascript/master/objects/README.md",
         "ghUrl": "https://github.com/GitbookIO/javascript/blob/master/objects/README.md",
-        "treePath": [
-          7
-        ]
+        "treePath": [7]
       }
     ],
     "title": "Summary",
@@ -590,17 +444,12 @@
             "title": "Why TypeScript",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/why-typescript.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/why-typescript.md",
-            "treePath": [
-              0,
-              0
-            ]
+            "treePath": [0, 0]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/getting-started.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/getting-started.md",
-        "treePath": [
-          0
-        ]
+        "treePath": [0]
       },
       {
         "type": "file",
@@ -613,10 +462,7 @@
             "title": "Equality",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/equality.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/equality.md",
-            "treePath": [
-              1,
-              0
-            ]
+            "treePath": [1, 0]
           },
           {
             "type": "file",
@@ -624,10 +470,7 @@
             "title": "References",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/references.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/references.md",
-            "treePath": [
-              1,
-              1
-            ]
+            "treePath": [1, 1]
           },
           {
             "type": "file",
@@ -635,10 +478,7 @@
             "title": "Null vs. Undefined",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/null-undefined.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/null-undefined.md",
-            "treePath": [
-              1,
-              2
-            ]
+            "treePath": [1, 2]
           },
           {
             "type": "file",
@@ -646,10 +486,7 @@
             "title": "this",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/this.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/this.md",
-            "treePath": [
-              1,
-              3
-            ]
+            "treePath": [1, 3]
           },
           {
             "type": "file",
@@ -657,10 +494,7 @@
             "title": "Closure",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/closure.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/closure.md",
-            "treePath": [
-              1,
-              4
-            ]
+            "treePath": [1, 4]
           },
           {
             "type": "file",
@@ -668,10 +502,7 @@
             "title": "Number",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/number.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/number.md",
-            "treePath": [
-              1,
-              5
-            ]
+            "treePath": [1, 5]
           },
           {
             "type": "file",
@@ -679,17 +510,12 @@
             "title": "Truthy",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/truthy.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/truthy.md",
-            "treePath": [
-              1,
-              6
-            ]
+            "treePath": [1, 6]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/javascript/recap.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/javascript/recap.md",
-        "treePath": [
-          1
-        ]
+        "treePath": [1]
       },
       {
         "type": "file",
@@ -707,19 +533,12 @@
                 "title": "Classes Emit",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/classes-emit.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/classes-emit.md",
-                "treePath": [
-                  2,
-                  0,
-                  0
-                ]
+                "treePath": [2, 0, 0]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/classes.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/classes.md",
-            "treePath": [
-              2,
-              0
-            ]
+            "treePath": [2, 0]
           },
           {
             "type": "file",
@@ -727,10 +546,7 @@
             "title": "Arrow Functions",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/arrow-functions.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/arrow-functions.md",
-            "treePath": [
-              2,
-              1
-            ]
+            "treePath": [2, 1]
           },
           {
             "type": "file",
@@ -738,10 +554,7 @@
             "title": "Rest Parameters",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/rest-parameters.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/rest-parameters.md",
-            "treePath": [
-              2,
-              2
-            ]
+            "treePath": [2, 2]
           },
           {
             "type": "file",
@@ -749,10 +562,7 @@
             "title": "let",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/let.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/let.md",
-            "treePath": [
-              2,
-              3
-            ]
+            "treePath": [2, 3]
           },
           {
             "type": "file",
@@ -760,10 +570,7 @@
             "title": "const",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/const.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/const.md",
-            "treePath": [
-              2,
-              4
-            ]
+            "treePath": [2, 4]
           },
           {
             "type": "file",
@@ -771,10 +578,7 @@
             "title": "Destructuring",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/destructuring.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/destructuring.md",
-            "treePath": [
-              2,
-              5
-            ]
+            "treePath": [2, 5]
           },
           {
             "type": "file",
@@ -782,10 +586,7 @@
             "title": "Spread Operator",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/spread-operator.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/spread-operator.md",
-            "treePath": [
-              2,
-              6
-            ]
+            "treePath": [2, 6]
           },
           {
             "type": "file",
@@ -793,10 +594,7 @@
             "title": "for...of",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/for...of.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/for...of.md",
-            "treePath": [
-              2,
-              7
-            ]
+            "treePath": [2, 7]
           },
           {
             "type": "file",
@@ -804,10 +602,7 @@
             "title": "Iterators",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/iterators.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/iterators.md",
-            "treePath": [
-              2,
-              8
-            ]
+            "treePath": [2, 8]
           },
           {
             "type": "file",
@@ -815,10 +610,7 @@
             "title": "Template Strings",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/template-strings.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/template-strings.md",
-            "treePath": [
-              2,
-              9
-            ]
+            "treePath": [2, 9]
           },
           {
             "type": "file",
@@ -826,10 +618,7 @@
             "title": "Promise",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/promise.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/promise.md",
-            "treePath": [
-              2,
-              10
-            ]
+            "treePath": [2, 10]
           },
           {
             "type": "file",
@@ -837,10 +626,7 @@
             "title": "Generators",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/generators.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/generators.md",
-            "treePath": [
-              2,
-              11
-            ]
+            "treePath": [2, 11]
           },
           {
             "type": "file",
@@ -848,17 +634,12 @@
             "title": "Async Await",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/async-await.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/async-await.md",
-            "treePath": [
-              2,
-              12
-            ]
+            "treePath": [2, 12]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/future-javascript.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/future-javascript.md",
-        "treePath": [
-          2
-        ]
+        "treePath": [2]
       },
       {
         "type": "file",
@@ -876,11 +657,7 @@
                 "title": "tsconfig.json",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/tsconfig.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/tsconfig.md",
-                "treePath": [
-                  3,
-                  0,
-                  0
-                ]
+                "treePath": [3, 0, 0]
               },
               {
                 "type": "file",
@@ -888,19 +665,12 @@
                 "title": "Which Files?",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/files.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/files.md",
-                "treePath": [
-                  3,
-                  0,
-                  1
-                ]
+                "treePath": [3, 0, 1]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/compilation-context.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/compilation-context.md",
-            "treePath": [
-              3,
-              0
-            ]
+            "treePath": [3, 0]
           },
           {
             "type": "file",
@@ -908,10 +678,7 @@
             "title": "Declaration Spaces",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/declarationspaces.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/declarationspaces.md",
-            "treePath": [
-              3,
-              1
-            ]
+            "treePath": [3, 1]
           },
           {
             "type": "file",
@@ -924,11 +691,7 @@
                 "title": "File Module Details",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/external-modules.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/external-modules.md",
-                "treePath": [
-                  3,
-                  2,
-                  0
-                ]
+                "treePath": [3, 2, 0]
               },
               {
                 "type": "file",
@@ -936,19 +699,12 @@
                 "title": "global.d.ts",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/globals.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/globals.md",
-                "treePath": [
-                  3,
-                  2,
-                  1
-                ]
+                "treePath": [3, 2, 1]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/modules.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/modules.md",
-            "treePath": [
-              3,
-              2
-            ]
+            "treePath": [3, 2]
           },
           {
             "type": "file",
@@ -956,10 +712,7 @@
             "title": "Namespaces",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/namespaces.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/namespaces.md",
-            "treePath": [
-              3,
-              3
-            ]
+            "treePath": [3, 3]
           },
           {
             "type": "file",
@@ -967,17 +720,12 @@
             "title": "Dynamic Import Expressions",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/dynamic-import-expressions.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/dynamic-import-expressions.md",
-            "treePath": [
-              3,
-              4
-            ]
+            "treePath": [3, 4]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/project/project.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/project/project.md",
-        "treePath": [
-          3
-        ]
+        "treePath": [3]
       },
       {
         "type": "file",
@@ -985,9 +733,7 @@
         "title": "Node.js QuickStart",
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/quick/nodejs.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/quick/nodejs.md",
-        "treePath": [
-          4
-        ]
+        "treePath": [4]
       },
       {
         "type": "file",
@@ -995,9 +741,7 @@
         "title": "Browser QuickStart",
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/quick/browser.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/quick/browser.md",
-        "treePath": [
-          5
-        ]
+        "treePath": [5]
       },
       {
         "type": "file",
@@ -1005,9 +749,7 @@
         "title": "Library QuickStart",
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/quick/library.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/quick/library.md",
-        "treePath": [
-          6
-        ]
+        "treePath": [6]
       },
       {
         "type": "file",
@@ -1020,10 +762,7 @@
             "title": "JS Migration Guide",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/migrating.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/migrating.md",
-            "treePath": [
-              7,
-              0
-            ]
+            "treePath": [7, 0]
           },
           {
             "type": "file",
@@ -1031,10 +770,7 @@
             "title": "@types",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/@types.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/@types.md",
-            "treePath": [
-              7,
-              1
-            ]
+            "treePath": [7, 1]
           },
           {
             "type": "file",
@@ -1047,11 +783,7 @@
                 "title": "Declaration Files",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/ambient/d.ts.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/ambient/d.ts.md",
-                "treePath": [
-                  7,
-                  2,
-                  0
-                ]
+                "treePath": [7, 2, 0]
               },
               {
                 "type": "file",
@@ -1059,19 +791,12 @@
                 "title": "Variables",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/ambient/variables.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/ambient/variables.md",
-                "treePath": [
-                  7,
-                  2,
-                  1
-                ]
+                "treePath": [7, 2, 1]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/ambient/intro.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/ambient/intro.md",
-            "treePath": [
-              7,
-              2
-            ]
+            "treePath": [7, 2]
           },
           {
             "type": "file",
@@ -1079,10 +804,7 @@
             "title": "Interfaces",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/interfaces.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/interfaces.md",
-            "treePath": [
-              7,
-              3
-            ]
+            "treePath": [7, 3]
           },
           {
             "type": "file",
@@ -1090,10 +812,7 @@
             "title": "Enums",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/enums.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/enums.md",
-            "treePath": [
-              7,
-              4
-            ]
+            "treePath": [7, 4]
           },
           {
             "type": "file",
@@ -1101,10 +820,7 @@
             "title": "lib.d.ts",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/lib.d.ts.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/lib.d.ts.md",
-            "treePath": [
-              7,
-              5
-            ]
+            "treePath": [7, 5]
           },
           {
             "type": "file",
@@ -1112,10 +828,7 @@
             "title": "Functions",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/functions.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/functions.md",
-            "treePath": [
-              7,
-              6
-            ]
+            "treePath": [7, 6]
           },
           {
             "type": "file",
@@ -1123,10 +836,7 @@
             "title": "Callable",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/callable.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/callable.md",
-            "treePath": [
-              7,
-              7
-            ]
+            "treePath": [7, 7]
           },
           {
             "type": "file",
@@ -1134,10 +844,7 @@
             "title": "Type Assertion",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/type-assertion.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/type-assertion.md",
-            "treePath": [
-              7,
-              8
-            ]
+            "treePath": [7, 8]
           },
           {
             "type": "file",
@@ -1145,10 +852,7 @@
             "title": "Freshness",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/freshness.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/freshness.md",
-            "treePath": [
-              7,
-              9
-            ]
+            "treePath": [7, 9]
           },
           {
             "type": "file",
@@ -1156,10 +860,7 @@
             "title": "Type Guard",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/typeGuard.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/typeGuard.md",
-            "treePath": [
-              7,
-              10
-            ]
+            "treePath": [7, 10]
           },
           {
             "type": "file",
@@ -1167,10 +868,7 @@
             "title": "Literal Types",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/literal-types.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/literal-types.md",
-            "treePath": [
-              7,
-              11
-            ]
+            "treePath": [7, 11]
           },
           {
             "type": "file",
@@ -1178,10 +876,7 @@
             "title": "Readonly",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/readonly.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/readonly.md",
-            "treePath": [
-              7,
-              12
-            ]
+            "treePath": [7, 12]
           },
           {
             "type": "file",
@@ -1189,10 +884,7 @@
             "title": "Generics",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/generics.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/generics.md",
-            "treePath": [
-              7,
-              13
-            ]
+            "treePath": [7, 13]
           },
           {
             "type": "file",
@@ -1200,10 +892,7 @@
             "title": "Type Inference",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/type-inference.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/type-inference.md",
-            "treePath": [
-              7,
-              14
-            ]
+            "treePath": [7, 14]
           },
           {
             "type": "file",
@@ -1211,10 +900,7 @@
             "title": "Type Compatibility",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/type-compatibility.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/type-compatibility.md",
-            "treePath": [
-              7,
-              15
-            ]
+            "treePath": [7, 15]
           },
           {
             "type": "file",
@@ -1222,10 +908,7 @@
             "title": "Never Type",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/never.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/never.md",
-            "treePath": [
-              7,
-              16
-            ]
+            "treePath": [7, 16]
           },
           {
             "type": "file",
@@ -1233,10 +916,7 @@
             "title": "Discriminated Unions",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/discriminated-unions.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/discriminated-unions.md",
-            "treePath": [
-              7,
-              17
-            ]
+            "treePath": [7, 17]
           },
           {
             "type": "file",
@@ -1244,10 +924,7 @@
             "title": "Index Signatures",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/index-signatures.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/index-signatures.md",
-            "treePath": [
-              7,
-              18
-            ]
+            "treePath": [7, 18]
           },
           {
             "type": "file",
@@ -1255,10 +932,7 @@
             "title": "Moving Types",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/moving-types.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/moving-types.md",
-            "treePath": [
-              7,
-              19
-            ]
+            "treePath": [7, 19]
           },
           {
             "type": "file",
@@ -1266,10 +940,7 @@
             "title": "Exception Handling",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/exceptions.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/exceptions.md",
-            "treePath": [
-              7,
-              20
-            ]
+            "treePath": [7, 20]
           },
           {
             "type": "file",
@@ -1277,17 +948,12 @@
             "title": "Mixins",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/mixins.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/mixins.md",
-            "treePath": [
-              7,
-              21
-            ]
+            "treePath": [7, 21]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/types/type-system.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/types/type-system.md",
-        "treePath": [
-          7
-        ]
+        "treePath": [7]
       },
       {
         "type": "file",
@@ -1300,10 +966,7 @@
             "title": "React",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/jsx/react.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/jsx/react.md",
-            "treePath": [
-              8,
-              0
-            ]
+            "treePath": [8, 0]
           },
           {
             "type": "file",
@@ -1311,17 +974,12 @@
             "title": "Non React JSX",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/jsx/others.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/jsx/others.md",
-            "treePath": [
-              8,
-              1
-            ]
+            "treePath": [8, 1]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/jsx/tsx.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/jsx/tsx.md",
-        "treePath": [
-          8
-        ]
+        "treePath": [8]
       },
       {
         "type": "file",
@@ -1334,10 +992,7 @@
             "title": "noImplicitAny",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/options/noImplicitAny.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/options/noImplicitAny.md",
-            "treePath": [
-              9,
-              0
-            ]
+            "treePath": [9, 0]
           },
           {
             "type": "file",
@@ -1345,17 +1000,12 @@
             "title": "strictNullChecks",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/options/strictNullChecks.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/options/strictNullChecks.md",
-            "treePath": [
-              9,
-              1
-            ]
+            "treePath": [9, 1]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/options/intro.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/options/intro.md",
-        "treePath": [
-          9
-        ]
+        "treePath": [9]
       },
       {
         "type": "file",
@@ -1368,10 +1018,7 @@
             "title": "Interpreting Errors",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/errors/interpreting-errors.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/errors/interpreting-errors.md",
-            "treePath": [
-              10,
-              0
-            ]
+            "treePath": [10, 0]
           },
           {
             "type": "file",
@@ -1379,17 +1026,12 @@
             "title": "Common Errors",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/errors/common-errors.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/errors/common-errors.md",
-            "treePath": [
-              10,
-              1
-            ]
+            "treePath": [10, 1]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/errors/main.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/errors/main.md",
-        "treePath": [
-          10
-        ]
+        "treePath": [10]
       },
       {
         "type": "file",
@@ -1397,9 +1039,7 @@
         "title": "NPM",
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/npm/index.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/npm/index.md",
-        "treePath": [
-          11
-        ]
+        "treePath": [11]
       },
       {
         "type": "file",
@@ -1412,10 +1052,7 @@
             "title": "Jest",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/testing/jest.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/testing/jest.md",
-            "treePath": [
-              12,
-              0
-            ]
+            "treePath": [12, 0]
           },
           {
             "type": "file",
@@ -1423,17 +1060,12 @@
             "title": "Cypress",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/testing/cypress.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/testing/cypress.md",
-            "treePath": [
-              12,
-              1
-            ]
+            "treePath": [12, 1]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/testing/intro.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/testing/intro.md",
-        "treePath": [
-          12
-        ]
+        "treePath": [12]
       },
       {
         "type": "file",
@@ -1446,10 +1078,7 @@
             "title": "Prettier",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tools/prettier.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tools/prettier.md",
-            "treePath": [
-              13,
-              0
-            ]
+            "treePath": [13, 0]
           },
           {
             "type": "file",
@@ -1457,10 +1086,7 @@
             "title": "Husky",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tools/husky.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tools/husky.md",
-            "treePath": [
-              13,
-              1
-            ]
+            "treePath": [13, 1]
           },
           {
             "type": "file",
@@ -1468,10 +1094,7 @@
             "title": "ESLint",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tools/eslint.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tools/eslint.md",
-            "treePath": [
-              13,
-              2
-            ]
+            "treePath": [13, 2]
           },
           {
             "type": "file",
@@ -1479,17 +1102,12 @@
             "title": "Changelog",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tools/changelog.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tools/changelog.md",
-            "treePath": [
-              13,
-              3
-            ]
+            "treePath": [13, 3]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tools/intro.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tools/intro.md",
-        "treePath": [
-          13
-        ]
+        "treePath": [13]
       },
       {
         "type": "file",
@@ -1502,10 +1120,7 @@
             "title": "String Based Enums",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/stringEnums.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/stringEnums.md",
-            "treePath": [
-              14,
-              0
-            ]
+            "treePath": [14, 0]
           },
           {
             "type": "file",
@@ -1513,10 +1128,7 @@
             "title": "Nominal Typing",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/nominalTyping.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/nominalTyping.md",
-            "treePath": [
-              14,
-              1
-            ]
+            "treePath": [14, 1]
           },
           {
             "type": "file",
@@ -1524,10 +1136,7 @@
             "title": "Stateful Functions",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/statefulFunctions.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/statefulFunctions.md",
-            "treePath": [
-              14,
-              2
-            ]
+            "treePath": [14, 2]
           },
           {
             "type": "file",
@@ -1535,10 +1144,7 @@
             "title": "Currying",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/currying.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/currying.md",
-            "treePath": [
-              14,
-              3
-            ]
+            "treePath": [14, 3]
           },
           {
             "type": "file",
@@ -1546,10 +1152,7 @@
             "title": "Type Instantiation",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/typeInstantiation.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/typeInstantiation.md",
-            "treePath": [
-              14,
-              4
-            ]
+            "treePath": [14, 4]
           },
           {
             "type": "file",
@@ -1557,10 +1160,7 @@
             "title": "Lazy Object Literal Initialization",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/lazyObjectLiteralInitialization.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/lazyObjectLiteralInitialization.md",
-            "treePath": [
-              14,
-              5
-            ]
+            "treePath": [14, 5]
           },
           {
             "type": "file",
@@ -1568,10 +1168,7 @@
             "title": "Classes are Useful",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/classesAreUseful.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/classesAreUseful.md",
-            "treePath": [
-              14,
-              6
-            ]
+            "treePath": [14, 6]
           },
           {
             "type": "file",
@@ -1579,10 +1176,7 @@
             "title": "Avoid Export Default",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/defaultIsBad.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/defaultIsBad.md",
-            "treePath": [
-              14,
-              7
-            ]
+            "treePath": [14, 7]
           },
           {
             "type": "file",
@@ -1590,10 +1184,7 @@
             "title": "Limit Property Setters",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/propertySetters.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/propertySetters.md",
-            "treePath": [
-              14,
-              8
-            ]
+            "treePath": [14, 8]
           },
           {
             "type": "file",
@@ -1601,10 +1192,7 @@
             "title": "outFile",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/outFile.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/outFile.md",
-            "treePath": [
-              14,
-              9
-            ]
+            "treePath": [14, 9]
           },
           {
             "type": "file",
@@ -1612,10 +1200,7 @@
             "title": "JQuery tips",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/jquery.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/jquery.md",
-            "treePath": [
-              14,
-              10
-            ]
+            "treePath": [14, 10]
           },
           {
             "type": "file",
@@ -1623,10 +1208,7 @@
             "title": "static constructors",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/staticConstructor.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/staticConstructor.md",
-            "treePath": [
-              14,
-              11
-            ]
+            "treePath": [14, 11]
           },
           {
             "type": "file",
@@ -1634,10 +1216,7 @@
             "title": "singleton pattern",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/singleton.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/singleton.md",
-            "treePath": [
-              14,
-              12
-            ]
+            "treePath": [14, 12]
           },
           {
             "type": "file",
@@ -1645,10 +1224,7 @@
             "title": "Function parameters",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/functionParameters.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/functionParameters.md",
-            "treePath": [
-              14,
-              13
-            ]
+            "treePath": [14, 13]
           },
           {
             "type": "file",
@@ -1656,10 +1232,7 @@
             "title": "Build Toggles",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/build-toggles.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/build-toggles.md",
-            "treePath": [
-              14,
-              14
-            ]
+            "treePath": [14, 14]
           },
           {
             "type": "file",
@@ -1667,10 +1240,7 @@
             "title": "Barrel",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/barrel.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/barrel.md",
-            "treePath": [
-              14,
-              15
-            ]
+            "treePath": [14, 15]
           },
           {
             "type": "file",
@@ -1678,10 +1248,7 @@
             "title": "Create Arrays",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/create-arrays.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/create-arrays.md",
-            "treePath": [
-              14,
-              16
-            ]
+            "treePath": [14, 16]
           },
           {
             "type": "file",
@@ -1689,17 +1256,12 @@
             "title": "Typesafe Event Emitter",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/typed-event.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/typed-event.md",
-            "treePath": [
-              14,
-              17
-            ]
+            "treePath": [14, 17]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/tips/main.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/tips/main.md",
-        "treePath": [
-          14
-        ]
+        "treePath": [14]
       },
       {
         "type": "file",
@@ -1707,9 +1269,7 @@
         "title": "StyleGuide",
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/styleguide/styleguide.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/styleguide/styleguide.md",
-        "treePath": [
-          15
-        ]
+        "treePath": [15]
       },
       {
         "type": "file",
@@ -1722,10 +1282,7 @@
             "title": "Program",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/program.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/program.md",
-            "treePath": [
-              16,
-              0
-            ]
+            "treePath": [16, 0]
           },
           {
             "type": "file",
@@ -1738,11 +1295,7 @@
                 "title": "TIP: Visit Children",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/ast-tip-children.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/ast-tip-children.md",
-                "treePath": [
-                  16,
-                  1,
-                  0
-                ]
+                "treePath": [16, 1, 0]
               },
               {
                 "type": "file",
@@ -1750,11 +1303,7 @@
                 "title": "TIP: SyntaxKind enum",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/ast-tip-syntaxkind.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/ast-tip-syntaxkind.md",
-                "treePath": [
-                  16,
-                  1,
-                  1
-                ]
+                "treePath": [16, 1, 1]
               },
               {
                 "type": "file",
@@ -1762,19 +1311,12 @@
                 "title": "Trivia",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/ast-trivia.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/ast-trivia.md",
-                "treePath": [
-                  16,
-                  1,
-                  2
-                ]
+                "treePath": [16, 1, 2]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/ast.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/ast.md",
-            "treePath": [
-              16,
-              1
-            ]
+            "treePath": [16, 1]
           },
           {
             "type": "file",
@@ -1782,10 +1324,7 @@
             "title": "Scanner",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/scanner.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/scanner.md",
-            "treePath": [
-              16,
-              2
-            ]
+            "treePath": [16, 2]
           },
           {
             "type": "file",
@@ -1798,19 +1337,12 @@
                 "title": "Parser Functions",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/parser-functions.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/parser-functions.md",
-                "treePath": [
-                  16,
-                  3,
-                  0
-                ]
+                "treePath": [16, 3, 0]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/parser.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/parser.md",
-            "treePath": [
-              16,
-              3
-            ]
+            "treePath": [16, 3]
           },
           {
             "type": "file",
@@ -1823,11 +1355,7 @@
                 "title": "Binder Functions",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/binder-functions.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/binder-functions.md",
-                "treePath": [
-                  16,
-                  4,
-                  0
-                ]
+                "treePath": [16, 4, 0]
               },
               {
                 "type": "file",
@@ -1835,11 +1363,7 @@
                 "title": "Binder Declarations",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/binder-declarations.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/binder-declarations.md",
-                "treePath": [
-                  16,
-                  4,
-                  1
-                ]
+                "treePath": [16, 4, 1]
               },
               {
                 "type": "file",
@@ -1847,11 +1371,7 @@
                 "title": "Binder Container",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/binder-container.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/binder-container.md",
-                "treePath": [
-                  16,
-                  4,
-                  2
-                ]
+                "treePath": [16, 4, 2]
               },
               {
                 "type": "file",
@@ -1859,11 +1379,7 @@
                 "title": "Binder SymbolTable",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/binder-symboltable.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/binder-symboltable.md",
-                "treePath": [
-                  16,
-                  4,
-                  3
-                ]
+                "treePath": [16, 4, 3]
               },
               {
                 "type": "file",
@@ -1871,19 +1387,12 @@
                 "title": "Binder Error Reporting",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/binder-diagnostics.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/binder-diagnostics.md",
-                "treePath": [
-                  16,
-                  4,
-                  4
-                ]
+                "treePath": [16, 4, 4]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/binder.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/binder.md",
-            "treePath": [
-              16,
-              4
-            ]
+            "treePath": [16, 4]
           },
           {
             "type": "file",
@@ -1896,11 +1405,7 @@
                 "title": "Checker Diagnostics",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/checker-global.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/checker-global.md",
-                "treePath": [
-                  16,
-                  5,
-                  0
-                ]
+                "treePath": [16, 5, 0]
               },
               {
                 "type": "file",
@@ -1908,19 +1413,12 @@
                 "title": "Checker Error Reporting",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/checker-diagnostics.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/checker-diagnostics.md",
-                "treePath": [
-                  16,
-                  5,
-                  1
-                ]
+                "treePath": [16, 5, 1]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/checker.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/checker.md",
-            "treePath": [
-              16,
-              5
-            ]
+            "treePath": [16, 5]
           },
           {
             "type": "file",
@@ -1933,11 +1431,7 @@
                 "title": "Emitter Functions",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/emitter-functions.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/emitter-functions.md",
-                "treePath": [
-                  16,
-                  6,
-                  0
-                ]
+                "treePath": [16, 6, 0]
               },
               {
                 "type": "file",
@@ -1945,19 +1439,12 @@
                 "title": "Emitter SourceMaps",
                 "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/emitter-sourcemaps.md",
                 "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/emitter-sourcemaps.md",
-                "treePath": [
-                  16,
-                  6,
-                  1
-                ]
+                "treePath": [16, 6, 1]
               }
             ],
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/emitter.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/emitter.md",
-            "treePath": [
-              16,
-              6
-            ]
+            "treePath": [16, 6]
           },
           {
             "type": "file",
@@ -1965,17 +1452,12 @@
             "title": "Contributing",
             "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/contributing.md",
             "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/contributing.md",
-            "treePath": [
-              16,
-              7
-            ]
+            "treePath": [16, 7]
           }
         ],
         "rawUrl": "https://raw.githubusercontent.com//basarat/typescript-book/master/docs/compiler/overview.md",
         "ghUrl": "https://github.com/basarat/typescript-book/blob/master/docs/compiler/overview.md",
-        "treePath": [
-          16
-        ]
+        "treePath": [16]
       }
     ],
     "title": "Summary",

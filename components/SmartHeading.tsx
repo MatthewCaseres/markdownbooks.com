@@ -1,12 +1,36 @@
-import { useSideBarDispatch, useIdToPath, Tracked } from "./SideBar/SideBarContext";
+import { useSideBarDispatch, useIdMapProperty } from "./SideBar/SideBarContext";
+import Dropdown from './DropDown'
+import {
+  CompleteProblemDocument,
+  GetProblemsDocument,
+} from "../graphql/generated";
+import {Flag} from './SVG'
+import { useMutation } from "@apollo/client";
 
-export default function SmartHeading({ id, slug, contents }: { id: string, slug: string, contents: string }) {
+type SmartHeadingProps = {
+  id: string;
+  slug: string;
+  contents: string;
+};
+export default function SmartHeading({
+  id,
+  slug,
+  contents,
+}: SmartHeadingProps) {
+  const [completeProblem] = useMutation(CompleteProblemDocument);
   return (
-    <h2
-      id={slug}
-      onClick={() => console.log('lol')}
-    >
-      {contents}
-    </h2>
-  )
+    <div className="flex flex-row items-center" style={{margin: "48px 0px 24px 0px"}}>
+      <h2
+      style={{margin: 0}}
+        id={slug}
+        onClick={() => {
+          completeProblem({ variables: { id } });
+        }}
+      >
+        {contents}
+      </h2>
+      <Dropdown id={id}/>
+    </div>
+  );
 }
+

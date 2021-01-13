@@ -22,15 +22,17 @@ var slug = require("remark-slug");
 const components = {
   CustomLink, SmartHeading, MCQ
 };
-const provider = {
-  component: ApolloProvider,
-  props: {client: initializeApollo()}
-}
+
+const getProvider = (urlTree: StatefulNode) => ({
+  component:(props: any) => <ApolloProvider client={initializeApollo()} >
+    <SideBarProvider {...props} config={urlTree.children as StatefulNode[]} />
+  </ApolloProvider>,
+})
 const remote = false;
 
 type PostProps = { urlTree: UrlNode; mdxSource: MdxRemote.Source, ghUrl: string, treePath: ReadonlyArray<number> }
 function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
-  const content = hydrate(mdxSource, {components, provider});
+  const content = hydrate(mdxSource, {components, provider: getProvider(urlTree)});
   return (
       <SideBarProvider config={urlTree.children as StatefulNode[]}>
         <SideBar ghUrl={ghUrl} treePath={treePath}>
@@ -58,7 +60,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ],
     },
     components,
-    provider
+    provider: getProvider(urlTree as UrlNode)
   });
   return {
     props: { urlTree, mdxSource, ghUrl, treePath }, // will be passed to the page component as props

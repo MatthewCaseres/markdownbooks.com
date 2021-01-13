@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Markdown from "./Markdown";
+import { useIdMapProperty, UserInfo } from "./SideBar/SideBarContext";
+import Dropdown from "./DropDown";
+import { useMutation } from "@apollo/client";
+import {X, Check} from "./SVG"
+import {
+  CompleteProblemDocument,
+  CompleteProblemMutation,
+  GetProblemsDocument,
+} from "graphql/generated";
 
 type MCQType = {
   prompt: string;
   solution: string;
   answers: string[];
   correct_idx: number;
+  id: string;
 };
-function MCQ({
-  prompt,
-  answers,
-  solution,
-  correct_idx,
-}: MCQType) {
+function MCQ({ prompt, answers, solution, correct_idx, id }: MCQType) {
   const [graded, setGraded] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
   function changeSelection(idx: number) {
@@ -21,18 +26,60 @@ function MCQ({
       setSelectedIdx(idx);
     }
   }
+  const userInfo = useIdMapProperty(id);
+  const [completeProblem] = useMutation(CompleteProblemDocument, {
+    update: (cache, { data }) => {
+      const existingProblems = cache.readQuery({
+        query: GetProblemsDocument,
+      });
+      //If data is returned
+      if (data?.completeProblem) {
+        //modify or add flagged property
+        let inExisting = false;
+        let newProblems = existingProblems?.problems.map((problem) => {
+          if (problem.id === id) {
+            inExisting = true;
+            return { ...problem, completed: data.completeProblem!.completed };
+          }
+          return problem;
+        });
+        if (!inExisting) {
+          newProblems = [...(newProblems || []), data.completeProblem];
+        }
+        cache.writeQuery({
+          query: GetProblemsDocument,
+          data: {
+            problems: newProblems!,
+          },
+        });
+      }
+    },
+  });
+  function handleCompletion() {
+    if(!userInfo?.completed && (selectedIdx === correct_idx)){
+      console.log("you got it")
+      completeProblem({
+        variables: { id },
+        optimisticResponse: getOptimisticCompletion(
+          userInfo,
+          userInfo ? userInfo.flagged : 0,
+          id
+        ),
+      });
+    }
+  }
   return (
-    <div>
+    <div id={id}>
       <div className="container border-gray-500 border px-4 rounded-lg">
         <div className="py-2 mt-2">
           <Markdown content={prompt} />
           {graded &&
             (selectedIdx === correct_idx ? (
-              <div className="bg-green-300 border-2 rounded-xl border-green-400 px-2 py-1 mt-2 ">
+              <div className="bg-green-300 dark:bg-green-800 border-2 rounded-xl border-green-400 dark:border-green-700 px-2 py-1 mt-2 ">
                 <Markdown content={solution} />
               </div>
             ) : (
-              <div className="bg-red-300 border-2 rounded-xl border-red-400 px-2 py-1 mt-2">
+              <div className="bg-red-300 dark:bg-red-800 border-2 rounded-xl border-red-400 dark:border-red-700 px-2 py-1 mt-2">
                 <Markdown content="Incorrect" />
               </div>
             ))}
@@ -54,14 +101,34 @@ function MCQ({
           </div>
         ))}
       </div>
-      <button
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-4 mt-1 rounded"
-        onClick={() => setGraded(true)}
-      >
-        Grade Problem
-      </button>
+      <div className="flex flex-row items-center py-1">
+        <button
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-4 mt-1 rounded"
+          onClick={() => {setGraded(true); handleCompletion()}}
+        >
+          Grade Problem
+        </button>
+        {userInfo?.completed ? <Check className="w-7 h-7 text-green-400"/> : <X className="h-7 w-7 text-red-400"/>}
+        <Dropdown id={id} />
+      </div>
     </div>
   );
+}
+
+function getOptimisticCompletion(
+  userInfo: UserInfo | undefined,
+  flag: number,
+  id: string
+): CompleteProblemMutation {
+  return {
+    __typename: "Mutation",
+    completeProblem: {
+      __typename: "Problem",
+      completed: userInfo ? userInfo.completed : false,
+      flagged: flag,
+      id,
+    },
+  };
 }
 
 export default MCQ;

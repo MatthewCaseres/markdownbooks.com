@@ -2,6 +2,7 @@ import { StatefulNode, useSideBarDispatch } from "./SideBarContext";
 import Chevron from "./Chevron";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import {Flag, X, Check} from '../SVG'
 
 function equalPrefix(subPathCandidate: readonly number[], longPath: readonly number[]) {
   if (subPathCandidate.length > longPath.length) {
@@ -67,8 +68,26 @@ export default function Node2({
           <span className="dark:text-gray-300">{node.title}</span>
         }
       </div>
+      {node.type.includes("edtech") && getProblemCompletion(node.userInfo?.completed)}
+      {getFlag(node.userInfo?.flagged)}
     </div>
   )
+}
+function getFlag(color: number | undefined) {
+  if (!color) {
+    return false
+  } else if (color === 1) {
+    return <Flag className="h-5 w-5 text-yellow-400" />
+  } else {
+    return <Flag className="h-5 w-5 text-red-400" />
+  }
+}
+function getProblemCompletion(completed: boolean | undefined) {
+  if (!completed) {
+    return <X className = "h-5 w-5 text-red-400"/>
+  } else {
+    return <Check className = "h-5 w-5 text-green-400"/>
+  }
 }
 
 // function Node({

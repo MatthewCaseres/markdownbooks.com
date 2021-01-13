@@ -43,9 +43,11 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
+  Mutation: {};
   Problem: { // root type
-    completed?: boolean | null; // Boolean
-    id?: string | null; // String
+    completed: boolean; // Boolean!
+    flagged: number; // Int!
+    id: string; // String!
   }
   Query: {};
 }
@@ -61,28 +63,49 @@ export type NexusGenRootTypes = NexusGenObjects
 export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
+  Mutation: { // field return type
+    completeProblem: NexusGenRootTypes['Problem'] | null; // Problem
+    flagProblem: NexusGenRootTypes['Problem'] | null; // Problem
+  }
   Problem: { // field return type
-    completed: boolean | null; // Boolean
-    id: string | null; // String
+    completed: boolean; // Boolean!
+    flagged: number; // Int!
+    id: string; // String!
   }
   Query: { // field return type
     hello: string | null; // String
     problem: NexusGenRootTypes['Problem'] | null; // Problem
+    problems: NexusGenRootTypes['Problem'][]; // [Problem!]!
   }
 }
 
 export interface NexusGenFieldTypeNames {
+  Mutation: { // field return type name
+    completeProblem: 'Problem'
+    flagProblem: 'Problem'
+  }
   Problem: { // field return type name
     completed: 'Boolean'
+    flagged: 'Int'
     id: 'String'
   }
   Query: { // field return type name
     hello: 'String'
     problem: 'Problem'
+    problems: 'Problem'
   }
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    completeProblem: { // args
+      id: string; // String!
+    }
+    flagProblem: { // args
+      flag: number; // Int!
+      id: string; // String!
+    }
+  }
   Query: {
     problem: { // args
       id: string; // String!
