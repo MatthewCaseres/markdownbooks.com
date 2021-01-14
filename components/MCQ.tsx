@@ -9,6 +9,7 @@ import {
   CompleteProblemMutation,
   GetProblemsDocument,
 } from "graphql/generated";
+import { useSession } from 'next-auth/client'
 
 type MCQType = {
   prompt: string;
@@ -20,6 +21,7 @@ type MCQType = {
 function MCQ({ prompt, answers, solution, correct_idx, id }: MCQType) {
   const [graded, setGraded] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
+  const [ session, loading ] = useSession()
   function changeSelection(idx: number) {
     if (idx !== selectedIdx) {
       setGraded(false);

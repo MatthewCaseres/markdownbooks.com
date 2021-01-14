@@ -9,7 +9,7 @@ const cards: CardType[] = [
     externalLink: "https://www.youtube.com/channel/UCsYqPH99FkUNKF1v5A8uIvQ",
     external: "YouTube",
     internal: "Book",
-    internalLink: "Open-EdTech/AWS-CSA/S3.md",
+    internalLink: "Open-EdTech/AWS-CSA/S3-Content.md",
   },
   {
     title: "This Website!",

@@ -48,6 +48,7 @@ export interface NexusGenObjects {
     completed: boolean; // Boolean!
     flagged: number; // Int!
     id: string; // String!
+    userId: number; // Int!
   }
   Query: {};
 }
@@ -71,6 +72,7 @@ export interface NexusGenFieldTypes {
     completed: boolean; // Boolean!
     flagged: number; // Int!
     id: string; // String!
+    userId: number; // Int!
   }
   Query: { // field return type
     hello: string | null; // String
@@ -88,6 +90,7 @@ export interface NexusGenFieldTypeNames {
     completed: 'Boolean'
     flagged: 'Int'
     id: 'String'
+    userId: 'Int'
   }
   Query: { // field return type name
     hello: 'String'

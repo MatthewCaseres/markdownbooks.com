@@ -77,6 +77,7 @@ const sideBarReducer = produce(
         draft.forEach((node) => MergeIdMap(node, action.idMap));
         break;
       case "expand":
+        console.log(draft)
         draft.forEach((node) => expandTree(node));
         break
       case "collapse":
@@ -102,7 +103,6 @@ const SideBarProvider: React.FC<{ config: StatefulNodes }> = ({
   // const { loading, error, data } = useQuery(GET_PROBLEMS);
   const { loading, error, data } = useQuery(GetProblemsDocument);
   useEffect(() => {
-    console.log("data change captured");
     if (data) {
       const newIdMap = data.problems.reduce<IdMap>((idAccum, problem) => {
         const { completed, flagged, id } = problem;
@@ -204,6 +204,7 @@ function isNodeVisible(filter: Filter, userInfo: UserInfo | undefined, type: str
     (filter.flagged.has(0) && (!userInfo || userInfo.flagged === 0)) ||
     (userInfo?.flagged && filter.flagged.has(userInfo.flagged as 1 | 2));
   const typeGood = 
+    (filter.nodes.has("edtech") && filter.nodes.has("heading")) ||
     (filter.nodes.has("edtech") && (type.includes("edtech"))) ||
     (filter.nodes.has("heading") && (type === "heading"))
 

@@ -1,4 +1,4 @@
-import { ApolloServer } from 'apollo-server-micro'
+import { ApolloServer, AuthenticationError } from 'apollo-server-micro'
 import { GraphQLDate } from 'graphql-iso-date'
 import {
   asNexusMethod,
@@ -11,17 +11,27 @@ import {
   stringArg,
 } from 'nexus'
 import path from 'path'
-import {PrismaClient} from '@prisma/client'
+import {PrismaClient, Prisma} from '@prisma/client'
+import { getSession } from 'next-auth/client'
 
-const prisma = new PrismaClient()
+let prisma: PrismaClient<Prisma.PrismaClientOptions, never>
+
+if (process.env.NODE_ENV === "production") {
+  prisma = new PrismaClient()
+} else {
+  if (!(global as any).prisma) {
+    (global as any).prisma = new PrismaClient()
+  }
+  prisma = (global as any).prisma
+}
 
 export const GQLDate = asNexusMethod(GraphQLDate, 'date')
-
 
 const Problem = objectType({
   name: 'Problem',
   definition(t) {
     t.nonNull.string('id')
+    t.nonNull.int('userId')
     t.nonNull.boolean('completed')
     t.nonNull.int('flagged')
   },
@@ -35,9 +45,9 @@ const Query = objectType({
       args: {
         id: nonNull(stringArg()),
       },
-      resolve: (_, args) => {
+      resolve: (_, {id}, {session}) => {
         return prisma.problem.findUnique({
-          where: { id: args.id },
+          where: { userId_id: {id: id, userId: session.id} },
         })
       },
     }),
@@ -61,19 +71,25 @@ const Mutation = objectType({
       args: {
         id: nonNull(stringArg()),
       },
-      resolve: (_, { id }) => {
+      resolve: (_, { id }, {session}) => {
         return prisma.problem.upsert({
           where: {
-            id: id
+            userId_id: {id: id, userId: session.id}
           },
           update: {
             completed: true,
           },
+
           create: {
+            user: {
+              connect: {
+                id: session.id
+              }
+            },
             completed: true,
             flagged: 0,
             id: id,
-          },
+          }
         });
       },
     }),
@@ -83,10 +99,12 @@ const Mutation = objectType({
         id: nonNull(stringArg()),
         flag: nonNull(intArg())
       },
-      resolve: (_, {id, flag}) => {
+      resolve: (_, {id, flag}, {session}) => {
+        console.log({id: id, userId: session.id})
+        console.log(session)
         return prisma.problem.upsert({
           where: {
-            id: id
+            userId_id: {id: id, userId: session.id}
           },
           update: {
             flagged: flag,
@@ -95,6 +113,11 @@ const Mutation = objectType({
             completed: false,
             flagged: flag,
             id: id,
+            user: {
+              connect: {
+                id: session.id
+              }
+            },
           },
         });
       }
@@ -116,6 +139,14 @@ export const config = {
   },
 }
 
-export default new ApolloServer({ schema }).createHandler({
+const context = async ({ req }: {req: any}) => {
+  const session = await getSession({ req });
+  if (!session) {
+    throw new AuthenticationError("you must be logged in");
+  }
+  return {session}
+};
+
+export default new ApolloServer({ schema, context }).createHandler({
   path: '/api',
 })

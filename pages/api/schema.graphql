@@ -16,6 +16,7 @@ type Problem {
   completed: Boolean!
   flagged: Int!
   id: String!
+  userId: Int!
 }
 
 type Query {
