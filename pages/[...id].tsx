@@ -34,9 +34,9 @@ type PostProps = { urlTree: UrlNode; mdxSource: MdxRemote.Source, ghUrl: string,
 function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
   const content = hydrate(mdxSource, {components, provider: getProvider(urlTree)});
   return (
-      <SideBarProvider config={urlTree.children as StatefulNode[]}>
+      <SideBarProvider treePath={treePath} config={urlTree.children as StatefulNode[]}>
         <SideBar ghUrl={ghUrl} treePath={treePath}>
-          <div className="prose dark:prose-dark max-w-sm sm:max-w-md lg:max-w-xl xl:max-w-2xl m-auto px-2 flex-1 ">
+          <div className="prose prose-sm max-w-xl dark:prose-dark my-5 mx-2 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl">
             <div>{content}</div>
           </div>
         </SideBar>

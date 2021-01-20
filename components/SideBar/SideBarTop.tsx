@@ -14,7 +14,7 @@ export default function SideBarTop({
   const [ session, loading ] = useSession()
   return (
     <div>
-      <div className="flex flex-shrink-0 flex-row py-1 z-10 bg-white dark:bg-black sticky top-0">
+      <div className="flex flex-shrink-0 flex-row py-1 z-10 sticky top-0">
         <div
           onClick={() => setVisible((mdVisible) => !mdVisible)}
           className="cursor-pointer"

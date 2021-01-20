@@ -85,9 +85,12 @@ module.exports = {
     },
   },
   variants: {
+    scrollbar: ["dark"],
     extend: {
       typography: ["dark"],
+      borderWidth: ["last"]
     },
+    
   },
   plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
 };

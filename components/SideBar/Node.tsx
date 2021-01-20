@@ -77,6 +77,8 @@ function getFlag(color: number | undefined) {
   if (!color) {
     return false
   } else if (color === 1) {
+    return <Flag className="h-5 w-5 text-green-400" />
+  } else if (color === 2){
     return <Flag className="h-5 w-5 text-yellow-400" />
   } else {
     return <Flag className="h-5 w-5 text-red-400" />

@@ -46,7 +46,9 @@ export default function Dropdown2({id}: {id: string}) {
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
     null
   );
-  const { styles, attributes } = usePopper(referenceElement, popperElement);
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    modifiers: [{}], placement: "right"
+  });
   const ref = useOnclickOutside(() => {
     setMenuVisible(false);
   });
@@ -68,7 +70,7 @@ export default function Dropdown2({id}: {id: string}) {
       {menuVisible && (
         <div
           ref={setPopperElement}
-          className="bg-white dark:bg-black rounded-md border border-gray-500"
+          className="bg-white flex dark:bg-black rounded-md border border-gray-500 ml-2"
           style={styles.popper}
           {...attributes.popper}
         >
@@ -76,19 +78,30 @@ export default function Dropdown2({id}: {id: string}) {
             flagProblem({variables: {id: id, flag: 0}, optimisticResponse: getOptimisticFlagResponse(
               idMapProperties, 0, id
             )})}}
+            className="border-r border-black last:border-0"
             >
             <Flag className="h-6 w-6 text-gray-400 opacity-40" />
           </div>
           <div onClick={() => { 
             flagProblem({variables: {id: id, flag: 1}, optimisticResponse: getOptimisticFlagResponse(
               idMapProperties, 1, id
-            )})}}>
-            <Flag className="h-6 w-6 text-yellow-400" />
+            )})}}
+            className="border-r border-black last:border-0"
+            >
+            <Flag className="h-6 w-6 text-green-400" />
           </div>
           <div onClick={() => { 
             flagProblem({variables: {id: id, flag: 2}, optimisticResponse: getOptimisticFlagResponse(
               idMapProperties, 2, id
-            )})}}>
+            )})}}
+            className="border-r border-black last:border-0">
+            <Flag className="h-6 w-6 text-yellow-400" />
+          </div>
+          <div onClick={() => { 
+            flagProblem({variables: {id: id, flag: 3}, optimisticResponse: getOptimisticFlagResponse(
+              idMapProperties, 3, id
+            )})}}
+            className="border-r border-black last:border-0">
             <Flag className="h-6 w-6 text-red-400" />
           </div>
         </div>
@@ -113,6 +126,8 @@ function getFlag(color: number | undefined) {
   if (!color) {
     return <Flag className="h-7 w-7 text-gray-400 opacity-40" />
   } else if (color === 1) {
+    return <Flag className="h-7 w-7 text-green-400" />
+  } else if  (color === 2){
     return <Flag className="h-7 w-7 text-yellow-400" />
   } else {
     return <Flag className="h-7 w-7 text-red-400" />

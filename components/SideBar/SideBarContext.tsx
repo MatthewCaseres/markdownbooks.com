@@ -13,7 +13,7 @@ import { UrlNode } from "next-mdx-books";
 import { useQuery, gql } from "@apollo/client";
 import { GetProblemsDocument, GetProblemsQuery } from "../../graphql/generated";
 export type UserInfo = { completed: boolean; flagged: number };
-export type Filter = { flagged: Set<0 | 1 | 2>; completed: Set<boolean>; nodes: Set<"edtech" | "heading"> };
+export type Filter = { flagged: Set<0 | 1 | 2 | 3>; completed: Set<boolean>; };
 export type IdMap = Partial<Record<string, UserInfo>>;
 export type StatefulNode = Readonly<Omit<UrlNode, "children" | "treePath">> &
   Readonly<{
@@ -88,9 +88,10 @@ const sideBarReducer = produce(
 );
 
 const IdMapContext = createContext<IdMap | undefined>(undefined);
-const SideBarProvider: React.FC<{ config: StatefulNodes }> = ({
+const SideBarProvider: React.FC<{ config: StatefulNodes, treePath: readonly number[] }> = ({
   children,
   config,
+  treePath
 }) => {
   const [state, dispatch] = useReducer(sideBarReducer, config);
   const [visible, setVisible] = useState(true);
@@ -98,7 +99,6 @@ const SideBarProvider: React.FC<{ config: StatefulNodes }> = ({
   const [filters, setFilters] = useState<Filter>({
     flagged: new Set([0, 1, 2]),
     completed: new Set([true, false]),
-    nodes: new Set(["edtech", "heading"])
   });
   // const { loading, error, data } = useQuery(GET_PROBLEMS);
   const { loading, error, data } = useQuery(GetProblemsDocument);
@@ -111,6 +111,9 @@ const SideBarProvider: React.FC<{ config: StatefulNodes }> = ({
       setIdMap(newIdMap);
       dispatch({ type: "merge", idMap: newIdMap });
       dispatch({ type: "filter", filter: filters });
+      if (!filters.completed.size && !filters.flagged.size) {
+        dispatch({type: "open", path: treePath})
+      }
     }
   }, [data, filters]);
   return (
@@ -197,19 +200,15 @@ function setHiddenRecursive({
   }
 }
 function isNodeVisible(filter: Filter, userInfo: UserInfo | undefined, type: string) {
-  const completedGood = (type === "heading") ||
+  const hasFilters = filter.completed.size || filter.flagged.size
+  const completedGood = (type.includes('edtech')) &&
     (filter.completed.has(false) && (!userInfo || !userInfo.completed)) ||
     (filter.completed.has(true) && userInfo?.completed);
   const flaggedGood =
-    (filter.flagged.has(0) && (!userInfo || userInfo.flagged === 0)) ||
-    (userInfo?.flagged && filter.flagged.has(userInfo.flagged as 1 | 2));
-  const typeGood = 
-    (filter.nodes.has("edtech") && filter.nodes.has("heading")) ||
-    (filter.nodes.has("edtech") && (type.includes("edtech"))) ||
-    (filter.nodes.has("heading") && (type === "heading"))
+    (userInfo?.flagged && filter.flagged.has(userInfo.flagged as 1 | 2 | 3));
 
   //If not completed AND flagged match, hide the node
-  return !!(completedGood && flaggedGood && typeGood);
+  return !hasFilters || completedGood || flaggedGood
 }
 
 export {
