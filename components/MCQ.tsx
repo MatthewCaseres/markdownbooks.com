@@ -59,7 +59,6 @@ function MCQ({ prompt, answers, solution, correct_idx, id }: MCQType) {
   });
   function handleCompletion() {
     if(!userInfo?.completed && (selectedIdx === correct_idx)){
-      console.log("you got it")
       completeProblem({
         variables: { id },
         optimisticResponse: getOptimisticCompletion(

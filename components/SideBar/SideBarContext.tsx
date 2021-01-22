@@ -77,7 +77,6 @@ const sideBarReducer = produce(
         draft.forEach((node) => MergeIdMap(node, action.idMap));
         break;
       case "expand":
-        console.log(draft)
         draft.forEach((node) => expandTree(node));
         break
       case "collapse":

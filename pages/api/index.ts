@@ -100,8 +100,6 @@ const Mutation = objectType({
         flag: nonNull(intArg())
       },
       resolve: (_, {id, flag}, {session}) => {
-        console.log({id: id, userId: session.id})
-        console.log(session)
         return prisma.problem.upsert({
           where: {
             userId_id: {id: id, userId: session.id}

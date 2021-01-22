@@ -14,7 +14,6 @@ export default function smartHeaders () {
         node.type = 'jsx'
         node.value = `<SmartHeading {...${JSON.stringify({id, slug, contents})}}/>`
       }
-      console.log(node)
     })
   }
 }
