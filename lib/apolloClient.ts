@@ -9,7 +9,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined", // set to true for SSR
     link: new HttpLink({
-      uri: "http://localhost:3001/api",
+      uri: "https://openedtech.io/api",
     }),
     cache: new InMemoryCache(),
   });
