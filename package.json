@@ -44,6 +44,7 @@
     "next-mdx-remote": "^2.1.0",
     "nexus": "^1.0.0",
     "nexus-plugin-prisma": "^0.28.0",
+    "pg": "^8.5.1",
     "postcss": "^8.1.14",
     "postcss-preset-env": "^6.7.0",
     "react": "17.0.1",
