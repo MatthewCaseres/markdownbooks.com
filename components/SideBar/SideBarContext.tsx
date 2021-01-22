@@ -97,8 +97,8 @@ const SideBarProvider: React.FC<{ config: StatefulNodes, treePath: readonly numb
   const [visible, setVisible] = useState(true);
   const [idMap, setIdMap] = useState({});
   const [filters, setFilters] = useState<Filter>({
-    flagged: new Set([0, 1, 2]),
-    completed: new Set([true, false]),
+    flagged: new Set(),
+    completed: new Set(),
   });
   // const { loading, error, data } = useQuery(GET_PROBLEMS);
   const { loading, error, data } = useQuery(GetProblemsDocument);
@@ -110,10 +110,15 @@ const SideBarProvider: React.FC<{ config: StatefulNodes, treePath: readonly numb
       }, {});
       setIdMap(newIdMap);
       dispatch({ type: "merge", idMap: newIdMap });
-      dispatch({ type: "filter", filter: filters });
-      if (!filters.completed.size && !filters.flagged.size) {
+      
+      if (!filters.completed.size && !filters.flagged.size && treePath) {
+        dispatch({type: "collapse"})
         dispatch({type: "open", path: treePath})
+      } else if (filters.completed.size || filters.flagged.size) {
+        dispatch({type: "expand"})
       }
+      dispatch({ type: "filter", filter: filters });
+
     }
   }, [data, filters]);
   return (

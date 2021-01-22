@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+/prisma/.env
 
 # production
 /build
@@ -32,3 +33,5 @@ yarn-error.log*
 
 # vercel
 .vercel
+prisma/.env
+prisma/.env

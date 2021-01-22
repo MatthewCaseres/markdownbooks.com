@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { signOut, useSession } from 'next-auth/client'
-import SideBarFilters from './SideBarFilters'
+import { signOut, useSession } from "next-auth/client";
+import SideBarFilters from "./SideBarFilters";
 import Link from "next/link";
-import FilterDropdown from './FilterDropdown'
+import FilterDropdown from "./FilterDropdown";
 
 export default function SideBarTop({
   setVisible,
@@ -11,21 +11,31 @@ export default function SideBarTop({
   setVisible: Dispatch<SetStateAction<boolean>>;
   ghUrl: string;
 }) {
-  const [ session, loading ] = useSession()
+  const [session, loading] = useSession();
   return (
     <div>
-      <div className="flex flex-shrink-0 flex-row py-1 z-10 sticky top-0">
+      <div className="flex flex-shrink-0 flex-row pt-6 pb-1 z-10 sticky top-0 select-none items-center">
+        <div className="border-gray-400 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 flex items-center pl-1 border rounded-lg">
+          <div className="">Edit</div>
+          <a target="_blank" rel="noopener noreferrer" href={ghUrl}>
+            <img src="/github.png" className="h-5 w-5 mx-1"></img>
+          </a>
+        </div>
+        <div className="border-gray-400 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-1 mx-1 rounded-lg border">
+          {session ? (
+            <button onClick={() => signOut()}>Log out</button>
+          ) : (
+            <p>
+              <a href="/api/auth/signin">Log in</a>
+            </p>
+          )}
+        </div>
         <div
           onClick={() => setVisible((mdVisible) => !mdVisible)}
           className="cursor-pointer"
         >
           <Close />
         </div>
-        <a target="_blank" rel="noopener noreferrer" href={ghUrl}>
-          <img src="/github.png" className="h-6 w-6 mx-2"></img>
-        </a>
-        {session && <button onClick={() => signOut()}>Sign out</button>}
-    {!session && <p><a href="/api/auth/signin">Sign in</a></p>}
       </div>
     </div>
   );
@@ -69,17 +79,16 @@ function Edit() {
 function Close() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      className="w-6 h-6 text-red-700 dark:text-red-300 mx-2"
+      className="w-5 h-5 text-red-500 opacity-60"
       stroke="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
     >
       <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+        clipRule="evenodd"
       />
     </svg>
   );

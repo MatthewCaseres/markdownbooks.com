@@ -11,7 +11,7 @@ enableMapSet();
 export default function SideBarFilters() {
   return (
     <div className="flex flex-row ml-2 py-1 items-center">
-        <div className="flex-row inline-flex items-center border-gray-400 border rounded-lg overflow-hidden">
+        <div className="flex-row inline-flex items-center border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden">
           <ActionWrapper action={{ type: "flagged", payload: 1 }}>
             <Flag className="h-6 w-6 text-green-400 z-10" />
           </ActionWrapper>
@@ -27,14 +27,6 @@ export default function SideBarFilters() {
           <ActionWrapper action={{ type: "completed", payload: true }}>
             <Check className="h-6 w-6 text-green-400" />
           </ActionWrapper>
-        </div>
-        <div className="flex items-center ml-2">
-        <CollapseWrapper type="expand">
-          <BiExpand className="h-6 w-6 text-gray-500" />
-        </CollapseWrapper>
-        <CollapseWrapper type="collapse">
-          <BiCollapse className="h-6 w-6 text-gray-500" />
-        </CollapseWrapper>
         </div>
     </div>
   );
@@ -54,7 +46,7 @@ function ActionWrapper({ children, action }: ActionWrapperProps) {
   return (
     <div
       className={`${
-        selected ? "bg-blue-200 dark:bg-blue-900" : "bg-gray-200"
+        selected ? "bg-blue-200 dark:bg-blue-800" : "bg-gray-100 dark:bg-gray-800"
       } cursor-pointer select-none border-r border-black last:border-r-0`}
       style={{ padding: "1px 2px" }}
       onClick={() =>
@@ -80,23 +72,6 @@ function ActionWrapper({ children, action }: ActionWrapperProps) {
     >
       {children}
     </div>
-  );
-}
-
-function CollapseWrapper({
-  type,
-  children,
-}: {
-  type: "collapse" | "expand";
-  children: ReactNode;
-}) {
-  const dispatch = useSideBarDispatch();
-  return (
-    <button
-      onClick={() => dispatch({ type })}
-    >
-      {children}
-    </button>
   );
 }
 

@@ -36,7 +36,7 @@ function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {
   return (
       <SideBarProvider treePath={treePath} config={urlTree.children as StatefulNode[]}>
         <SideBar ghUrl={ghUrl} treePath={treePath}>
-          <div className="prose prose-sm max-w-xl dark:prose-dark my-5 mx-2 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl">
+          <div className="prose max-w-2xl dark:prose-dark my-5 mx-2 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl">
             <div>{content}</div>
           </div>
         </SideBar>

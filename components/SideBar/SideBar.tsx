@@ -6,13 +6,13 @@ import SideBarTop from "./SideBarTop";
 import SideBarFilters from "./SideBarFilters";
 
 const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ children, ghUrl, treePath }) => {
-  // const sideBarDispatch = useSideBarDispatch();
+  const sideBarDispatch = useSideBarDispatch();
   const sideBarState = useSideBarState();
   const [mdVisible, setVisible] = useState<boolean>(true);
-  const width = 300;
-  // useEffect(()=> {
-  //   sideBarDispatch({type: 'open', path: treePath.slice(0,treePath.length-1)})
-  // }, [treePath])
+  const width = 260;
+  useEffect(()=> {
+    sideBarDispatch({type: 'open', path: treePath})
+  }, [treePath])
   return (
     <div className=" min-h-screen flex justify-center bg-blue-50 dark:bg-black">
       <div className="flex">
