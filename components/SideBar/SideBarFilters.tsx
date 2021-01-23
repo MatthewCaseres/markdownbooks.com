@@ -11,7 +11,7 @@ enableMapSet();
 export default function SideBarFilters() {
   return (
     <div className="flex flex-row ml-2 py-1 items-center">
-        <div className="flex-row inline-flex items-center border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden">
+        <div className="flex-row inline-flex items-center my-2 border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden">
           <ActionWrapper action={{ type: "flagged", payload: 1 }}>
             <Flag className="h-6 w-6 text-green-400 z-10" />
           </ActionWrapper>
@@ -27,9 +27,25 @@ export default function SideBarFilters() {
           <ActionWrapper action={{ type: "completed", payload: true }}>
             <Check className="h-6 w-6 text-green-400" />
           </ActionWrapper>
+          
         </div>
+        <ClearFilters/>
     </div>
   );
+}
+
+function ClearFilters()  {
+  const [filters, setFilters] = useFilters();
+  return (!!filters.flagged.size || !!filters.completed.size) && (
+  <div  className="text-sm ml-2 text-red-500 cursor-pointer"
+  onClick={()=>{setFilters({
+    flagged: new Set(),
+    completed: new Set(),
+  })}}>
+    <div>clear</div>
+    <div>filters</div>
+  </div>
+  )
 }
 
 type ActionWrapperProps = {
