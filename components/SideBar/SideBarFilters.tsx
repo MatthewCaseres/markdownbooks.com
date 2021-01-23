@@ -9,34 +9,28 @@ import { BiExpand, BiCollapse } from "react-icons/bi";
 enableMapSet();
 
 export default function SideBarFilters() {
+  const [filters, setFilters] = useFilters();
   return (
     <div className="flex flex-row ml-2 py-1 items-center">
         <div className="flex-row inline-flex items-center my-2 border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden">
-          <ActionWrapper action={{ type: "flagged", payload: 1 }}>
+          <ActionWrapper action={{ type: "flagged", payload: 1,  }} {...{filters, setFilters}}>
             <Flag className="h-6 w-6 text-green-400 z-10" />
           </ActionWrapper>
-          <ActionWrapper action={{ type: "flagged", payload: 2 }}>
+          <ActionWrapper action={{ type: "flagged", payload: 2 }} {...{filters, setFilters}}>
             <Flag className="h-6 w-6 text-yellow-400 z-10" />
           </ActionWrapper>
-          <ActionWrapper action={{ type: "flagged", payload: 3 }}>
+          <ActionWrapper action={{ type: "flagged", payload: 3 }} {...{filters, setFilters}}>
             <Flag className="h-6 w-6 text-red-400 z-10" />
           </ActionWrapper>
-          <ActionWrapper action={{ type: "completed", payload: false }}>
+          <ActionWrapper action={{ type: "completed", payload: false }} {...{filters, setFilters}}>
             <X className="h-6 w-6 text-red-400" />
           </ActionWrapper>
-          <ActionWrapper action={{ type: "completed", payload: true }}>
+          <ActionWrapper action={{ type: "completed", payload: true }} {...{filters, setFilters}}>
             <Check className="h-6 w-6 text-green-400" />
           </ActionWrapper>
           
         </div>
-        <ClearFilters/>
-    </div>
-  );
-}
-
-function ClearFilters()  {
-  const [filters, setFilters] = useFilters();
-  return (!!filters.flagged.size || !!filters.completed.size) && (
+        {!!(filters.flagged.size || filters.completed.size) && (
   <div  className="text-sm ml-2 text-red-500 cursor-pointer"
   onClick={()=>{setFilters({
     flagged: new Set(),
@@ -45,7 +39,9 @@ function ClearFilters()  {
     <div>clear</div>
     <div>filters</div>
   </div>
-  )
+  )}
+    </div>
+  );
 }
 
 type ActionWrapperProps = {
@@ -53,9 +49,10 @@ type ActionWrapperProps = {
   action:
     | { type: "flagged"; payload: 0 | 1 | 2 | 3}
     | { type: "completed"; payload: boolean }
+  filters: Filter,
+  setFilters: React.Dispatch<React.SetStateAction<Filter>>
 };
-function ActionWrapper({ children, action }: ActionWrapperProps) {
-  const [filters, setFilters] = useFilters();
+function ActionWrapper({ children, action, filters, setFilters }: ActionWrapperProps) {
   const selected =
     (action.type === "flagged" && filters["flagged"].has(action.payload)) ||
     (action.type === "completed" && filters["completed"].has(action.payload)) 
