@@ -189,22 +189,21 @@ function setHiddenRecursive({
   node: Draft<StatefulNode>;
   filter: Filter;
 }) {
-  //If there are no children and no matching properties then not visible, else recurse
-  if (!node.children) {
-    node.hidden = !isNodeVisible(filter, node.userInfo, node.type, node.id);
-    return node.hidden;
-  } else {
+  let hasVisibleChild = false
+  if (node.children) {
     const childrenHidden: boolean[] = node.children.map((child) =>
       setHiddenRecursive({ node: child, filter })
     );
-    const hasVisibleChild = childrenHidden.some((hidden) => !hidden);
-    const hidden = hasVisibleChild ? false : true;
+    hasVisibleChild = childrenHidden.some((hidden) => !hidden);
+    const hidden = !hasVisibleChild
     node.hidden = hidden;
     return hidden;
   }
+  node.hidden = !isNodeVisible(filter, node.userInfo, node.type, node.id) || hasVisibleChild
+  return node.hidden;
 }
 function isNodeVisible(filter: Filter, userInfo: UserInfo | undefined, type: string, id?: string) {
-  const noFilters = (!filter.completed.size) || (!filter.flagged.size)
+  const noFilters = (!filter.completed.size) && (!filter.flagged.size)
   const hasId = !!id
   const completedGood = (!filter.completed.size) || ((type.includes('edtech')) &&
     (filter.completed.has(false) && (!userInfo || !userInfo.completed)) ||

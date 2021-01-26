@@ -13,7 +13,7 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
   const [mdVisible, setVisible] = useState<boolean>(true);
   const width = 260;
   useEffect(()=> {
-    sideBarDispatch({type: 'open', path: treePath})
+    sideBarDispatch({type: 'open', path: treePath.slice(treePath.length - 1)})
   }, [treePath])
   return (
     <div className=" min-h-screen flex justify-center bg-blue-50 dark:bg-black">
@@ -28,7 +28,7 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
         >
           <SideBarTop setVisible={setVisible} ghUrl={ghUrl} />
           {session && <SideBarFilters />}
-          <div className="ml-1">
+          <div className="ml-1 border-gray-400 dark:border-gray-600 border-b border-opacity-50">
           {sideBarState.map((node, index) => (
             <RenderNode key={index} node={node} pagePath={treePath} />
           ))}

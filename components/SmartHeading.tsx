@@ -40,21 +40,8 @@ function Heading({
   slug: string;
   contents: string;
 }) {
-  if (depth === "1") {
-    return (
-      <h1 style={{ marginBottom: 10 }} id={slug}>
-        {contents}
-      </h1>
-    );
-  } else if (depth === "2") {
+
     return <h2 style={{ margin: 0 }} id={slug}>
       {contents}
     </h2>;
-  } else {
-    return (
-      <h3 style={{ margin: 0 }} id={slug}>
-        {contents}
-      </h3>
-    );
-  }
 }

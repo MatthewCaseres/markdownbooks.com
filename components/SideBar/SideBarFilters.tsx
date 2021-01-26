@@ -13,7 +13,7 @@ export default function SideBarFilters() {
   return (
     <div className="flex flex-row ml-2 py-1 items-center">
         <div className="flex-row inline-flex items-center my-2 border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden">
-        <ActionWrapper action={{ type: "flagged", payload: 0,  }} {...{filters, setFilters}}>
+          <ActionWrapper action={{ type: "flagged", payload: 0,  }} {...{filters, setFilters}}>
             <Flag className="h-6 w-6 text-gray-400 opacity-40 z-10" />
           </ActionWrapper>
           <ActionWrapper action={{ type: "flagged", payload: 1,  }} {...{filters, setFilters}}>

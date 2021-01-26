@@ -56,7 +56,7 @@ export default function Dropdown2({id, large=true}: {id: string, large?: boolean
   });
 
   return (
-    session ? <div ref={ref} onClick={() => setMenuVisible((visible) => !visible)} className="ml-1">
+    session ? <div ref={ref} onClick={() => setMenuVisible((visible) => !visible)} className="ml-auto">
       <div className="flex flex-row items-center">
         <button
           ref={setReferenceElement}

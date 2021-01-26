@@ -15,8 +15,7 @@ const RenderNode = ({
         <div
           style={{
             margin: "2px 0px 2px 12px",
-            paddingLeft: 10,
-            borderLeft: "1px dashed gray",
+            borderLeft: "1px solid gray",
           }}
         >
           {node.children.map((nodeChild, index) => {
