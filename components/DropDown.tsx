@@ -9,8 +9,10 @@ import {
   FlagProblemMutation,
   GetProblemsDocument
 } from "../graphql/generated";
+import { useSession } from "next-auth/client";
 //
 export default function Dropdown2({id, large=true}: {id: string, large?: boolean}) {
+  const [session] = useSession()
   const idMapProperties = useIdMapProperty(id)
   const [menuVisible, setMenuVisible] = useState(false);
   const [flagProblem] = useMutation(FlagProblemDocument, {
@@ -54,7 +56,7 @@ export default function Dropdown2({id, large=true}: {id: string, large?: boolean
   });
 
   return (
-    <div ref={ref} onClick={() => setMenuVisible((visible) => !visible)} className="ml-1">
+    session ? <div ref={ref} onClick={() => setMenuVisible((visible) => !visible)} className="ml-1">
       <div className="flex flex-row items-center">
         <button
           ref={setReferenceElement}
@@ -106,7 +108,7 @@ export default function Dropdown2({id, large=true}: {id: string, large?: boolean
           </div>
         </div>
       )}
-    </div>
+    </div> : null
   );
 }
 

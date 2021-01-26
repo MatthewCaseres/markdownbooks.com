@@ -4,26 +4,26 @@ import BookList from "./BookList";
 import {CardType} from './Card'
 const cards: CardType[] = [
   {
-    title: "AWS CSA",
-    content: "Public domain educational content for AWS CSA exam.",
-    externalLink: "https://www.youtube.com/channel/UCsYqPH99FkUNKF1v5A8uIvQ",
-    external: "YouTube",
-    internal: "Book",
-    internalLink: "Open-EdTech/AWS-CSA/S3-Content.md",
-  },
-  {
-    title: "This Website!",
-    content: "An educational platform in progress.",
+    title: "openedtech.io",
+    content: "Our educational platform, under construction.",
+    internal: "User Guide",
+    internalLink: "Open-EdTech/next-mdx-books/about.md",
     externalLink: "https://github.com/Open-EdTech/openedtech.dev",
     external: "GitHub",
   },
   {
-    title: "next-mdx-books",
-    content: "An NPM package to build books with NextJS and MDX.",
+    title: "mdxbook",
+    content: "Data processor for books built on GitHub",
     external: "GitHub",
-    externalLink: "https://github.com/Open-EdTech/next-mdx-books",
-    internal: "Docs",
+    externalLink: "https://github.com/Open-EdTech/mdxbook",
+    internal: "Documentation",
     internalLink: "Open-EdTech/next-mdx-books/about.md",
+  },
+  {
+    title: "react-run-code",
+    content: "Embeddable, runnable, with TypeScript support.",
+    externalLink: "https://github.com/Open-EdTech/react-run-code",
+    external: "GitHub",
   },
 ];
 const books = [
@@ -91,7 +91,7 @@ export default function Home() {
       </div>
       <div>
         <div className="prose dark:prose-dark max-w-md md:max-w-xl xl:max-w-2xl m-auto px-2 text-center">
-          <h1>Projects</h1>
+          <h1>Software</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-md md:max-w-3xl m-auto px-2 my-8">
           {cards.map((card) => (

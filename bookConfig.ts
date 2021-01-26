@@ -25,36 +25,19 @@ const userFunction: UserFunction  = (node: any, { mdast, frontMatter }) => {
       headers.push(header);
     }
   });
-  let problems: any[] = [];
-  let problemCount = 1
-  visit(mdast, 'code', (node: any) => {
-    if (node.lang?.includes('edtech')) {
-      let problemData = yaml.safeLoad(node.value) as any;
-      if(!problemData.id){
-        throw new Error("There is no ID on your edtech component")
-      }
-      let problem = {
-        type: node.lang,
-        title: `problem ${problemCount}`,
-        id: problemData.id,
-        route: routePrefix + '/#' + problemData.id
-      };
-      problemCount += 1
-      if (problem.id) {
-        problems.push(problem);
-      }
-    }
-  });
-  node.children = [...headers, ...problems];
+  node.children = headers;
 };
 
 (async () => {
-  const awsTree = await summaryToUrlTree({
-    url: "https://github.com/Open-EdTech/AWS-CSA/blob/main/DOCS.md",
-    localPath: "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/DOCS.md",
-    userFunction: userFunction
-  });
-  fs.writeFileSync('bookConfig.json', JSON.stringify([awsTree]))
+  const scsTree = await summaryToUrlTree({
+    url: "https://github.com/MatthewCaseres/secure-computer-systems/blob/main/TOC.md",
+    localPath: "/Users/matthewcaseres/Documents/GitHub/secure-computer-systems/TOC.md"
+  })
+  const mdxDocsTree = await summaryToUrlTree({
+    url: "https://github.com/Open-EdTech/mdxbook/blob/main/DOCS/DOCS.md",
+    localPath: "/Users/matthewcaseres/Documents/GitHub/mdxbook/DOCS/DOCS.md"
+  })
+  fs.writeFileSync('bookConfig.json', JSON.stringify([scsTree, mdxDocsTree]))
 })();
 
 

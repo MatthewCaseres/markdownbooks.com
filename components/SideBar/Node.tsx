@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import {Flag, X, Check} from '../SVG'
 import Dropdown from '../DropDown'
+import { useSession } from "next-auth/client";
 
 function equalPrefix(subPathCandidate: readonly number[], longPath: readonly number[]) {
   if (subPathCandidate.length > longPath.length) {
@@ -27,6 +28,7 @@ export default function Node2({
   node: StatefulNode;
   pagePath: readonly number[]
 }) {
+  const [session] = useSession()
   const dispatch = useSideBarDispatch();
   const highlighted = isHighlighted(node, pagePath)
   const myRef = useRef<HTMLDivElement>(null)
@@ -69,7 +71,7 @@ export default function Node2({
           <span className="dark:text-gray-300">{node.title}</span>
         }
       </div>
-      {node.type.includes("edtech") && getProblemCompletion(node.userInfo?.completed)}
+      {session && node.type.includes("edtech") && getProblemCompletion(node.userInfo?.completed)}
       {node.id && <Dropdown id={node.id} large={false}/>}
     </div>
   )

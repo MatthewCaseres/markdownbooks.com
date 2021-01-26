@@ -109,7 +109,9 @@ const SideBarProvider: React.FC<{ config: StatefulNodes, treePath: readonly numb
       }, {});
       setIdMap(newIdMap);
       dispatch({ type: "merge", idMap: newIdMap });
-      
+    }
+  }, [data]);
+  useEffect(() => {
       if (!filters.completed.size && !filters.flagged.size && treePath) {
         dispatch({type: "collapse"})
         dispatch({type: "open", path: treePath})
@@ -117,9 +119,7 @@ const SideBarProvider: React.FC<{ config: StatefulNodes, treePath: readonly numb
         dispatch({type: "expand"})
       }
       dispatch({ type: "filter", filter: filters });
-
-    }
-  }, [data, filters]);
+  }, [filters]);
   return (
     <SideBarStateContext.Provider value={state}>
       <SideBarDispatchContext.Provider value={dispatch}>
@@ -191,7 +191,7 @@ function setHiddenRecursive({
 }) {
   //If there are no children and no matching properties then not visible, else recurse
   if (!node.children) {
-    node.hidden = !isNodeVisible(filter, node.userInfo, node.type);
+    node.hidden = !isNodeVisible(filter, node.userInfo, node.type, node.id);
     return node.hidden;
   } else {
     const childrenHidden: boolean[] = node.children.map((child) =>
@@ -203,16 +203,19 @@ function setHiddenRecursive({
     return hidden;
   }
 }
-function isNodeVisible(filter: Filter, userInfo: UserInfo | undefined, type: string) {
-  const hasFilters = filter.completed.size || filter.flagged.size
-  const completedGood = (type.includes('edtech')) &&
+function isNodeVisible(filter: Filter, userInfo: UserInfo | undefined, type: string, id?: string) {
+  const noFilters = (!filter.completed.size) || (!filter.flagged.size)
+  const hasId = !!id
+  const completedGood = (!filter.completed.size) || ((type.includes('edtech')) &&
     (filter.completed.has(false) && (!userInfo || !userInfo.completed)) ||
-    (filter.completed.has(true) && userInfo?.completed);
-  const flaggedGood =
-    (userInfo?.flagged && filter.flagged.has(userInfo.flagged as 1 | 2 | 3));
+    (filter.completed.has(true) && userInfo?.completed))
+  const flaggedGood = (!filter.flagged.size) || (
+    (!userInfo?.flagged && filter.flagged.has(0)) ||
+    (userInfo?.flagged && filter.flagged.has(userInfo.flagged as 1 | 2 | 3))
+    )
 
   //If not completed AND flagged match, hide the node
-  return !hasFilters || completedGood || flaggedGood
+  return noFilters || (hasId && completedGood && flaggedGood)
 }
 
 export {

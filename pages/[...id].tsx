@@ -28,7 +28,7 @@ const getProvider = (urlTree: StatefulNode) => ({
     <SideBarProvider {...props} config={urlTree.children as StatefulNode[]} />
   </ApolloProvider>,
 })
-const remote = true;
+const remote = false;
 
 type PostProps = { urlTree: UrlNode; mdxSource: MdxRemote.Source, ghUrl: string, treePath: ReadonlyArray<number> }
 function Post({ urlTree, mdxSource, ghUrl, treePath }: PostProps) {

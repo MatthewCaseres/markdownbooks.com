@@ -4,118 +4,58 @@
     "children": [
       {
         "type": "file",
-        "route": "Open-EdTech/AWS-CSA/S3-Content.md",
-        "title": "Amazon S3",
-        "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/S3-Content.md",
-        "rawUrl": "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/S3-Content.md",
-        "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/S3-Content.md",
-        "children": [
-          {
-            "id": "1",
-            "title": "What is S3?! ",
-            "route": "Open-EdTech/AWS-CSA/S3-Content.md/#what-is-s3",
-            "type": "heading",
-            "treePath": [0, 0]
-          },
-          {
-            "id": "2",
-            "title": "more ",
-            "route": "Open-EdTech/AWS-CSA/S3-Content.md/#more",
-            "type": "heading",
-            "treePath": [0, 1]
-          },
-          {
-            "id": "4",
-            "title": "lolol sampletext ",
-            "route": "Open-EdTech/AWS-CSA/S3-Content.md/#lolol-sampletext",
-            "type": "heading",
-            "treePath": [0, 2]
-          }
-        ],
+        "route": "MatthewCaseres/secure-computer-systems/00-getting-started.md",
+        "title": "Get Started",
+        "path": "/Users/matthewcaseres/Documents/GitHub/secure-computer-systems/00-getting-started.md",
+        "rawUrl": "https://raw.githubusercontent.com/MatthewCaseres/secure-computer-systems/main/00-getting-started.md",
+        "ghUrl": "https://github.com/MatthewCaseres/secure-computer-systems/blob/main/00-getting-started.md",
         "treePath": [0]
       },
       {
         "type": "file",
-        "route": "Open-EdTech/AWS-CSA/S3-Problems.md",
-        "title": "S3 Problems",
-        "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/S3-Problems.md",
-        "rawUrl": "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/S3-Problems.md",
-        "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/S3-Problems.md",
-        "children": [
-          {
-            "title": "lol",
-            "route": "Open-EdTech/AWS-CSA/S3-Problems.md/#lol",
-            "type": "heading",
-            "treePath": [1, 0]
-          },
-          {
-            "type": "edtech-mcq",
-            "title": "problem 1",
-            "id": "63bde698-7dc5-4f25-9703-b01b8041e029",
-            "route": "Open-EdTech/AWS-CSA/S3-Problems.md/#63bde698-7dc5-4f25-9703-b01b8041e029",
-            "treePath": [1, 1]
-          },
-          {
-            "type": "edtech-mcq",
-            "title": "problem 2",
-            "id": "63bde698-7dc5-4f25-9703-b01b804de023",
-            "route": "Open-EdTech/AWS-CSA/S3-Problems.md/#63bde698-7dc5-4f25-9703-b01b804de023",
-            "treePath": [1, 2]
-          },
-          {
-            "type": "edtech-mcq",
-            "title": "problem 3",
-            "id": "63bde698-7dc5-4f25-9703-b01b804de095",
-            "route": "Open-EdTech/AWS-CSA/S3-Problems.md/#63bde698-7dc5-4f25-9703-b01b804de095",
-            "treePath": [1, 3]
-          }
-        ],
+        "route": "MatthewCaseres/secure-computer-systems/01-design-principles-for-secure-computer-systems.md",
+        "title": "Design Principles",
+        "path": "/Users/matthewcaseres/Documents/GitHub/secure-computer-systems/01-design-principles-for-secure-computer-systems.md",
+        "rawUrl": "https://raw.githubusercontent.com/MatthewCaseres/secure-computer-systems/main/01-design-principles-for-secure-computer-systems.md",
+        "ghUrl": "https://github.com/MatthewCaseres/secure-computer-systems/blob/main/01-design-principles-for-secure-computer-systems.md",
+        "treePath": [1]
+      }
+    ],
+    "title": "Secure Computer Systems",
+    "treePath": []
+  },
+  {
+    "type": "directory",
+    "children": [
+      {
+        "type": "file",
+        "route": "Open-EdTech/mdxbook/about.md",
+        "title": "About",
+        "path": "/Users/matthewcaseres/Documents/GitHub/mdxbook/DOCS/about.md",
+        "rawUrl": "https://raw.githubusercontent.com/Open-EdTech/mdxbook/main/DOCS/about.md",
+        "ghUrl": "https://github.com/Open-EdTech/mdxbook/blob/main/DOCS/about.md",
+        "treePath": [0]
+      },
+      {
+        "type": "file",
+        "route": "Open-EdTech/mdxbook/generate.md",
+        "title": "Generate Configurations",
+        "path": "/Users/matthewcaseres/Documents/GitHub/mdxbook/DOCS/generate.md",
+        "rawUrl": "https://raw.githubusercontent.com/Open-EdTech/mdxbook/main/DOCS/generate.md",
+        "ghUrl": "https://github.com/Open-EdTech/mdxbook/blob/main/DOCS/generate.md",
         "treePath": [1]
       },
       {
         "type": "file",
-        "route": "Open-EdTech/AWS-CSA/RDS.md",
-        "title": "Amazon RDS",
-        "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/RDS.md",
-        "rawUrl": "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/RDS.md",
-        "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/RDS.md",
-        "children": [],
+        "route": "Open-EdTech/mdxbook/consume.md",
+        "title": "Consume Configurations",
+        "path": "/Users/matthewcaseres/Documents/GitHub/mdxbook/DOCS/consume.md",
+        "rawUrl": "https://raw.githubusercontent.com/Open-EdTech/mdxbook/main/DOCS/consume.md",
+        "ghUrl": "https://github.com/Open-EdTech/mdxbook/blob/main/DOCS/consume.md",
         "treePath": [2]
-      },
-      {
-        "type": "file",
-        "route": "Open-EdTech/AWS-CSA/Lambda.md",
-        "title": "AWS Lambda",
-        "path": "/Users/matthewcaseres/Documents/GitHub/AWS-CSA/Lambda.md",
-        "rawUrl": "https://raw.githubusercontent.com/Open-EdTech/AWS-CSA/main/Lambda.md",
-        "ghUrl": "https://github.com/Open-EdTech/AWS-CSA/blob/main/Lambda.md",
-        "children": [
-          {
-            "id": "89042089342",
-            "title": "Clipped ",
-            "route": "Open-EdTech/AWS-CSA/Lambda.md/#clipped",
-            "type": "heading",
-            "treePath": [3, 0]
-          },
-          {
-            "type": "edtech-mcq",
-            "title": "problem 1",
-            "id": "63bde698-7dc5-4f25-9703-b01b804de129",
-            "route": "Open-EdTech/AWS-CSA/Lambda.md/#63bde698-7dc5-4f25-9703-b01b804de129",
-            "treePath": [3, 1]
-          },
-          {
-            "type": "edtech-mcq",
-            "title": "problem 2",
-            "id": "63bde698-7dc5-4f25-9703-b01b804de029",
-            "route": "Open-EdTech/AWS-CSA/Lambda.md/#63bde698-7dc5-4f25-9703-b01b804de029",
-            "treePath": [3, 2]
-          }
-        ],
-        "treePath": [3]
       }
     ],
-    "title": "Docs",
+    "title": "docs",
     "treePath": []
   }
 ]
