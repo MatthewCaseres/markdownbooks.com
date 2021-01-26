@@ -3,6 +3,7 @@ import Chevron from "./Chevron";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import {Flag, X, Check} from '../SVG'
+import Dropdown from '../DropDown'
 
 function equalPrefix(subPathCandidate: readonly number[], longPath: readonly number[]) {
   if (subPathCandidate.length > longPath.length) {
@@ -69,7 +70,7 @@ export default function Node2({
         }
       </div>
       {node.type.includes("edtech") && getProblemCompletion(node.userInfo?.completed)}
-      {getFlag(node.userInfo?.flagged)}
+      {node.id && <Dropdown id={node.id} large={false}/>}
     </div>
   )
 }

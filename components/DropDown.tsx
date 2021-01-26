@@ -9,8 +9,8 @@ import {
   FlagProblemMutation,
   GetProblemsDocument
 } from "../graphql/generated";
-
-export default function Dropdown2({id}: {id: string}) {
+//
+export default function Dropdown2({id, large=true}: {id: string, large?: boolean}) {
   const idMapProperties = useIdMapProperty(id)
   const [menuVisible, setMenuVisible] = useState(false);
   const [flagProblem] = useMutation(FlagProblemDocument, {
@@ -54,7 +54,7 @@ export default function Dropdown2({id}: {id: string}) {
   });
 
   return (
-    <div ref={ref} onClick={() => setMenuVisible((visible) => !visible)}>
+    <div ref={ref} onClick={() => setMenuVisible((visible) => !visible)} className="ml-1">
       <div className="flex flex-row items-center">
         <button
           ref={setReferenceElement}
@@ -64,7 +64,7 @@ export default function Dropdown2({id}: {id: string}) {
           aria-haspopup="true"
           aria-expanded="true"
         >
-          {getFlag(idMapProperties?.flagged)}
+          {getFlag(idMapProperties?.flagged, large)}
         </button>
       </div>
       {menuVisible && (
@@ -80,7 +80,7 @@ export default function Dropdown2({id}: {id: string}) {
             )})}}
             className="border-r border-black last:border-0"
             >
-            <Flag className="h-6 w-6 text-gray-400 opacity-40" />
+            <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-gray-400 opacity-40`} />
           </div>
           <div onClick={() => { 
             flagProblem({variables: {id: id, flag: 1}, optimisticResponse: getOptimisticFlagResponse(
@@ -88,21 +88,21 @@ export default function Dropdown2({id}: {id: string}) {
             )})}}
             className="border-r border-black last:border-0"
             >
-            <Flag className="h-6 w-6 text-green-400" />
+            <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-green-400`} />
           </div>
           <div onClick={() => { 
             flagProblem({variables: {id: id, flag: 2}, optimisticResponse: getOptimisticFlagResponse(
               idMapProperties, 2, id
             )})}}
             className="border-r border-black last:border-0">
-            <Flag className="h-6 w-6 text-yellow-400" />
+            <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-yellow-400`} />
           </div>
           <div onClick={() => { 
             flagProblem({variables: {id: id, flag: 3}, optimisticResponse: getOptimisticFlagResponse(
               idMapProperties, 3, id
             )})}}
             className="border-r border-black last:border-0">
-            <Flag className="h-6 w-6 text-red-400" />
+            <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-red-400`} />
           </div>
         </div>
       )}
@@ -122,14 +122,14 @@ return ({
 })
 }
 
-function getFlag(color: number | undefined) {
+function getFlag(color: number | undefined, large?: boolean) {
   if (!color) {
-    return <Flag className="h-7 w-7 text-gray-400 opacity-40" />
+    return <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-gray-400 opacity-40`} />
   } else if (color === 1) {
-    return <Flag className="h-7 w-7 text-green-400" />
+    return <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-green-400`}/>
   } else if  (color === 2){
-    return <Flag className="h-7 w-7 text-yellow-400" />
+    return <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-yellow-400`} />
   } else {
-    return <Flag className="h-7 w-7 text-red-400" />
+    return <Flag className={`${large ? "h-7 w-7" : "h-5 w-5"} text-red-400`} />
   }
 }

@@ -6,6 +6,7 @@ import {
 } from "../graphql/generated";
 import {Flag} from './SVG'
 import { useMutation } from "@apollo/client";
+import { useSession } from "next-auth/client";
 
 type SmartHeadingProps = {
   id: string;
@@ -18,8 +19,9 @@ export default function SmartHeading({
   contents,
 }: SmartHeadingProps) {
   const [completeProblem] = useMutation(CompleteProblemDocument);
+  const [session] = useSession()
   return (
-    <div className="flex flex-row items-center" style={{margin: "48px 0px 24px 0px"}}>
+    !!session && <div className="flex flex-row items-center" style={{margin: "48px 0px 24px 0px"}}>
       <h2
       style={{margin: 0}}
         id={slug}

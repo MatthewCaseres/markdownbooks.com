@@ -109,12 +109,13 @@ function MCQ({ prompt, answers, solution, correct_idx, id }: MCQType) {
         >
           Grade Problem
         </button>
-        {userInfo?.completed ? <Check className="w-7 h-7 text-green-400"/> : <X className="h-7 w-7 text-red-400"/>}
-        <Dropdown id={id} />
+        {!!session && (userInfo?.completed ? <Check className="w-7 h-7 text-green-400"/> : <X className="h-7 w-7 text-red-400"/>)}
+        {!!session &&<Dropdown id={id} />}
       </div>
     </div>
   );
 }
+
 
 function getOptimisticCompletion(
   userInfo: UserInfo | undefined,

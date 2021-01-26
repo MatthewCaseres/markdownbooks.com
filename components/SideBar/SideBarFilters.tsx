@@ -13,6 +13,9 @@ export default function SideBarFilters() {
   return (
     <div className="flex flex-row ml-2 py-1 items-center">
         <div className="flex-row inline-flex items-center my-2 border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden">
+        <ActionWrapper action={{ type: "flagged", payload: 0,  }} {...{filters, setFilters}}>
+            <Flag className="h-6 w-6 text-gray-400 opacity-40 z-10" />
+          </ActionWrapper>
           <ActionWrapper action={{ type: "flagged", payload: 1,  }} {...{filters, setFilters}}>
             <Flag className="h-6 w-6 text-green-400 z-10" />
           </ActionWrapper>
@@ -22,13 +25,14 @@ export default function SideBarFilters() {
           <ActionWrapper action={{ type: "flagged", payload: 3 }} {...{filters, setFilters}}>
             <Flag className="h-6 w-6 text-red-400 z-10" />
           </ActionWrapper>
+          </div>
+        <div className="flex-row inline-flex items-center my-2 border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden ml-1">
           <ActionWrapper action={{ type: "completed", payload: false }} {...{filters, setFilters}}>
             <X className="h-6 w-6 text-red-400" />
           </ActionWrapper>
           <ActionWrapper action={{ type: "completed", payload: true }} {...{filters, setFilters}}>
             <Check className="h-6 w-6 text-green-400" />
           </ActionWrapper>
-          
         </div>
         {!!(filters.flagged.size || filters.completed.size) && (
   <div  className="text-sm ml-2 text-red-500 cursor-pointer"
