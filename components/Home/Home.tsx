@@ -6,8 +6,8 @@ const cards: CardType[] = [
   {
     title: "openedtech.io",
     content: "Our educational platform, under construction.",
-    internal: "User Guide",
-    internalLink: "Open-EdTech/next-mdx-books/about.md",
+    // internal: "User Guide",
+    // internalLink: "Open-EdTech/next-mdx-books/about.md",
     externalLink: "https://github.com/Open-EdTech/openedtech.dev",
     external: "GitHub",
   },
@@ -26,33 +26,27 @@ const cards: CardType[] = [
     external: "GitHub",
   },
 ];
-const books = [
+const books1 = [
   {
-    title: "King James Bible",
-    bookLink: 'Open-EdTech/kjv-markdown/01-Genesis-KJV.md'
-  },
-  {
-    title: "Public Domain Catholic Version Bible",
-    bookLink: 'MatthewCaseres/scrape-bibles/Genesis.md'
-  },
-  {
-    title: "Guide to Functional Programming",
-    author: "Mostly Adequate",
-    authorLink: "https://github.com/MostlyAdequate",
-    bookLink: "MatthewCaseres/mostly-adequate-guide/ch01.md",
-  },
+    title: "Secure Computer Systems",
+    bookLink: "MatthewCaseres/secure-computer-systems/00-getting-started.md"
+  }
+]
+const books2 = [
   {
     title: "TypeScript Deep Dive",
     author: "Basarat Ali Syed",
     authorLink: "https://github.com/basarat",
     bookLink: "basarat/typescript-book/docs/getting-started.md",
-  },
+  }
+];
+const books3 = [
   {
-    title: "javascript",
-    author: "GitbookIo",
-    authorLink: "https://github.com/GitbookIO",
-    bookLink: "GitbookIO/javascript/basics/README.md",
-  },
+    title: "Amazon S3 Basics",
+    author: "Amazon Web Services",
+    authorLink: "https://github.com/awsdocs",
+    bookLink: "awsdocs/amazon-s3-getting-started-guide/doc_source/GetStartedWithS3.md",
+  }
 ];
 export default function Home() {
   return (
@@ -101,10 +95,18 @@ export default function Home() {
       </div>
       <div className="prose dark:prose-dark max-w-md md:max-w-xl xl:max-w-2xl m-auto px-2">
         <h1 className="text-center">Books</h1>
-        <BookList books={books} />
-        <div>
-          These books are hosted using the next-mdx-books package. Books ported from GitBook may have some broken plugins.
-        </div>
+        The following book has interactive elements for authenticated users.
+        <BookList books={books1} />
+        We are compatible with existing GitBooks like this book about TypeScript.
+        <BookList books={books2} />
+        You don't need a GitBook to get started. Here's some documentation from Amazon.
+        <BookList books={books3} />
+        <hr />
+        When you rebuild the site it fetches any changes from the parent repository, a low maintenance way to mirror content.
+
+
+        We include links to the parent repository via an "Edit this page" button. This parent repository 
+        must contain an appropriate open source license.
       </div>
     </div>
   );

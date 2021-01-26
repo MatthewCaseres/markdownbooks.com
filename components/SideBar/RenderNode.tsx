@@ -12,10 +12,9 @@ const RenderNode = ({
     <div>
       {!node.hidden && <Node node={node} pagePath={pagePath}/>}
       {node.children && node.open && (
-        <div
+        <div className="border-l border-gray-400 dark:border-gray-600 border-opacity-50"
           style={{
             margin: "2px 0px 2px 12px",
-            borderLeft: "1px solid gray",
           }}
         >
           {node.children.map((nodeChild, index) => {

@@ -10,7 +10,6 @@ const userFunction: UserFunction  = (node: any, { mdast, frontMatter }) => {
   const routePrefix = node.route;
   var slugger = new GithubSlugger();
   let children = mdast.children
-  console.log(children)
   const childrenTree = children
     .filter((child: any) => child.type === "html" && child.value.match(hidRegex))
     .map((child: any) => {
@@ -35,7 +34,13 @@ const userFunction: UserFunction  = (node: any, { mdast, frontMatter }) => {
     url: "https://github.com/Open-EdTech/mdxbook/blob/main/DOCS/DOCS.md",
     localPath: "/Users/matthewcaseres/Documents/GitHub/mdxbook/DOCS/DOCS.md"
   })
-  fs.writeFileSync('bookConfig.json', JSON.stringify([scsTree, mdxDocsTree]))
+  const basarat = await summaryToUrlTree({
+    url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md"
+  })
+  const awsS3 = await summaryToUrlTree({
+    url: "https://github.com/MatthewCaseres/aws-docs-configs/blob/main/configs/amazon-s3-getting-started-guide.md"
+  })
+  fs.writeFileSync('bookConfig.json', JSON.stringify([scsTree, mdxDocsTree, basarat, awsS3]))
 })();
 
 

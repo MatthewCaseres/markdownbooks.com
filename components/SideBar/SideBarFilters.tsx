@@ -1,11 +1,7 @@
 import React, { ReactNode, useState } from "react";
-import { usePopper } from "react-popper";
-import useOnclickOutside from "react-cool-onclickoutside";
 import { Filter, useFilters, useSideBarDispatch } from "./SideBarContext";
 import { Flag, Check, X, Filter as FilterIcon } from "../SVG";
 import produce, { enableMapSet } from "immer";
-import { useMutation } from "@apollo/client";
-import { BiExpand, BiCollapse } from "react-icons/bi";
 enableMapSet();
 
 export default function SideBarFilters() {
@@ -26,14 +22,14 @@ export default function SideBarFilters() {
             <Flag className="h-6 w-6 text-red-400 z-10" />
           </ActionWrapper>
           </div>
-        <div className="flex-row inline-flex items-center my-2 border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden ml-1">
+        {false && <div className="flex-row inline-flex items-center my-2 border-gray-400 dark:border-gray-600 border rounded-lg overflow-hidden ml-1">
           <ActionWrapper action={{ type: "completed", payload: false }} {...{filters, setFilters}}>
             <X className="h-6 w-6 text-red-400" />
           </ActionWrapper>
           <ActionWrapper action={{ type: "completed", payload: true }} {...{filters, setFilters}}>
             <Check className="h-6 w-6 text-green-400" />
           </ActionWrapper>
-        </div>
+        </div>}
         {!!(filters.flagged.size || filters.completed.size) && (
   <div  className="text-sm ml-2 text-red-500 cursor-pointer"
   onClick={()=>{setFilters({
