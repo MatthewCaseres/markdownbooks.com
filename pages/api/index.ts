@@ -58,7 +58,7 @@ const Query = objectType({
     )
     t.field('problems', {
       type: nonNull(list(nonNull(Problem))),
-      resolve: () => prisma.problem.findMany()
+      resolve: (_, __, {session}) => prisma.problem.findMany({where: {userId: session.id}})
     })
   },
 })
