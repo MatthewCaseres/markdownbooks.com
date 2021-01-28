@@ -24,7 +24,27 @@ const userFunction: UserFunction  = (node: any, { mdast, frontMatter }) => {
   node.children = childrenTree;
 };
 
+const headersFunction: UserFunction = (node: any, { mdast, frontMatter}) => {
+  const routePrefix = node.route;
+  var slugger = new GithubSlugger();
+  const headers: any[] = []
+  visit(mdast, "heading", (node: any) => {
+    if (node.depth === 2) {
+      headers.push({
+        type: "heading",
+        title: node.children[0].value,
+        route: routePrefix + '#' + slugger.slug(node.children[0].value)
+      })
+    }
+  })
+  node.children = headers
+}
+
 (async () => {
+  const scsPlain = await summaryToUrlTree({
+    url: "https://github.com/MatthewCaseres/omscs-notes-notes/blob/master/secure-computer-systems/00-table-of-contents.md",
+    userFunction: headersFunction
+  })
   const scsTree = await summaryToUrlTree({
     url: "https://github.com/MatthewCaseres/secure-computer-systems/blob/main/TOC.md",
     localPath: "/Users/matthewcaseres/Documents/GitHub/secure-computer-systems/TOC.md",
@@ -40,7 +60,7 @@ const userFunction: UserFunction  = (node: any, { mdast, frontMatter }) => {
   const awsS3 = await summaryToUrlTree({
     url: "https://github.com/MatthewCaseres/aws-docs-configs/blob/main/configs/amazon-s3-getting-started-guide.md"
   })
-  fs.writeFileSync('bookConfig.json', JSON.stringify([scsTree, mdxDocsTree, basarat, awsS3]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([scsPlain, scsTree, mdxDocsTree, basarat, awsS3]))
 })();
 
 

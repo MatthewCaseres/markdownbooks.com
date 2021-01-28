@@ -15,8 +15,9 @@ import {UrlNode} from 'next-mdx-books'
 import SmartHeading from '../components/SmartHeading'
 import MCQ from '../components/MCQ'
 import withMCQ from '../remark/withMCQ'
-import { useApollo, initializeApollo } from "../lib/apolloClient";
-import { ApolloClient, ApolloProvider, gql, useQuery } from "@apollo/client";
+import { initializeApollo } from "../lib/apolloClient";
+import { ApolloProvider} from "@apollo/client";
+import matter from 'gray-matter'
 var slug = require("remark-slug");
 
 const components = {
@@ -50,8 +51,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const {index: nodeIndex, ghUrl, treePath} = allRoutesInfo[stringRoute]
   const urlTree = bookConfig[nodeIndex];
   const source = await getMdSource(stringRoute, allRoutesInfo, remote);
+  const {content} = matter(source)
 
-  const mdxSource = await renderToString(source, {
+  const mdxSource = await renderToString(content, {
     mdxOptions: {
       remarkPlugins: [
         withSmartHeading,
