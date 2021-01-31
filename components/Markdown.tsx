@@ -6,6 +6,7 @@ export default function Markdown({ content }: { content: string }) {
       renderers={{
         paragraph: (props) => <p {...props} style={{ margin: 0 }} />,
       }}
+      allowDangerousHtml = {true}
     >
       {content}
     </ReactMarkdown>

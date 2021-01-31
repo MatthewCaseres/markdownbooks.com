@@ -3,6 +3,7 @@ import GithubSlugger from 'github-slugger'
 import visit from 'unist-util-visit'
 import yaml from 'js-yaml'
 import fs from 'fs'
+import {hidRegex as detailsRegex} from './remark/withMCQ'
 
 const hidRegex = /^<h[123]\s+hid="([^"]+)">(.+)(?=<\/h)/
 //Let the user add a function
@@ -24,6 +25,23 @@ const userFunction: UserFunction  = (node: any, { mdast, frontMatter }) => {
   node.children = childrenTree;
 };
 
+const problemsFunction: UserFunction = (node: any, {mdast}) => {
+  const routePrefix = node.route;
+  const problems: any = []
+  visit(mdast, "html", (hNode: any) => {
+    const matches = hNode.value.match(detailsRegex)
+    if (matches.length) {
+      problems.push({
+        type: "edtech-mcq",
+        title: `Problem ${problems.length+1}`,
+        id: matches[1],
+        route: routePrefix + '#' + matches[1]
+      })
+    }
+  })
+  node.children = problems
+}
+
 const headersFunction: UserFunction = (node: any, { mdast, frontMatter}) => {
   const routePrefix = node.route;
   var slugger = new GithubSlugger();
@@ -41,6 +59,15 @@ const headersFunction: UserFunction = (node: any, { mdast, frontMatter}) => {
 }
 
 (async () => {
+  const awsPractice = await summaryToUrlTree({
+    url: "https://github.com/MatthewCaseres/aws-questions/blob/master/config.md",
+    localPath: "/Users/matthewcaseres/Documents/GitHub/aws-questions/config.md",
+    userFunction: problemsFunction
+  })
+  const iisTree = await summaryToUrlTree({
+    url: "https://github.com/MatthewCaseres/mdExperiments/blob/main/IIS.md",
+    localPath: "/Users/matthewcaseres/Documents/GitHub/mdExperiments/IIS.md"
+  })
   const scsPlain = await summaryToUrlTree({
     url: "https://github.com/MatthewCaseres/omscs-notes-notes/blob/master/secure-computer-systems/00-table-of-contents.md",
     userFunction: headersFunction
@@ -60,7 +87,7 @@ const headersFunction: UserFunction = (node: any, { mdast, frontMatter}) => {
   const awsS3 = await summaryToUrlTree({
     url: "https://github.com/MatthewCaseres/aws-docs-configs/blob/main/configs/amazon-s3-getting-started-guide.md"
   })
-  fs.writeFileSync('bookConfig.json', JSON.stringify([scsPlain, scsTree, mdxDocsTree, basarat, awsS3]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([awsPractice, iisTree, scsPlain, scsTree, mdxDocsTree, basarat, awsS3]))
 })();
 
 

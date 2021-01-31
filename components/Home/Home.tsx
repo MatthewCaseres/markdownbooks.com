@@ -26,6 +26,12 @@ const cards: CardType[] = [
     external: "GitHub",
   },
 ];
+const books0 = [
+  {
+    title: "Experimental Interactivity - AWS Practice Exams",
+    bookLink: "MatthewCaseres/aws-questions/README.md"
+  }
+]
 const books1 = [
   {
     title: "Experimental Interactivity - Secure Computer Systems",
@@ -101,6 +107,8 @@ export default function Home() {
       </div>
       <div className="prose dark:prose-dark max-w-md md:max-w-xl xl:max-w-2xl m-auto px-2">
         <h1 className="text-center">Books</h1>
+        Practice AWS
+        <BookList books={books0} />
         The following book has interactive elements for authenticated users. Log in to mark sections for review. Not up to date for studying, for demonstration purposes only.
         <BookList books={books1} />
         This version is a mirror of content from <a target="_blank" rel="noopener noreferrer" href="http://your_url_here.html">OMSCS Notes</a> and is always up to date. Our `mdxbook` software 

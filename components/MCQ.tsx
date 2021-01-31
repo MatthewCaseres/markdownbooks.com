@@ -17,8 +17,9 @@ type MCQType = {
   answers: string[];
   correct_idx: number;
   id: string;
+  head_text: string
 };
-function MCQ({ prompt, answers, solution, correct_idx, id }: MCQType) {
+function MCQ({ prompt, answers, solution, correct_idx, id, head_text }: MCQType) {
   const [graded, setGraded] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState(-1);
   const [ session, loading ] = useSession()
@@ -73,7 +74,7 @@ function MCQ({ prompt, answers, solution, correct_idx, id }: MCQType) {
     <div id={id}>
       <div className="container border-gray-500 border px-4 rounded-lg">
         <div className="py-2 mt-2">
-          <Markdown content={prompt} />
+          <Markdown content={`**${head_text}** ` + prompt} />
           {graded &&
             (selectedIdx === correct_idx ? (
               <div className="bg-green-300 dark:bg-green-800 border-2 rounded-xl border-green-400 dark:border-green-700 px-2 py-1 mt-2 ">
@@ -105,12 +106,19 @@ function MCQ({ prompt, answers, solution, correct_idx, id }: MCQType) {
       <div className="flex flex-row items-center py-1">
         <button
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-4 mt-1 rounded"
-          onClick={() => {setGraded(true); handleCompletion()}}
+          onClick={() => {
+            setGraded(true);
+            if (session) {
+              handleCompletion()
+            }
+          }}
         >
           Grade Problem
         </button>
+        <div className="flex ml-auto">
         {!!session && (userInfo?.completed ? <Check className="w-7 h-7 text-green-400"/> : <X className="h-7 w-7 text-red-400"/>)}
         {!!session && <Dropdown id={id} />}
+        </div>
       </div>
     </div>
   );

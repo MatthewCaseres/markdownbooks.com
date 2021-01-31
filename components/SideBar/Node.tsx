@@ -71,7 +71,7 @@ export default function Node2({
           <span className="dark:text-gray-300">{node.title}</span>
         }
       </div>
-      <div className="ml-auto">
+      <div className="flex ml-auto">
       {session && node.type.includes("edtech") && getProblemCompletion(node.userInfo?.completed)}
       {node.id && <Dropdown id={node.id} large={false}/>}
       </div>
