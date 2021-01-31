@@ -15,18 +15,24 @@ type MCQType = {
   prompt: string;
   solution: string;
   answers: string[];
-  correct_idx: number;
+  correct_idxs: number[];
   id: string;
   head_text: string
 };
-function MCQ({ prompt, answers, solution, correct_idx, id, head_text }: MCQType) {
+function MCQ({ prompt, answers, solution, correct_idxs, id, head_text }: MCQType) {
   const [graded, setGraded] = useState(false);
-  const [selectedIdx, setSelectedIdx] = useState(-1);
+  const [selectedIdxs, setSelectedIdx] = useState<number[]>([]);
   const [ session, loading ] = useSession()
   function changeSelection(idx: number) {
-    if (idx !== selectedIdx) {
-      setGraded(false);
-      setSelectedIdx(idx);
+    setGraded(false);
+    if (correct_idxs.length == 1) {
+      setSelectedIdx([idx])
+    } else {
+      if (selectedIdxs.includes(idx)) {
+        setSelectedIdx(selectedIdxs.filter(el => el !== idx))
+      } else {
+        setSelectedIdx([...selectedIdxs, idx])
+      }
     }
   }
   const userInfo = useIdMapProperty(id);
@@ -58,8 +64,9 @@ function MCQ({ prompt, answers, solution, correct_idx, id, head_text }: MCQType)
       }
     },
   });
+  const isMatch = selectedIdxs.sort().toString() === correct_idxs.sort().toString()
   function handleCompletion() {
-    if(!userInfo?.completed && (selectedIdx === correct_idx)){
+    if(!userInfo?.completed && isMatch){
       completeProblem({
         variables: { id },
         optimisticResponse: getOptimisticCompletion(
@@ -76,7 +83,7 @@ function MCQ({ prompt, answers, solution, correct_idx, id, head_text }: MCQType)
         <div className="py-2 mt-2">
           <Markdown content={`**${head_text}** ` + prompt} />
           {graded &&
-            (selectedIdx === correct_idx ? (
+            (isMatch ? (
               <div className="bg-green-300 dark:bg-green-800 border-2 rounded-xl border-green-400 dark:border-green-700 px-2 py-1 mt-2 ">
                 <Markdown content={solution} />
               </div>
@@ -93,11 +100,11 @@ function MCQ({ prompt, answers, solution, correct_idx, id, head_text }: MCQType)
           >
             {/* text-indigo-600 */}
             <input
-              type="radio"
+              type={correct_idxs.length === 1 ? "radio" : "checkbox"}
               className="form-radio mr-4 bg-gray-300"
               value={index}
               onChange={() => changeSelection(index)}
-              checked={index === selectedIdx}
+              checked={selectedIdxs.includes(index)}
             ></input>
             <Markdown content={answer} />
           </div>
@@ -113,7 +120,12 @@ function MCQ({ prompt, answers, solution, correct_idx, id, head_text }: MCQType)
             }
           }}
         >
-          Grade Problem
+          Submit
+        </button>
+        <button 
+        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 ml-2 px-4 mt-1 rounded"
+        onClick={()=>{setGraded(true), setSelectedIdx(correct_idxs)}}>
+          Solution
         </button>
         <div className="flex ml-auto">
         {!!session && (userInfo?.completed ? <Check className="w-7 h-7 text-green-400"/> : <X className="h-7 w-7 text-red-400"/>)}
