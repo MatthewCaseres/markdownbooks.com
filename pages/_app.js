@@ -1,13 +1,9 @@
 import "../styles/globals.css";
 import "../styles/tailwind.css";
-import "katex/dist/katex.css";
 import router from "next/router";
 import { useEffect } from "react";
-import TopNav from "../components/TopNav/TopNav";
+import TopNav from "../components/TopNav";
 import { DarkProvider } from "../components/DarkToggle";
-import { ApolloClient, ApolloProvider, gql, useQuery } from "@apollo/client";
-import { useApollo, initializeApollo } from "../lib/apolloClient";
-import { Provider } from "next-auth/client";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -34,16 +30,12 @@ function MyApp({ Component, pageProps }) {
     };
   }, []);
   return (
-    <Provider session={pageProps.session}>
-      <ApolloProvider client={initializeApollo()}>
         <DarkProvider>
           <div className="dark:bg-black min-h-screen flex flex-col">
             <TopNav className="dark:bg-black shadow-lg" />
             <Component {...pageProps} />
           </div>
         </DarkProvider>
-      </ApolloProvider>
-    </Provider>
   );
 }
 

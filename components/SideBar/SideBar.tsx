@@ -3,11 +3,8 @@ import { useSideBarState, useSideBarDispatch } from "./SideBarContext";
 import RenderNode from "./RenderNode";
 import MenuIcon from "@material-ui/icons/Menu";
 import SideBarTop from "./SideBarTop";
-import SideBarFilters from "./SideBarFilters";
-import { useSession } from "next-auth/client";
 
 const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ children, ghUrl, treePath }) => {
-  const [session] = useSession()
   const sideBarDispatch = useSideBarDispatch();
   const sideBarState = useSideBarState();
   const [mdVisible, setVisible] = useState<boolean>(true);
@@ -27,11 +24,10 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
           style={{ width: width, minWidth: width }}
         >
           <SideBarTop setVisible={setVisible} ghUrl={ghUrl} />
-          {session && <SideBarFilters />}
           <div className="ml-1 border-gray-400 dark:border-gray-600 border-b border-opacity-50">
-          {sideBarState.map((node, index) => (
-            <RenderNode key={index} node={node} pagePath={treePath} />
-          ))}
+            {sideBarState.map((node, index) => (
+              <RenderNode key={index} node={node} pagePath={treePath} />
+            ))}
           </div>
         </div>
       </div>

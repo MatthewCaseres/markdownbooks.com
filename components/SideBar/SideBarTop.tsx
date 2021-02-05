@@ -1,8 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { signOut, useSession } from "next-auth/client";
-import SideBarFilters from "./SideBarFilters";
-import Link from "next/link";
-import FilterDropdown from "./FilterDropdown";
+import { Dispatch, SetStateAction} from "react";
 
 export default function SideBarTop({
   setVisible,
@@ -11,7 +7,6 @@ export default function SideBarTop({
   setVisible: Dispatch<SetStateAction<boolean>>;
   ghUrl: string;
 }) {
-  const [session, loading] = useSession();
   return (
     <div>
       <div className="flex flex-shrink-0 flex-row pt-6 pb-1 z-10 sticky top-0 select-none items-center">
@@ -20,15 +15,6 @@ export default function SideBarTop({
           <a target="_blank" rel="noopener noreferrer" href={ghUrl}>
             <img src="/github.png" className="h-5 w-5 mx-1"></img>
           </a>
-        </div>
-        <div className="border-gray-400 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-1 mx-1 rounded-lg border">
-          {session ? (
-            <button onClick={() => signOut()}>Log out</button>
-          ) : (
-            <p>
-              <a href="/api/auth/signin">Log in</a>
-            </p>
-          )}
         </div>
         <div
           onClick={() => setVisible((mdVisible) => !mdVisible)}

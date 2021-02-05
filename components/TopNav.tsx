@@ -1,5 +1,5 @@
-import DarkToggle from "../DarkToggle";
-import Logo from "../logo/Logo";
+import DarkToggle from "./DarkToggle";
+import Logo from "./logo/Logo";
 
 export default function TopNav() {
   return (
