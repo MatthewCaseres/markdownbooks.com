@@ -20,12 +20,10 @@ const headersFunction: UserFunction = (node: any, { mdast }) => {
 }
 
 (async () => {
-  const mdxDocsTree = await summaryToUrlTree({
-    url: "https://github.com/Open-EdTech/mdxbook/blob/main/DOCS/DOCS.md",
-    localPath: "/Users/matthewcaseres/Documents/GitHub/mdxbook/DOCS/DOCS.md",
-    userFunction: headersFunction
+  const tsTree = await summaryToUrlTree({
+    url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md"
   })
-  fs.writeFileSync('bookConfig.json', JSON.stringify([mdxDocsTree]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([tsTree]))
 })();
 
 
