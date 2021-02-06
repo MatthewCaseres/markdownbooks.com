@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction} from "react";
+import Link from 'next/link'
 
 export default function SideBarTop({
   setVisible,
@@ -16,6 +17,11 @@ export default function SideBarTop({
             <img src="/github.png" className="h-5 w-5 mx-1"></img>
           </a>
         </div>
+        <Link href="/">
+          <a className="mx-2">
+          <Home />
+          </a>
+        </Link>
         <div
           onClick={() => setVisible((mdVisible) => !mdVisible)}
           className="cursor-pointer"
@@ -33,7 +39,7 @@ function Home() {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      className="w-6 h-6 text-gray-800 dark:text-gray-400 mx-2"
+      className="w-6 h-6 text-gray-600 dark:text-gray-400 mx-2"
       stroke="currentColor"
     >
       <path

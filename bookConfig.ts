@@ -1,9 +1,10 @@
-import { summaryToUrlTree, UserFunction } from "mdxbook";
+import { summaryToUrlTree, UserFunction } from "github-books";
 import GithubSlugger from 'github-slugger'
 import visit from 'unist-util-visit'
 import fs from 'fs'
 
-const headersFunction: UserFunction = (node: any, { mdast }) => {
+//Use this in the userFunction property of your configuration (if files not have file children)
+const headersFunction: UserFunction = (node, { mdast }) => {
   const routePrefix = node.route;
   var slugger = new GithubSlugger();
   const headers: any[] = []

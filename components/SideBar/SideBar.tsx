@@ -10,7 +10,7 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
   const [mdVisible, setVisible] = useState<boolean>(true);
   const width = 260;
   useEffect(()=> {
-    sideBarDispatch({type: 'open', path: treePath.slice(treePath.length - 1)})
+    sideBarDispatch({type: 'open', path: treePath})
   }, [treePath])
   return (
     <div className=" min-h-screen flex justify-center bg-blue-50 dark:bg-black">
@@ -42,7 +42,7 @@ const SideBar: React.FC<{ ghUrl: string, treePath: readonly number[] }> = ({ chi
           <MenuIcon className="dark:text-gray-400 text-gray-500" />
         </div>
       </div>
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 px-2">{children}</div>
       </div>
     </div>
   );
