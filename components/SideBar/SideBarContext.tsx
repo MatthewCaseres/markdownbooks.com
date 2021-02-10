@@ -7,7 +7,7 @@ import {
   Dispatch,
 } from "react";
 import produce, { Draft } from "immer";
-import { UrlNode } from "next-mdx-books";
+import { UrlNode } from "github-books";
 export type UserInfo = { completed: boolean; flagged: number };
 export type IdMap = Partial<Record<string, UserInfo>>;
 export type StatefulNode = Readonly<Omit<UrlNode, "children" | "treePath">> &

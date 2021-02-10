@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction} from "react";
-import Link from 'next/link'
+import { Dispatch, SetStateAction } from "react";
+import Link from "next/link";
 
 export default function SideBarTop({
   setVisible,
@@ -11,15 +11,15 @@ export default function SideBarTop({
   return (
     <div>
       <div className="flex flex-shrink-0 flex-row pt-6 pb-1 z-10 sticky top-0 select-none items-center">
-        <div className="border-gray-400 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 flex items-center pl-1 border rounded-lg">
-          <div className="">Edit</div>
-          <a target="_blank" rel="noopener noreferrer" href={ghUrl}>
+        <a target="_blank" rel="noopener noreferrer" href={ghUrl}>
+          <div className="border-gray-400 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 flex items-center pl-1 border rounded-lg">
+            <div className="">Edit</div>
             <img src="/github.png" className="h-5 w-5 mx-1"></img>
-          </a>
-        </div>
+          </div>
+        </a>
         <Link href="/">
           <a className="mx-2">
-          <Home />
+            <Home />
           </a>
         </Link>
         <div

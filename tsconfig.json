@@ -23,6 +23,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "book/config.js", "pages/api/auth/[...nextauth].js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "book/config.js", "pages/api/auth/[...nextauth].js", "pages/index.js", "bookConfig.js"],
   "exclude": ["node_modules"]
 }

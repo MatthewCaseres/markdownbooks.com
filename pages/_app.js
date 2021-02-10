@@ -12,13 +12,13 @@ function MyApp({ Component, pageProps }) {
         if (url.includes("#")) {
           router.push(router.asPath);
         } else {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, 78);
         }
       }, 300);
     };
     const handleHashChange = (url) => {
       if (!url.includes("#")) {
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 78);
       }
     };
     router.events.on("routeChangeComplete", handleRouteChange);
