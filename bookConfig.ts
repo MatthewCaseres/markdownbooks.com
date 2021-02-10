@@ -20,9 +20,8 @@ const headersFunction: UserFunction = (node: any, { mdast, frontMatter}) => {
 }
 
 (async () => {
-  const fpTree = await summaryToUrlTree({
-    url: "https://github.com/Open-EdTech/library/blob/main/JavaScript-Functional-Programming.md",
-    userFunction: headersFunction
+  const s3Tree = await summaryToUrlTree({
+    url: "https://github.com/MatthewCaseres/aws-docs-configs/blob/main/configs/amazon-s3-getting-started-guide.md",
   })
   const tsTree = await summaryToUrlTree({
     url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md"
@@ -35,7 +34,7 @@ const headersFunction: UserFunction = (node: any, { mdast, frontMatter}) => {
     url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
     userFunction: headersFunction
   })
-  fs.writeFileSync('bookConfig.json', JSON.stringify([bibleTree, osTree, tsTree, fpTree]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([s3Tree, bibleTree, osTree, tsTree]))
 })();
 
 

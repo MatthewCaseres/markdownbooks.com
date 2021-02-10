@@ -59,16 +59,16 @@ export default function Index() {
             </a>
           </li>
           <li>
-            <Link href="MostlyAdequate/mostly-adequate-guide/ch01.md">
-              <a>Functional Programming</a>
+            <Link href="awsdocs/amazon-s3-getting-started-guide/doc_source/GetStartedWithS3.md">
+              <a>Getting Started with Amazon S3</a>
             </Link>
-            {` , also hosted `}
+            {`, `}
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://mostly-adequate.gitbook.io/mostly-adequate-guide/"
+              href="https://github.com/awsdocs/amazon-s3-getting-started-guide"
             >
-              as a legacy GitBook
+               by AWS.
             </a>
           </li>
         </ul>

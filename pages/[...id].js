@@ -38,7 +38,6 @@ export const getStaticProps = async ({ params }) => {
   const urlTree = bookConfig[nodeIndex];
   const source = await getMdSource(flatNode);
   const { content } = matter(source);
-  console.log(prevNext);
   const mdxSource = await renderToString(content, {
     mdxOptions: {
       remarkPlugins: [slug],
