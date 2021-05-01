@@ -38,7 +38,7 @@ export default function DarkToggle() {
   }, [isDarkMode]);
   return (
     <div className="flex flex-col justify-center">
-      <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={80} />
+      <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={60} />
     </div>
   );
 }
