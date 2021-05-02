@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/tailwind.css";
+import 'instantsearch.css/themes/satellite.css';
 import router from "next/router";
 import { useEffect } from "react";
 import TopNav from "../components/TopNav";
@@ -12,13 +13,13 @@ function MyApp({ Component, pageProps }) {
         if (url.includes("#")) {
           router.push(router.asPath);
         } else {
-          window.scrollTo(0, 78);
+          window.scrollTo(0, 0);
         }
       }, 300);
     };
     const handleHashChange = (url) => {
       if (!url.includes("#")) {
-        window.scrollTo(0, 78);
+        window.scrollTo(0, 0);
       }
     };
     router.events.on("routeChangeComplete", handleRouteChange);
