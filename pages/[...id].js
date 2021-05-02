@@ -5,9 +5,10 @@ import renderToString from "next-mdx-remote/render-to-string";
 import Link from "next/link";
 import hydrate from "next-mdx-remote/hydrate";
 import bookConfig from "../bookConfig.json";
+import bookPageHeadings from '../bookPageHeadings.json'
 import matter from "gray-matter";
 import slug from "remark-slug";
-import visit from "unist-util-visit";
+
 
 const getProvider = (urlTree) => ({
   component: (props) => (
@@ -15,12 +16,12 @@ const getProvider = (urlTree) => ({
   ),
 });
 
-function Post({ urlTree, mdxSource, ghUrl, treePath, prevNext }) {
+function Post({ urlTree, mdxSource, ghUrl, treePath, prevNext, headings }) {
   const content = hydrate(mdxSource, { provider: getProvider(urlTree) });
   return (
-    <SideBarProvider treePath={treePath} config={urlTree.children}>
-      <SideBar ghUrl={ghUrl} treePath={treePath}>
-        <div className="max-w-2xl my-5 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl ml-auto">
+    <SideBarProvider config={urlTree.children}>
+      <SideBar ghUrl={ghUrl} treePath={treePath} headings={headings}>
+        <div className="my-5 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl max-w-2xl">
           <div className="prose dark:prose-dark">{content}</div>
           <Cards prevNext={prevNext} />
         </div>
@@ -33,7 +34,10 @@ export const getStaticProps = async ({ params }) => {
   const allRoutesInfo = getAllRoutesInfo(bookConfig);
   const stringRoute = params.id.join("/");
   const flatNode = allRoutesInfo[stringRoute];
-  const { index: nodeIndex, ghUrl, treePath, prev, next } = flatNode;
+  const { index: nodeIndex, ghUrl, treePath, prev, next, route} = flatNode;
+
+  const headings = bookPageHeadings[route]
+
   const prevNext = { prev: prev ?? null, next: next ?? null };
   const urlTree = bookConfig[nodeIndex];
   const source = await getMdSource(flatNode);
@@ -45,7 +49,7 @@ export const getStaticProps = async ({ params }) => {
     provider: getProvider(urlTree),
   });
   return {
-    props: { urlTree, mdxSource, ghUrl, treePath, prevNext }, // will be passed to the page component as props
+    props: { urlTree, mdxSource, ghUrl, treePath, prevNext, headings }, // will be passed to the page component as props
   };
 };
 

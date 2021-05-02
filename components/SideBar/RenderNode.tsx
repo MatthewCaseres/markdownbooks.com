@@ -12,10 +12,10 @@ const RenderNode = ({
     <div>
       <Node node={node} pagePath={pagePath}/>
       {node.children && node.open && (
-        <div className="border-l border-gray-400 dark:border-gray-600 border-opacity-50"
-          style={{
-            margin: "2px 0px 2px 12px",
-          }}
+        <div className="ml-4"
+          // style={{
+          //   margin: "2px 0px 2px 12px",
+          // }}
         >
           {node.children.map((nodeChild, index) => {
             return (

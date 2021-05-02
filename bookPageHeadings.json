@@ -1,0 +1,1300 @@
+{
+  "basarat/typescript-book/docs/getting-started.md": [
+    { "depth": 2, "title": "TypeScript Version", "slug": "typescript-version" },
+    {
+      "depth": 2,
+      "title": "Getting the Source Code",
+      "slug": "getting-the-source-code"
+    }
+  ],
+  "basarat/typescript-book/docs/why-typescript.md": [
+    {
+      "depth": 2,
+      "title": "The TypeScript type system",
+      "slug": "the-typescript-type-system"
+    },
+    {
+      "depth": 3,
+      "title": "Your JavaScript is TypeScript",
+      "slug": "your-javascript-is-typescript"
+    },
+    {
+      "depth": 3,
+      "title": "Types can be Implicit",
+      "slug": "types-can-be-implicit"
+    },
+    {
+      "depth": 3,
+      "title": "Types can be Explicit",
+      "slug": "types-can-be-explicit"
+    },
+    {
+      "depth": 3,
+      "title": "Types are structural",
+      "slug": "types-are-structural"
+    },
+    {
+      "depth": 3,
+      "title": "Type errors do not prevent JavaScript emit",
+      "slug": "type-errors-do-not-prevent-javascript-emit"
+    },
+    {
+      "depth": 3,
+      "title": "Types can be ambient",
+      "slug": "types-can-be-ambient"
+    },
+    {
+      "depth": 2,
+      "title": "Future JavaScript => Now",
+      "slug": "future-javascript--now"
+    },
+    { "depth": 3, "title": "Summary", "slug": "summary" }
+  ],
+  "basarat/typescript-book/docs/javascript/recap.md": [
+    {
+      "depth": 2,
+      "title": "Making JavaScript Better",
+      "slug": "making-javascript-better"
+    },
+    {
+      "depth": 2,
+      "title": "You still need to learn JavaScript",
+      "slug": "you-still-need-to-learn-javascript"
+    }
+  ],
+  "basarat/typescript-book/docs/javascript/equality.md": [
+    { "depth": 2, "title": "Equality", "slug": "equality" },
+    {
+      "depth": 2,
+      "title": "Structural Equality",
+      "slug": "structural-equality"
+    }
+  ],
+  "basarat/typescript-book/docs/javascript/references.md": [
+    { "depth": 2, "title": "References", "slug": "references" },
+    {
+      "depth": 3,
+      "title": "Mutations are across all references",
+      "slug": "mutations-are-across-all-references"
+    },
+    {
+      "depth": 3,
+      "title": "Equality is for references",
+      "slug": "equality-is-for-references"
+    }
+  ],
+  "basarat/typescript-book/docs/javascript/null-undefined.md": [
+    { "depth": 2, "title": "Null and Undefined", "slug": "null-and-undefined" },
+    {
+      "depth": 3,
+      "title": "Checking for either",
+      "slug": "checking-for-either"
+    },
+    {
+      "depth": 3,
+      "title": "Checking for root level undefined",
+      "slug": "checking-for-root-level-undefined"
+    },
+    {
+      "depth": 3,
+      "title": "Limit explicit use of ",
+      "slug": "limit-explicit-use-of"
+    },
+    {
+      "depth": 3,
+      "title": "Node style callbacks",
+      "slug": "node-style-callbacks"
+    },
+    { "depth": 3, "title": "Don't use ", "slug": "dont-use" },
+    {
+      "depth": 3,
+      "title": "JSON and serialization",
+      "slug": "json-and-serialization"
+    },
+    { "depth": 3, "title": "Final thoughts", "slug": "final-thoughts" }
+  ],
+  "basarat/typescript-book/docs/javascript/this.md": [
+    { "depth": 2, "title": "this", "slug": "this" }
+  ],
+  "basarat/typescript-book/docs/javascript/closure.md": [
+    { "depth": 2, "title": "Closure", "slug": "closure" },
+    {
+      "depth": 3,
+      "title": "Reason why it's awesome",
+      "slug": "reason-why-its-awesome"
+    }
+  ],
+  "basarat/typescript-book/docs/javascript/number.md": [
+    { "depth": 2, "title": "Number", "slug": "number" },
+    { "depth": 3, "title": "Core Type", "slug": "core-type" },
+    { "depth": 3, "title": "Decimal", "slug": "decimal" },
+    { "depth": 3, "title": "Integer", "slug": "integer" },
+    { "depth": 3, "title": "big.js", "slug": "bigjs" },
+    { "depth": 3, "title": "NaN", "slug": "nan" },
+    { "depth": 3, "title": "Infinity", "slug": "infinity" },
+    { "depth": 3, "title": "Infinitesimal", "slug": "infinitesimal" }
+  ],
+  "basarat/typescript-book/docs/javascript/truthy.md": [
+    { "depth": 2, "title": "Truthy", "slug": "truthy" },
+    { "depth": 3, "title": "Being explicit", "slug": "being-explicit" }
+  ],
+  "basarat/typescript-book/docs/future-javascript.md": [],
+  "basarat/typescript-book/docs/classes.md": [
+    { "depth": 3, "title": "Classes", "slug": "classes" },
+    { "depth": 3, "title": "Inheritance", "slug": "inheritance" },
+    { "depth": 3, "title": "Statics", "slug": "statics" },
+    { "depth": 3, "title": "Access Modifiers", "slug": "access-modifiers" },
+    { "depth": 3, "title": "Abstract", "slug": "abstract" },
+    {
+      "depth": 3,
+      "title": "Constructor is optional",
+      "slug": "constructor-is-optional"
+    },
+    {
+      "depth": 3,
+      "title": "Define using constructor",
+      "slug": "define-using-constructor"
+    },
+    {
+      "depth": 3,
+      "title": "Property initializer",
+      "slug": "property-initializer"
+    }
+  ],
+  "basarat/typescript-book/docs/classes-emit.md": [
+    { "depth": 3, "title": "__extends", "slug": "__extends" }
+  ],
+  "basarat/typescript-book/docs/arrow-functions.md": [
+    { "depth": 3, "title": "Arrow Functions", "slug": "arrow-functions" },
+    {
+      "depth": 3,
+      "title": "Tip: Quick object return",
+      "slug": "tip-quick-object-return"
+    }
+  ],
+  "basarat/typescript-book/docs/rest-parameters.md": [
+    { "depth": 3, "title": "Rest Parameters", "slug": "rest-parameters" }
+  ],
+  "basarat/typescript-book/docs/let.md": [
+    { "depth": 3, "title": "let", "slug": "let" }
+  ],
+  "basarat/typescript-book/docs/const.md": [
+    { "depth": 3, "title": "const", "slug": "const" }
+  ],
+  "basarat/typescript-book/docs/destructuring.md": [
+    { "depth": 3, "title": "Destructuring", "slug": "destructuring" }
+  ],
+  "basarat/typescript-book/docs/spread-operator.md": [
+    { "depth": 3, "title": "Spread Operator", "slug": "spread-operator" }
+  ],
+  "basarat/typescript-book/docs/for...of.md": [
+    { "depth": 3, "title": "for...of", "slug": "forof" }
+  ],
+  "basarat/typescript-book/docs/iterators.md": [
+    { "depth": 3, "title": "Iterators", "slug": "iterators" }
+  ],
+  "basarat/typescript-book/docs/template-strings.md": [
+    {
+      "depth": 3,
+      "title": "Template Literals (Template Strings)",
+      "slug": "template-literals-template-strings"
+    }
+  ],
+  "basarat/typescript-book/docs/promise.md": [
+    { "depth": 2, "title": "Promise", "slug": "promise" },
+    {
+      "depth": 3,
+      "title": "Callback style code",
+      "slug": "callback-style-code"
+    },
+    { "depth": 2, "title": "Creating a Promise", "slug": "creating-a-promise" },
+    {
+      "depth": 3,
+      "title": "Subscribing to the fate of the promise",
+      "slug": "subscribing-to-the-fate-of-the-promise"
+    },
+    {
+      "depth": 3,
+      "title": "Chain-ability of Promises",
+      "slug": "chain-ability-of-promises"
+    },
+    {
+      "depth": 3,
+      "title": "TypeScript and promises",
+      "slug": "typescript-and-promises"
+    },
+    {
+      "depth": 3,
+      "title": "Converting a callback style function to return a promise",
+      "slug": "converting-a-callback-style-function-to-return-a-promise"
+    },
+    {
+      "depth": 3,
+      "title": "Revisiting the JSON example",
+      "slug": "revisiting-the-json-example"
+    },
+    {
+      "depth": 3,
+      "title": "Parallel control flow",
+      "slug": "parallel-control-flow"
+    }
+  ],
+  "basarat/typescript-book/docs/generators.md": [
+    { "depth": 2, "title": "Generators", "slug": "generators" },
+    { "depth": 3, "title": "Lazy Iterators", "slug": "lazy-iterators" },
+    {
+      "depth": 3,
+      "title": "Externally Controlled Execution",
+      "slug": "externally-controlled-execution"
+    }
+  ],
+  "basarat/typescript-book/docs/async-await.md": [
+    { "depth": 2, "title": "Async Await", "slug": "async-await" },
+    {
+      "depth": 3,
+      "title": "Generated JavaScript",
+      "slug": "generated-javascript"
+    },
+    {
+      "depth": 3,
+      "title": "Async Await Support in TypeScript",
+      "slug": "async-await-support-in-typescript"
+    }
+  ],
+  "basarat/typescript-book/docs/project/project.md": [],
+  "basarat/typescript-book/docs/project/compilation-context.md": [
+    {
+      "depth": 2,
+      "title": "Compilation Context",
+      "slug": "compilation-context"
+    }
+  ],
+  "basarat/typescript-book/docs/project/tsconfig.md": [
+    { "depth": 3, "title": "Basic", "slug": "basic" },
+    { "depth": 3, "title": "compilerOptions", "slug": "compileroptions" },
+    {
+      "depth": 3,
+      "title": "TypeScript compiler",
+      "slug": "typescript-compiler"
+    }
+  ],
+  "basarat/typescript-book/docs/project/files.md": [
+    { "depth": 2, "title": "Which files?", "slug": "which-files" },
+    { "depth": 3, "title": "Globs", "slug": "globs" },
+    { "depth": 3, "title": "files", "slug": "files" }
+  ],
+  "basarat/typescript-book/docs/project/declarationspaces.md": [
+    { "depth": 2, "title": "Declaration Spaces", "slug": "declaration-spaces" },
+    {
+      "depth": 3,
+      "title": "Type Declaration Space",
+      "slug": "type-declaration-space"
+    },
+    {
+      "depth": 3,
+      "title": "Variable Declaration Space",
+      "slug": "variable-declaration-space"
+    }
+  ],
+  "basarat/typescript-book/docs/project/modules.md": [
+    { "depth": 2, "title": "Modules", "slug": "modules" },
+    { "depth": 3, "title": "Global Module", "slug": "global-module" },
+    { "depth": 3, "title": "File Module", "slug": "file-module" }
+  ],
+  "basarat/typescript-book/docs/project/external-modules.md": [
+    { "depth": 2, "title": "External modules", "slug": "external-modules" },
+    {
+      "depth": 3,
+      "title": "Clarification: commonjs, amd, es modules, others",
+      "slug": "clarification-commonjs-amd-es-modules-others"
+    },
+    { "depth": 3, "title": "ES Module syntax", "slug": "es-module-syntax" },
+    {
+      "depth": 3,
+      "title": "Default exports/imports",
+      "slug": "default-exportsimports"
+    },
+    { "depth": 3, "title": "Module paths", "slug": "module-paths" },
+    { "depth": 3, "title": "What is ", "slug": "what-is" },
+    {
+      "depth": 3,
+      "title": "Overturning dynamic lookup ",
+      "slug": "overturning-dynamic-lookup"
+    },
+    { "depth": 3, "title": "import/require", "slug": "importrequire" },
+    {
+      "depth": 3,
+      "title": "Use case: Lazy loading",
+      "slug": "use-case-lazy-loading"
+    },
+    {
+      "depth": 3,
+      "title": "Use case: Breaking Circular dependencies",
+      "slug": "use-case-breaking-circular-dependencies"
+    },
+    {
+      "depth": 3,
+      "title": "Use case: Ensure Import",
+      "slug": "use-case-ensure-import"
+    }
+  ],
+  "basarat/typescript-book/docs/project/globals.md": [],
+  "basarat/typescript-book/docs/project/namespaces.md": [
+    { "depth": 2, "title": "Namespaces", "slug": "namespaces" }
+  ],
+  "basarat/typescript-book/docs/project/dynamic-import-expressions.md": [
+    {
+      "depth": 2,
+      "title": "Dynamic import expressions",
+      "slug": "dynamic-import-expressions"
+    }
+  ],
+  "basarat/typescript-book/docs/quick/nodejs.md": [
+    {
+      "depth": 2,
+      "title": "Bonus: Live compile + run",
+      "slug": "bonus-live-compile--run"
+    },
+    { "depth": 2, "title": "Bonus points", "slug": "bonus-points" }
+  ],
+  "basarat/typescript-book/docs/quick/browser.md": [
+    {
+      "depth": 2,
+      "title": "General Machine Setup",
+      "slug": "general-machine-setup"
+    },
+    {
+      "depth": 2,
+      "title": "Project Setup Quick",
+      "slug": "project-setup-quick"
+    },
+    {
+      "depth": 2,
+      "title": "Project Setup Detailed",
+      "slug": "project-setup-detailed"
+    }
+  ],
+  "basarat/typescript-book/docs/quick/library.md": [
+    {
+      "depth": 3,
+      "title": "Managing Dependencies",
+      "slug": "managing-dependencies"
+    }
+  ],
+  "basarat/typescript-book/docs/types/type-system.md": [
+    { "depth": 2, "title": "Basic Annotations", "slug": "basic-annotations" },
+    { "depth": 3, "title": "Primitive Types", "slug": "primitive-types" },
+    { "depth": 3, "title": "Arrays", "slug": "arrays" },
+    { "depth": 3, "title": "Interfaces", "slug": "interfaces" },
+    {
+      "depth": 3,
+      "title": "Inline Type Annotation",
+      "slug": "inline-type-annotation"
+    },
+    { "depth": 2, "title": "Special Types", "slug": "special-types" },
+    { "depth": 3, "title": "any", "slug": "any" },
+    { "depth": 3, "title": "null", "slug": "null" },
+    { "depth": 3, "title": ":void", "slug": "void" },
+    { "depth": 2, "title": "Generics", "slug": "generics" },
+    { "depth": 2, "title": "Union Type", "slug": "union-type" },
+    { "depth": 2, "title": "Intersection Type", "slug": "intersection-type" },
+    { "depth": 2, "title": "Tuple Type", "slug": "tuple-type" },
+    { "depth": 2, "title": "Type Alias", "slug": "type-alias" },
+    { "depth": 2, "title": "Summary", "slug": "summary" }
+  ],
+  "basarat/typescript-book/docs/types/migrating.md": [
+    {
+      "depth": 2,
+      "title": "Migrating From JavaScript",
+      "slug": "migrating-from-javascript"
+    },
+    { "depth": 3, "title": "Suppressing Errors", "slug": "suppressing-errors" },
+    {
+      "depth": 3,
+      "title": "Third Party JavaScript",
+      "slug": "third-party-javascript"
+    }
+  ],
+  "basarat/typescript-book/docs/types/@types.md": [
+    { "depth": 2, "title": "Using ", "slug": "using" },
+    { "depth": 3, "title": "Global ", "slug": "global" },
+    { "depth": 3, "title": "Module ", "slug": "module" },
+    {
+      "depth": 2,
+      "title": "Controlling Globals",
+      "slug": "controlling-globals"
+    }
+  ],
+  "basarat/typescript-book/docs/types/ambient/intro.md": [
+    {
+      "depth": 2,
+      "title": "Ambient Declarations",
+      "slug": "ambient-declarations"
+    }
+  ],
+  "basarat/typescript-book/docs/types/ambient/d.ts.md": [
+    { "depth": 3, "title": "Declaration file", "slug": "declaration-file" }
+  ],
+  "basarat/typescript-book/docs/types/ambient/variables.md": [
+    { "depth": 3, "title": "Variables", "slug": "variables" }
+  ],
+  "basarat/typescript-book/docs/types/interfaces.md": [
+    { "depth": 2, "title": "Interfaces", "slug": "interfaces" },
+    {
+      "depth": 2,
+      "title": "Classes can implement interfaces",
+      "slug": "classes-can-implement-interfaces"
+    },
+    { "depth": 2, "title": "TIPs", "slug": "tips" },
+    {
+      "depth": 3,
+      "title": "Not every interface is implementable easily",
+      "slug": "not-every-interface-is-implementable-easily"
+    }
+  ],
+  "basarat/typescript-book/docs/enums.md": [
+    { "depth": 3, "title": "Enums", "slug": "enums" },
+    {
+      "depth": 3,
+      "title": "Enum with static functions",
+      "slug": "enum-with-static-functions"
+    }
+  ],
+  "basarat/typescript-book/docs/types/lib.d.ts.md": [
+    { "depth": 2, "title": "lib.d.ts", "slug": "libdts" },
+    { "depth": 3, "title": "Example Usage", "slug": "example-usage" },
+    { "depth": 3, "title": "lib.d.ts", "slug": "libdts-1" },
+    {
+      "depth": 3,
+      "title": "Modifying Native Types",
+      "slug": "modifying-native-types"
+    },
+    { "depth": 3, "title": "Example ", "slug": "example" },
+    {
+      "depth": 3,
+      "title": "Using your own custom lib.d.ts",
+      "slug": "using-your-own-custom-libdts"
+    },
+    {
+      "depth": 3,
+      "title": "Compiler target effect on ",
+      "slug": "compiler-target-effect-on"
+    },
+    { "depth": 3, "title": "lib option", "slug": "lib-option" },
+    {
+      "depth": 2,
+      "title": "Polyfill for old JavaScript engines",
+      "slug": "polyfill-for-old-javascript-engines"
+    }
+  ],
+  "basarat/typescript-book/docs/types/functions.md": [
+    { "depth": 2, "title": "Functions", "slug": "functions" },
+    {
+      "depth": 3,
+      "title": "Parameter annotations",
+      "slug": "parameter-annotations"
+    },
+    {
+      "depth": 3,
+      "title": "Return type annotation",
+      "slug": "return-type-annotation"
+    },
+    {
+      "depth": 3,
+      "title": "Optional Parameters",
+      "slug": "optional-parameters"
+    },
+    { "depth": 3, "title": "Overloading", "slug": "overloading" },
+    {
+      "depth": 3,
+      "title": "Declaring Functions",
+      "slug": "declaring-functions"
+    }
+  ],
+  "basarat/typescript-book/docs/types/callable.md": [
+    { "depth": 2, "title": "Callable", "slug": "callable" },
+    { "depth": 3, "title": "Obvious examples", "slug": "obvious-examples" },
+    { "depth": 3, "title": "Arrow Syntax", "slug": "arrow-syntax" },
+    { "depth": 3, "title": "Newable", "slug": "newable" }
+  ],
+  "basarat/typescript-book/docs/types/type-assertion.md": [
+    { "depth": 2, "title": "Type Assertion", "slug": "type-assertion" },
+    { "depth": 3, "title": "as foo", "slug": "as-foo" },
+    {
+      "depth": 3,
+      "title": "Type Assertion vs. Casting",
+      "slug": "type-assertion-vs-casting"
+    },
+    {
+      "depth": 3,
+      "title": "Assertion considered harmful",
+      "slug": "assertion-considered-harmful"
+    },
+    { "depth": 3, "title": "Double assertion", "slug": "double-assertion" }
+  ],
+  "basarat/typescript-book/docs/types/freshness.md": [
+    { "depth": 2, "title": "Freshness", "slug": "freshness" },
+    {
+      "depth": 3,
+      "title": "Allowing extra properties",
+      "slug": "allowing-extra-properties"
+    },
+    {
+      "depth": 3,
+      "title": "Use Case: React State",
+      "slug": "use-case-react-state"
+    }
+  ],
+  "basarat/typescript-book/docs/types/typeGuard.md": [
+    { "depth": 2, "title": "Type Guard", "slug": "type-guard" },
+    { "depth": 3, "title": "typeof", "slug": "typeof" },
+    { "depth": 3, "title": "instanceof", "slug": "instanceof" },
+    { "depth": 3, "title": "in", "slug": "in" },
+    { "depth": 3, "title": "Literal Type Guard", "slug": "literal-type-guard" },
+    {
+      "depth": 3,
+      "title": "null and undefined with ",
+      "slug": "null-and-undefined-with"
+    },
+    {
+      "depth": 3,
+      "title": "User Defined Type Guards",
+      "slug": "user-defined-type-guards"
+    },
+    {
+      "depth": 3,
+      "title": "Type Guards and callbacks",
+      "slug": "type-guards-and-callbacks"
+    }
+  ],
+  "basarat/typescript-book/docs/types/literal-types.md": [
+    { "depth": 2, "title": "Literals", "slug": "literals" },
+    { "depth": 3, "title": "String Literals", "slug": "string-literals" },
+    {
+      "depth": 3,
+      "title": "Other literal types",
+      "slug": "other-literal-types"
+    },
+    { "depth": 3, "title": "Inference", "slug": "inference" },
+    { "depth": 3, "title": "Use cases", "slug": "use-cases" }
+  ],
+  "basarat/typescript-book/docs/types/readonly.md": [
+    { "depth": 2, "title": "readonly", "slug": "readonly" },
+    { "depth": 2, "title": "Readonly", "slug": "readonly-1" },
+    { "depth": 3, "title": "Various Use Cases", "slug": "various-use-cases" },
+    { "depth": 3, "title": "Difference from ", "slug": "difference-from" }
+  ],
+  "basarat/typescript-book/docs/types/generics.md": [
+    { "depth": 2, "title": "Generics", "slug": "generics" },
+    {
+      "depth": 2,
+      "title": "Motivation and samples",
+      "slug": "motivation-and-samples"
+    },
+    {
+      "depth": 3,
+      "title": "Design Pattern: Convenience generic",
+      "slug": "design-pattern-convenience-generic"
+    }
+  ],
+  "basarat/typescript-book/docs/types/type-inference.md": [
+    {
+      "depth": 2,
+      "title": "Variable Definition",
+      "slug": "variable-definition"
+    },
+    {
+      "depth": 2,
+      "title": "Function Return Types",
+      "slug": "function-return-types"
+    },
+    { "depth": 2, "title": "Assignment", "slug": "assignment" },
+    { "depth": 2, "title": "Structuring", "slug": "structuring" },
+    { "depth": 2, "title": "Destructuring", "slug": "destructuring" },
+    { "depth": 2, "title": "Type Guards", "slug": "type-guards" },
+    { "depth": 2, "title": "Warnings", "slug": "warnings" },
+    {
+      "depth": 3,
+      "title": "Be careful around parameters",
+      "slug": "be-careful-around-parameters"
+    },
+    {
+      "depth": 3,
+      "title": "Be careful around return",
+      "slug": "be-careful-around-return"
+    },
+    { "depth": 2, "title": "noImplicitAny", "slug": "noimplicitany" }
+  ],
+  "basarat/typescript-book/docs/types/type-compatibility.md": [
+    { "depth": 2, "title": "Type Compatibility", "slug": "type-compatibility" },
+    { "depth": 2, "title": "Soundness", "slug": "soundness" },
+    { "depth": 2, "title": "Structural", "slug": "structural" },
+    { "depth": 2, "title": "Variance", "slug": "variance" },
+    { "depth": 2, "title": "Functions", "slug": "functions" },
+    { "depth": 3, "title": "Return Type", "slug": "return-type" },
+    {
+      "depth": 3,
+      "title": "Number of arguments",
+      "slug": "number-of-arguments"
+    },
+    {
+      "depth": 3,
+      "title": "Optional and Rest Parameters",
+      "slug": "optional-and-rest-parameters"
+    },
+    { "depth": 3, "title": "Types of arguments", "slug": "types-of-arguments" },
+    { "depth": 2, "title": "Enums", "slug": "enums" },
+    { "depth": 2, "title": "Classes", "slug": "classes" },
+    { "depth": 2, "title": "Generics", "slug": "generics" },
+    {
+      "depth": 2,
+      "title": "FootNote: Invariance",
+      "slug": "footnote-invariance"
+    }
+  ],
+  "basarat/typescript-book/docs/types/never.md": [],
+  "basarat/typescript-book/docs/types/discriminated-unions.md": [
+    {
+      "depth": 3,
+      "title": "Discriminated Union",
+      "slug": "discriminated-union"
+    },
+    { "depth": 3, "title": "Exhaustive Checks", "slug": "exhaustive-checks" },
+    { "depth": 3, "title": "Switch", "slug": "switch" },
+    { "depth": 3, "title": "strictNullChecks", "slug": "strictnullchecks" },
+    {
+      "depth": 3,
+      "title": "Throw in exhaustive checks",
+      "slug": "throw-in-exhaustive-checks"
+    },
+    {
+      "depth": 3,
+      "title": "Retrospective Versioning",
+      "slug": "retrospective-versioning"
+    },
+    { "depth": 3, "title": "Redux", "slug": "redux" }
+  ],
+  "basarat/typescript-book/docs/types/index-signatures.md": [
+    {
+      "depth": 2,
+      "title": "TypeScript Index Signature",
+      "slug": "typescript-index-signature"
+    },
+    {
+      "depth": 3,
+      "title": "Declaring an index signature",
+      "slug": "declaring-an-index-signature"
+    },
+    {
+      "depth": 3,
+      "title": "All members must conform to the ",
+      "slug": "all-members-must-conform-to-the"
+    },
+    {
+      "depth": 3,
+      "title": "Using a limited set of string literals",
+      "slug": "using-a-limited-set-of-string-literals"
+    },
+    { "depth": 3, "title": "Having both ", "slug": "having-both" },
+    {
+      "depth": 3,
+      "title": "Design Pattern: Nested index signature",
+      "slug": "design-pattern-nested-index-signature"
+    },
+    {
+      "depth": 3,
+      "title": "Excluding certain properties from the index signature",
+      "slug": "excluding-certain-properties-from-the-index-signature"
+    }
+  ],
+  "basarat/typescript-book/docs/types/moving-types.md": [
+    {
+      "depth": 2,
+      "title": "Copying both the Type + Value",
+      "slug": "copying-both-the-type--value"
+    },
+    {
+      "depth": 2,
+      "title": "Capturing the type of a variable",
+      "slug": "capturing-the-type-of-a-variable"
+    },
+    {
+      "depth": 2,
+      "title": "Capturing the type of a class member",
+      "slug": "capturing-the-type-of-a-class-member"
+    },
+    {
+      "depth": 2,
+      "title": "Capturing the type of magic strings",
+      "slug": "capturing-the-type-of-magic-strings"
+    },
+    {
+      "depth": 2,
+      "title": "Capturing Key Names",
+      "slug": "capturing-key-names"
+    }
+  ],
+  "basarat/typescript-book/docs/types/exceptions.md": [
+    { "depth": 2, "title": "Error Sub Types", "slug": "error-sub-types" },
+    { "depth": 3, "title": "RangeError", "slug": "rangeerror" },
+    { "depth": 3, "title": "ReferenceError", "slug": "referenceerror" },
+    { "depth": 3, "title": "SyntaxError", "slug": "syntaxerror" },
+    { "depth": 3, "title": "TypeError", "slug": "typeerror" },
+    { "depth": 3, "title": "URIError", "slug": "urierror" },
+    { "depth": 2, "title": "Always use ", "slug": "always-use" },
+    { "depth": 2, "title": "You don't have to ", "slug": "you-dont-have-to" },
+    { "depth": 2, "title": "Exceptional cases", "slug": "exceptional-cases" },
+    {
+      "depth": 3,
+      "title": "Unclear where it is thrown",
+      "slug": "unclear-where-it-is-thrown"
+    },
+    {
+      "depth": 3,
+      "title": "Makes graceful handling hard",
+      "slug": "makes-graceful-handling-hard"
+    },
+    {
+      "depth": 3,
+      "title": "Not well represented in the type system",
+      "slug": "not-well-represented-in-the-type-system"
+    }
+  ],
+  "basarat/typescript-book/docs/types/mixins.md": [
+    { "depth": 2, "title": "Take a constructor", "slug": "take-a-constructor" },
+    {
+      "depth": 2,
+      "title": "Extend the class and return it",
+      "slug": "extend-the-class-and-return-it"
+    }
+  ],
+  "basarat/typescript-book/docs/jsx/tsx.md": [],
+  "basarat/typescript-book/docs/jsx/react.md": [
+    { "depth": 2, "title": "Setup", "slug": "setup" },
+    {
+      "depth": 2,
+      "title": "HTML Tags vs. Components",
+      "slug": "html-tags-vs-components"
+    },
+    { "depth": 2, "title": "Type Checking", "slug": "type-checking" },
+    { "depth": 3, "title": "HTML Tags", "slug": "html-tags" },
+    {
+      "depth": 3,
+      "title": "Function Components",
+      "slug": "function-components"
+    },
+    {
+      "depth": 3,
+      "title": "Void Function Components",
+      "slug": "void-function-components"
+    },
+    { "depth": 3, "title": "Class Components", "slug": "class-components" },
+    {
+      "depth": 3,
+      "title": "React JSX Tip: Interface for renderable",
+      "slug": "react-jsx-tip-interface-for-renderable"
+    },
+    {
+      "depth": 3,
+      "title": "React JSX Tip: Accept an instance of a Component",
+      "slug": "react-jsx-tip-accept-an-instance-of-a-component"
+    },
+    {
+      "depth": 3,
+      "title": "React JSX Tip: Accept a ",
+      "slug": "react-jsx-tip-accept-a"
+    },
+    {
+      "depth": 3,
+      "title": "React JSX Tip: Generic components",
+      "slug": "react-jsx-tip-generic-components"
+    },
+    { "depth": 3, "title": "Generic functions", "slug": "generic-functions" },
+    {
+      "depth": 3,
+      "title": "React Tip: Strongly Typed Refs",
+      "slug": "react-tip-strongly-typed-refs"
+    },
+    { "depth": 3, "title": "Type Assertions", "slug": "type-assertions" },
+    { "depth": 2, "title": "Default Props", "slug": "default-props" },
+    {
+      "depth": 2,
+      "title": "Declaring a webcomponent",
+      "slug": "declaring-a-webcomponent"
+    }
+  ],
+  "basarat/typescript-book/docs/jsx/others.md": [
+    { "depth": 2, "title": "jsxFactory", "slug": "jsxfactory" },
+    { "depth": 3, "title": "Example", "slug": "example" },
+    { "depth": 2, "title": "jsx", "slug": "jsx" }
+  ],
+  "basarat/typescript-book/docs/options/intro.md": [
+    { "depth": 2, "title": "Boolean Options", "slug": "boolean-options" }
+  ],
+  "basarat/typescript-book/docs/options/noImplicitAny.md": [],
+  "basarat/typescript-book/docs/options/strictNullChecks.md": [
+    {
+      "depth": 2,
+      "title": "Non-Null Assertion Operator",
+      "slug": "non-null-assertion-operator"
+    },
+    {
+      "depth": 3,
+      "title": "Definite Assignment Assertion Operator",
+      "slug": "definite-assignment-assertion-operator"
+    }
+  ],
+  "basarat/typescript-book/docs/errors/main.md": [],
+  "basarat/typescript-book/docs/errors/interpreting-errors.md": [
+    { "depth": 2, "title": "Error Categories", "slug": "error-categories" },
+    { "depth": 3, "title": "Succinct", "slug": "succinct" },
+    { "depth": 3, "title": "Detailed", "slug": "detailed" },
+    {
+      "depth": 2,
+      "title": "How it shows up in an IDE Tooltip",
+      "slug": "how-it-shows-up-in-an-ide-tooltip"
+    }
+  ],
+  "basarat/typescript-book/docs/errors/common-errors.md": [
+    { "depth": 2, "title": "TS2304", "slug": "ts2304" },
+    { "depth": 2, "title": "TS2307", "slug": "ts2307" },
+    { "depth": 2, "title": "TS1148", "slug": "ts1148" },
+    {
+      "depth": 2,
+      "title": "Catch clause variable cannot have a type annotation",
+      "slug": "catch-clause-variable-cannot-have-a-type-annotation"
+    },
+    { "depth": 2, "title": "Interface ", "slug": "interface" }
+  ],
+  "basarat/typescript-book/docs/npm/index.md": [
+    { "depth": 2, "title": "Quick common setup", "slug": "quick-common-setup" },
+    {
+      "depth": 2,
+      "title": "Installing a package",
+      "slug": "installing-a-package"
+    },
+    {
+      "depth": 2,
+      "title": "Installing a devDependency",
+      "slug": "installing-a-devdependency"
+    },
+    { "depth": 2, "title": "Security", "slug": "security" },
+    { "depth": 2, "title": "NPM Scripts", "slug": "npm-scripts" },
+    { "depth": 3, "title": "What is with ", "slug": "what-is-with" },
+    {
+      "depth": 2,
+      "title": "Public vs. Private packages",
+      "slug": "public-vs-private-packages"
+    },
+    { "depth": 3, "title": "Public packages", "slug": "public-packages" },
+    { "depth": 3, "title": "Private packages", "slug": "private-packages" }
+  ],
+  "basarat/typescript-book/docs/testing/intro.md": [],
+  "basarat/typescript-book/docs/testing/jest.md": [
+    { "depth": 2, "title": "Step 1: Install", "slug": "step-1-install" },
+    {
+      "depth": 2,
+      "title": "Step 2: Configure Jest",
+      "slug": "step-2-configure-jest"
+    },
+    { "depth": 2, "title": "Step 3: Run tests", "slug": "step-3-run-tests" },
+    {
+      "depth": 3,
+      "title": "Optional: Add script target for npm scripts",
+      "slug": "optional-add-script-target-for-npm-scripts"
+    },
+    {
+      "depth": 3,
+      "title": "Optional: Run jest in watch mode",
+      "slug": "optional-run-jest-in-watch-mode"
+    },
+    { "depth": 3, "title": "Example", "slug": "example" },
+    { "depth": 3, "title": "Example async", "slug": "example-async" },
+    { "depth": 3, "title": "Example enzyme", "slug": "example-enzyme" },
+    {
+      "depth": 2,
+      "title": "Reasons why we like jest",
+      "slug": "reasons-why-we-like-jest"
+    }
+  ],
+  "basarat/typescript-book/docs/testing/cypress.md": [
+    { "depth": 2, "title": "Installation", "slug": "installation" },
+    {
+      "depth": 2,
+      "title": "More description of key Files",
+      "slug": "more-description-of-key-files"
+    },
+    { "depth": 2, "title": "First test", "slug": "first-test" },
+    {
+      "depth": 2,
+      "title": "Running in development",
+      "slug": "running-in-development"
+    },
+    {
+      "depth": 2,
+      "title": "Running on a build server",
+      "slug": "running-on-a-build-server"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Sharing code between UI and test",
+      "slug": "tip-sharing-code-between-ui-and-test"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Creating Page Objects",
+      "slug": "tip-creating-page-objects"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Explicit assertion",
+      "slug": "tip-explicit-assertion"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Commands and Chaining",
+      "slug": "tip-commands-and-chaining"
+    },
+    { "depth": 2, "title": "Tip: Using ", "slug": "tip-using" },
+    {
+      "depth": 2,
+      "title": "Tip: Smart delays and retries",
+      "slug": "tip-smart-delays-and-retries"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Implicit assertion",
+      "slug": "tip-implicit-assertion"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Waiting for an HTTP request",
+      "slug": "tip-waiting-for-an-http-request"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Mocking an HTTP request response",
+      "slug": "tip-mocking-an-http-request-response"
+    },
+    {
+      "depth": 3,
+      "title": "Tip: Asserting an Http request response",
+      "slug": "tip-asserting-an-http-request-response"
+    },
+    { "depth": 2, "title": "Tip: Mocking time", "slug": "tip-mocking-time" },
+    {
+      "depth": 2,
+      "title": "Tip: Unit testing application code",
+      "slug": "tip-unit-testing-application-code"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Mocking in unit testing",
+      "slug": "tip-mocking-in-unit-testing"
+    },
+    {
+      "depth": 2,
+      "title": "Tip: Command - execution separation",
+      "slug": "tip-command---execution-separation"
+    },
+    { "depth": 2, "title": "Tip: Breakpoint", "slug": "tip-breakpoint" },
+    {
+      "depth": 2,
+      "title": "Tip: Start server and test",
+      "slug": "tip-start-server-and-test"
+    },
+    { "depth": 2, "title": "Resources", "slug": "resources" }
+  ],
+  "basarat/typescript-book/docs/tools/intro.md": [],
+  "basarat/typescript-book/docs/tools/prettier.md": [
+    { "depth": 2, "title": "Setup", "slug": "setup" },
+    { "depth": 2, "title": "Usage", "slug": "usage" }
+  ],
+  "basarat/typescript-book/docs/tools/husky.md": [],
+  "basarat/typescript-book/docs/tools/eslint.md": [
+    { "depth": 2, "title": "Install", "slug": "install" },
+    { "depth": 2, "title": "Configure", "slug": "configure" },
+    { "depth": 2, "title": "Run", "slug": "run" },
+    { "depth": 2, "title": "Configure VSCode", "slug": "configure-vscode" }
+  ],
+  "basarat/typescript-book/docs/tools/changelog.md": [
+    { "depth": 2, "title": "Changelog", "slug": "changelog" },
+    {
+      "depth": 3,
+      "title": "Commit message convention",
+      "slug": "commit-message-convention"
+    },
+    { "depth": 3, "title": "Setup", "slug": "setup" },
+    { "depth": 3, "title": "Releasing", "slug": "releasing" }
+  ],
+  "basarat/typescript-book/docs/tips/main.md": [],
+  "basarat/typescript-book/docs/tips/stringEnums.md": [
+    { "depth": 2, "title": "String enums", "slug": "string-enums" }
+  ],
+  "basarat/typescript-book/docs/tips/nominalTyping.md": [
+    { "depth": 2, "title": "Nominal Typing", "slug": "nominal-typing" },
+    {
+      "depth": 2,
+      "title": "Using literal types",
+      "slug": "using-literal-types"
+    },
+    { "depth": 2, "title": "Using Enums", "slug": "using-enums" },
+    { "depth": 2, "title": "Using Interfaces", "slug": "using-interfaces" }
+  ],
+  "basarat/typescript-book/docs/tips/statefulFunctions.md": [
+    { "depth": 2, "title": "Stateful Functions", "slug": "stateful-functions" }
+  ],
+  "basarat/typescript-book/docs/tips/currying.md": [
+    { "depth": 2, "title": "Currying", "slug": "currying" }
+  ],
+  "basarat/typescript-book/docs/tips/typeInstantiation.md": [
+    {
+      "depth": 2,
+      "title": "Type Instantiation for Generics",
+      "slug": "type-instantiation-for-generics"
+    },
+    { "depth": 3, "title": "Inheritance", "slug": "inheritance" }
+  ],
+  "basarat/typescript-book/docs/tips/lazyObjectLiteralInitialization.md": [
+    {
+      "depth": 2,
+      "title": "Lazy Object Literal Initialization",
+      "slug": "lazy-object-literal-initialization"
+    },
+    { "depth": 3, "title": "Ideal Fix", "slug": "ideal-fix" },
+    { "depth": 3, "title": "Quick Fix", "slug": "quick-fix" },
+    { "depth": 3, "title": "Middle Ground", "slug": "middle-ground" }
+  ],
+  "basarat/typescript-book/docs/tips/classesAreUseful.md": [
+    { "depth": 2, "title": "Classes Are Useful", "slug": "classes-are-useful" }
+  ],
+  "basarat/typescript-book/docs/tips/defaultIsBad.md": [
+    { "depth": 2, "title": "export default", "slug": "export-default" },
+    {
+      "depth": 3,
+      "title": "Poor Discoverability",
+      "slug": "poor-discoverability"
+    },
+    { "depth": 3, "title": "Autocomplete", "slug": "autocomplete" },
+    { "depth": 3, "title": "CommonJS interop", "slug": "commonjs-interop" },
+    { "depth": 3, "title": "Typo Protection", "slug": "typo-protection" },
+    {
+      "depth": 3,
+      "title": "TypeScript auto-import",
+      "slug": "typescript-auto-import"
+    },
+    { "depth": 3, "title": "Re-exporting", "slug": "re-exporting" },
+    { "depth": 3, "title": "Dynamic Imports", "slug": "dynamic-imports" },
+    {
+      "depth": 3,
+      "title": "Needs two lines for non-class / non-function",
+      "slug": "needs-two-lines-for-non-class--non-function"
+    }
+  ],
+  "basarat/typescript-book/docs/tips/propertySetters.md": [
+    {
+      "depth": 2,
+      "title": "Limit usage of property setters",
+      "slug": "limit-usage-of-property-setters"
+    }
+  ],
+  "basarat/typescript-book/docs/tips/outFile.md": [
+    { "depth": 2, "title": "Runtime Errors", "slug": "runtime-errors" },
+    { "depth": 2, "title": "Fast compile", "slug": "fast-compile" },
+    { "depth": 2, "title": "Global Scope", "slug": "global-scope" },
+    { "depth": 2, "title": "Hard to analyze", "slug": "hard-to-analyze" },
+    { "depth": 2, "title": "Hard to scale", "slug": "hard-to-scale" },
+    { "depth": 2, "title": "_references.ts", "slug": "_referencests" },
+    { "depth": 2, "title": "Code reuse", "slug": "code-reuse" },
+    { "depth": 2, "title": "Multiple Targets", "slug": "multiple-targets" },
+    { "depth": 2, "title": "Isolated Compile", "slug": "isolated-compile" },
+    { "depth": 2, "title": "Summary", "slug": "summary" }
+  ],
+  "basarat/typescript-book/docs/tips/jquery.md": [
+    { "depth": 2, "title": "JQuery Tips", "slug": "jquery-tips" },
+    {
+      "depth": 3,
+      "title": "Quickly define a new plugin",
+      "slug": "quickly-define-a-new-plugin"
+    }
+  ],
+  "basarat/typescript-book/docs/tips/staticConstructor.md": [],
+  "basarat/typescript-book/docs/tips/singleton.md": [],
+  "basarat/typescript-book/docs/tips/functionParameters.md": [],
+  "basarat/typescript-book/docs/tips/build-toggles.md": [
+    { "depth": 2, "title": "Build Toggles", "slug": "build-toggles" }
+  ],
+  "basarat/typescript-book/docs/tips/barrel.md": [
+    { "depth": 2, "title": "Barrel", "slug": "barrel" },
+    { "depth": 3, "title": "Named exports", "slug": "named-exports" }
+  ],
+  "basarat/typescript-book/docs/tips/create-arrays.md": [
+    { "depth": 2, "title": "Creating arrays", "slug": "creating-arrays" }
+  ],
+  "basarat/typescript-book/docs/tips/typed-event.md": [
+    {
+      "depth": 2,
+      "title": "Typesafe Event Emitter",
+      "slug": "typesafe-event-emitter"
+    },
+    {
+      "depth": 3,
+      "title": "Reference TypedEvent",
+      "slug": "reference-typedevent"
+    }
+  ],
+  "basarat/typescript-book/docs/styleguide/styleguide.md": [
+    {
+      "depth": 2,
+      "title": "Variable and Function",
+      "slug": "variable-and-function"
+    },
+    { "depth": 2, "title": "Class", "slug": "class" },
+    { "depth": 2, "title": "Interface", "slug": "interface" },
+    { "depth": 2, "title": "Type", "slug": "type" },
+    { "depth": 2, "title": "Namespace", "slug": "namespace" },
+    { "depth": 2, "title": "Enum", "slug": "enum" },
+    { "depth": 2, "title": "Null vs. Undefined", "slug": "null-vs-undefined" },
+    { "depth": 2, "title": "Formatting", "slug": "formatting" },
+    { "depth": 2, "title": "Quotes", "slug": "quotes" },
+    { "depth": 2, "title": "Spaces", "slug": "spaces" },
+    { "depth": 2, "title": "Semicolons", "slug": "semicolons" },
+    { "depth": 2, "title": "Array", "slug": "array" },
+    { "depth": 2, "title": "Filename", "slug": "filename" },
+    { "depth": 2, "title": "type vs. interface", "slug": "type-vs-interface" }
+  ],
+  "basarat/typescript-book/docs/compiler/overview.md": [
+    {
+      "depth": 2,
+      "title": "Syntax vs. Semantics",
+      "slug": "syntax-vs-semantics"
+    },
+    {
+      "depth": 2,
+      "title": "Processing Overview",
+      "slug": "processing-overview"
+    },
+    { "depth": 2, "title": "File: Utilities", "slug": "file-utilities" },
+    {
+      "depth": 2,
+      "title": "File: Key Data Structures",
+      "slug": "file-key-data-structures"
+    },
+    { "depth": 2, "title": "File: System", "slug": "file-system" }
+  ],
+  "basarat/typescript-book/docs/compiler/program.md": [
+    { "depth": 2, "title": "Program", "slug": "program" },
+    { "depth": 3, "title": "Usage of ", "slug": "usage-of" },
+    { "depth": 3, "title": "SourceFile", "slug": "sourcefile" }
+  ],
+  "basarat/typescript-book/docs/compiler/ast.md": [
+    { "depth": 2, "title": "Node", "slug": "node" },
+    { "depth": 2, "title": "SourceFile", "slug": "sourcefile" }
+  ],
+  "basarat/typescript-book/docs/compiler/ast-tip-children.md": [
+    {
+      "depth": 3,
+      "title": "AST Tip: Visit Children",
+      "slug": "ast-tip-visit-children"
+    }
+  ],
+  "basarat/typescript-book/docs/compiler/ast-tip-syntaxkind.md": [
+    { "depth": 3, "title": "AST Tip: SyntaxKind", "slug": "ast-tip-syntaxkind" }
+  ],
+  "basarat/typescript-book/docs/compiler/ast-trivia.md": [
+    { "depth": 3, "title": "Trivia", "slug": "trivia" }
+  ],
+  "basarat/typescript-book/docs/compiler/scanner.md": [
+    { "depth": 2, "title": "Scanner", "slug": "scanner" },
+    { "depth": 3, "title": "Usage by Parser", "slug": "usage-by-parser" },
+    { "depth": 3, "title": "Scanner State", "slug": "scanner-state" },
+    { "depth": 3, "title": "Standalone scanner", "slug": "standalone-scanner" }
+  ],
+  "basarat/typescript-book/docs/compiler/parser.md": [
+    { "depth": 2, "title": "Parser", "slug": "parser" },
+    { "depth": 3, "title": "Usage by program", "slug": "usage-by-program" },
+    { "depth": 3, "title": "Sample Usage", "slug": "sample-usage" }
+  ],
+  "basarat/typescript-book/docs/compiler/parser-functions.md": [
+    { "depth": 3, "title": "Parser Functions", "slug": "parser-functions" },
+    { "depth": 3, "title": "Node creation", "slug": "node-creation" },
+    { "depth": 3, "title": "finishNode", "slug": "finishnode" }
+  ],
+  "basarat/typescript-book/docs/compiler/binder.md": [
+    { "depth": 2, "title": "Binder", "slug": "binder" },
+    { "depth": 3, "title": "Symbol", "slug": "symbol" },
+    { "depth": 3, "title": "Usage by Checker", "slug": "usage-by-checker" }
+  ],
+  "basarat/typescript-book/docs/compiler/binder-functions.md": [
+    { "depth": 3, "title": "Binder function", "slug": "binder-function" }
+  ],
+  "basarat/typescript-book/docs/compiler/binder-declarations.md": [
+    {
+      "depth": 3,
+      "title": "Symbols and Declarations",
+      "slug": "symbols-and-declarations"
+    }
+  ],
+  "basarat/typescript-book/docs/compiler/binder-container.md": [
+    { "depth": 3, "title": "Container", "slug": "container" }
+  ],
+  "basarat/typescript-book/docs/compiler/binder-symboltable.md": [
+    { "depth": 3, "title": "SymbolTable", "slug": "symboltable" }
+  ],
+  "basarat/typescript-book/docs/compiler/binder-diagnostics.md": [
+    {
+      "depth": 3,
+      "title": "Binder Error Reporting",
+      "slug": "binder-error-reporting"
+    }
+  ],
+  "basarat/typescript-book/docs/compiler/checker.md": [
+    { "depth": 2, "title": "Checker", "slug": "checker" },
+    { "depth": 3, "title": "Usage by Program", "slug": "usage-by-program" },
+    {
+      "depth": 3,
+      "title": "Association with Emitter",
+      "slug": "association-with-emitter"
+    }
+  ],
+  "basarat/typescript-book/docs/compiler/checker-global.md": [
+    {
+      "depth": 3,
+      "title": "Global Namespace Merging",
+      "slug": "global-namespace-merging"
+    }
+  ],
+  "basarat/typescript-book/docs/compiler/checker-diagnostics.md": [
+    {
+      "depth": 3,
+      "title": "Checker error reporting",
+      "slug": "checker-error-reporting"
+    }
+  ],
+  "basarat/typescript-book/docs/compiler/emitter.md": [
+    { "depth": 2, "title": "Emitter", "slug": "emitter" },
+    { "depth": 3, "title": "Usage by ", "slug": "usage-by" }
+  ],
+  "basarat/typescript-book/docs/compiler/emitter-functions.md": [
+    { "depth": 3, "title": "emitFiles", "slug": "emitfiles" },
+    { "depth": 3, "title": "emitJavaScript", "slug": "emitjavascript" },
+    {
+      "depth": 3,
+      "title": "emitJavaScriptWorker",
+      "slug": "emitjavascriptworker"
+    }
+  ],
+  "basarat/typescript-book/docs/compiler/emitter-sourcemaps.md": [
+    { "depth": 3, "title": "Emitter SourceMaps", "slug": "emitter-sourcemaps" }
+  ],
+  "basarat/typescript-book/docs/compiler/contributing.md": [
+    { "depth": 2, "title": "Contributing", "slug": "contributing" },
+    { "depth": 3, "title": "Setup", "slug": "setup" },
+    { "depth": 3, "title": "Setup Fork", "slug": "setup-fork" },
+    { "depth": 3, "title": "Running Tests", "slug": "running-tests" },
+    { "depth": 3, "title": "Baselines", "slug": "baselines" },
+    { "depth": 3, "title": "Test Categories", "slug": "test-categories" },
+    { "depth": 3, "title": "Debugging Tests", "slug": "debugging-tests" },
+    { "depth": 3, "title": "More", "slug": "more" }
+  ]
+}

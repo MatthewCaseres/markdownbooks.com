@@ -1,40 +1,41 @@
-import { summaryToUrlTree, UserFunction } from "github-books"
+import { summaryToUrlTree, UserFunction, getAllRoutesInfo } from "github-books"
 import fs from 'fs'
 import visit from 'unist-util-visit'
 import GithubSlugger from 'github-slugger'
 
-const headersFunction: UserFunction = (node: any, { mdast, frontMatter}) => {
-  const routePrefix = node.route;
+let allHeaders: Record<string, any> = {}
+export type HeadersConfig = {depth: number, title: string, slug: string}[]
+
+const headersFunction: UserFunction = ({ treeNode, mdast }) => {
+  const routePrefix = treeNode.route;
   var slugger = new GithubSlugger();
-  const headers: any[] = []
-  visit(mdast, "heading", (node: any) => {
-    if (node.depth === 2) {
-      headers.push({
-        type: "heading",
-        title: node.children[0].value,
-        route: routePrefix + '#' + slugger.slug(node.children[0].value)
-      })
+  const headers: HeadersConfig = []
+  for (let node of mdast.children) {
+    if(node.type === "heading" && (node.depth === 2 || node.depth === 3)) {
+      const depth = node.depth
+      const title = node.children[0].value
+      const slug = slugger.slug(title)
+      headers.push({depth, title, slug})
     }
-  })
-  node.children = headers
+  }
+  allHeaders[routePrefix] = headers
 }
 
 (async () => {
-  const s3Tree = await summaryToUrlTree({
-    url: "https://github.com/MatthewCaseres/aws-docs-configs/blob/main/configs/amazon-s3-getting-started-guide.md",
-  })
   const tsTree = await summaryToUrlTree({
-    url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md"
-  })
-  const osTree = await summaryToUrlTree({
-    url: "https://github.com/Open-EdTech/library/blob/main/OMSCS-OS.md",
+    url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md",
     userFunction: headersFunction
   })
-  const bibleTree = await summaryToUrlTree({
-    url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
-    userFunction: headersFunction
-  })
-  fs.writeFileSync('bookConfig.json', JSON.stringify([s3Tree, bibleTree, osTree, tsTree]))
+  // const osTree = await summaryToUrlTree({
+  //   url: "https://github.com/Open-EdTech/library/blob/main/OMSCS-OS.md",
+  //   userFunction: headersFunction
+  // })
+  // const bibleTree = await summaryToUrlTree({
+  //   url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
+  // })
+  fs.writeFileSync('bookPageHeadings.json', JSON.stringify(allHeaders))
+  // fs.writeFileSync('bookConfig.json', JSON.stringify([bibleTree, osTree, tsTree]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([tsTree]))
 })();
 
 
