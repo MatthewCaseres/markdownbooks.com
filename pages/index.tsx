@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "components/logo/Logo";
 import Typewriter from "typewriter-effect";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { useDarkToggle } from "components/DarkToggle";
 
@@ -13,51 +11,70 @@ type CardProps = {
   route: string;
 };
 const cardsInfo = [
-  { resource: "/bible.svg", title: "KJV Bible", owner: "Arley McBlain", route: "arleym/kjv-markdown/01 - Genesis - KJV.md" },
   {
-    resource: "/cloud-network.svg",
-    title: "AWS Study Guide",
-    owner: "Matthew Caseres",
-    route: "arleym/kjv-markdown/01 - Genesis - KJV.md"
+    resource: "/bible.svg",
+    title: "KJV Bible",
+    owner: "Arley McBlain",
+    route: "arleym/kjv-markdown/01 - Genesis - KJV.md",
   },
   {
     resource: "/operating-system.svg",
     title: "Operating Systems",
     owner: "Matt Schlenker",
-    route: "arleym/kjv-markdown/01 - Genesis - KJV.md"
-  },
-  {
-    resource: "/snorkling.svg",
-    title: "TypeScript Deep Dive",
-    owner: "Ali Basarat",
-    route: "basarat/typescript-book/docs/getting-started.md"
+    route: "arleym/kjv-markdown/01 - Genesis - KJV.md",
   },
 ];
 function Card({ resource, owner, title, route }: CardProps) {
   return (
-    
-      <div className="flex flex-col m-2 border border-gray-300 dark:bg-gray-700 shadow-md dark:border-gray-600 rounded-md">
-        <Link href={route}>
-        <a className="group hover:bg-indigo-50 dark:hover:bg-indigo-900 flex-1 flex flex-row px-4 py-6">
+    <div className="flex flex-col m-2 border border-gray-300 dark:bg-gray-700 shadow-lg hover:shadow-2xl dark:border-gray-600 rounded-md">
+      <Link href={route}>
+        <a className="dark:hover:bg-indigo-900 flex-1 flex flex-row px-4 py-6">
           <Image src={resource} width="85" height="85" />
-            <div className=" m-auto">
-              <div className="text-3xl text-gray-900 dark:text-white group-hover:text-indigo-500">{title}</div>
+          <div className=" m-auto">
+            <div className="text-3xl text-gray-900 dark:text-white">
+              {title}
             </div>
+          </div>
         </a>
-        </Link>
-        <div className="text-sm font-light p-1 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-md">
-          Maintainer - {}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/Open-EdTech"
-            className="underline text-blue-400 dark:text-blue-600"
-          >
-            {owner}
-          </a>
-        </div>
+      </Link>
+      <div className="text-sm font-light p-1 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-md">
+        Maintainer - {}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/Open-EdTech"
+          className="underline text-blue-400 dark:text-blue-600"
+        >
+          {owner}
+        </a>
       </div>
+    </div>
+  );
+}
 
+function BigCard({ resource, owner, title, route }: CardProps) {
+  return (
+    <div className="flex max-w-xl mx-auto flex-col m-2 border border-gray-300 dark:bg-gray-700 shadow-md hover:shadow-2xl dark:border-gray-600 rounded-md">
+      <Link href={route}>
+        <a className="dark:hover:bg-indigo-900 flex flex-row justify-evenly px-4 py-6">
+          <Image src={resource} width="85" height="85" />
+          <div className="text-3xl text-center font-bold text-gray-700 dark:text-white self-center">
+            {title}
+          </div>
+        </a>
+      </Link>
+      <div className="text-sm font-light p-1 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-md">
+        Maintainer - {}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/Open-EdTech"
+          className="underline text-blue-400 dark:text-blue-600"
+        >
+          {owner}
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -67,7 +84,7 @@ export default function Index() {
   return (
     <div className=" dark:bg-black flex-1">
       <div className="mx-auto lg:max-w-4xl md:max-w-xl max-w-lg   dark:bg-black flex flex-col">
-        <div className="self-center my-3 dark:text-white">
+        <div className="self-center mt-20 my-3 dark:text-white">
           <Typewriter
             onInit={(typewriter) => {
               typewriter.typeString("Collaborative").start();
@@ -167,27 +184,38 @@ export default function Index() {
             ized
           </motion.div>
         </div>
-
-        <div className="self-center my-6 text-lg font-light dark:text-white">
-          A new type of electronic book, built for the web.
+        <div className="self-center mx-5 text-center my-6 text-lg font-light dark:text-white">
+          <div>A new type of electronic book. </div>
+          <div>Built for the web.</div>
+          <div>Great for online courses.</div>
         </div>
-        <button className="my-5 self-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-          Source Code
-        </button>
-        <div className="self-center text-center dark:text-white my-5">
-        <div>
-          Make books from any public markdown files on GitHub.
+        <div className="mx-5">
+          <BigCard
+            {...{
+              resource: "/cloud-network2.svg",
+              title: "AWS Study Guide",
+              owner: "Open EdTech",
+              route: "arleym/kjv-markdown/01 - Genesis - KJV.md",
+            }}
+          />
         </div>
-        <div className="font-extralight">
-          You don't even have to make a fork.
+        <div className="self-center text-center dark:text-white my-8">
+          <div>Make books from any public markdown files on GitHub.</div>
+          <div className="font-extralight">
+            You don't even have to make a fork.
+          </div>
         </div>
-        </div>
-        
         <div className="grid md:grid-cols-2 grid-cols-1 mx-5">
           {cardsInfo.map((props) => (
             <Card {...props} />
           ))}
         </div>
+        <div className="font-extralight self-center text-center mt-8">
+          Like the site? Build your own.
+        </div>
+        <button className="mt-3 mb-12 self-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          View on GitHub
+        </button>
       </div>
     </div>
   );
