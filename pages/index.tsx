@@ -82,8 +82,8 @@ export default function Index() {
   const isDark = useDarkToggle()![0];
   const blackWhite = isDark ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)";
   return (
-    <div className=" dark:bg-black flex-1">
-      <div className="mx-auto lg:max-w-4xl md:max-w-xl max-w-lg   dark:bg-black flex flex-col">
+    <div className=" dark:bg-black mx-auto">
+      <div className="mx-auto lg:max-w-4xl md:max-w-xl max-w-lg  dark:bg-black flex flex-col">
         <div className="self-center mt-20 my-3 dark:text-white">
           <Typewriter
             onInit={(typewriter) => {
@@ -205,7 +205,7 @@ export default function Index() {
             You don't even have to make a fork.
           </div>
         </div>
-        <div className="grid md:grid-cols-2 grid-cols-1 mx-5">
+        <div className="grid md:grid-cols-2 grid-cols-1 mx-5 max-w-xl">
           {cardsInfo.map((props) => (
             <Card {...props} />
           ))}
