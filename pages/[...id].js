@@ -24,6 +24,7 @@ function Post({ urlTree, mdxSource, ghUrl, treePath, prevNext, headings }) {
         <div className="my-5 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl max-w-2xl">
           <div className="prose dark:prose-dark">{content}</div>
           lol
+          {JSON.stringify(prevNext)}
           <Cards prevNext={prevNext} />
         </div>
       </SideBar>
@@ -69,11 +70,11 @@ export const getStaticPaths = async () => {
 
 function Cards({ prevNext }) {
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-1 my-5">
-      <div className="row-start-2 lg:row-start-1">
+    <div className="grid grid-cols-2 gap-1 my-5">
+      <div >
         <Card left info={prevNext.prev} />
       </div>
-      <div className="row-start-1 lg:row-start-1">
+      <div>
         <Card info={prevNext.next} />
       </div>
     </div>
