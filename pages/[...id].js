@@ -23,6 +23,7 @@ function Post({ urlTree, mdxSource, ghUrl, treePath, prevNext, headings }) {
       <SideBar ghUrl={ghUrl} treePath={treePath} headings={headings}>
         <div className="my-5 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl max-w-2xl">
           <div className="prose dark:prose-dark">{content}</div>
+          lol
           <Cards prevNext={prevNext} />
         </div>
       </SideBar>
