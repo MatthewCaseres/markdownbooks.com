@@ -23,10 +23,10 @@ const headersFunction: UserFunction = ({ treeNode, mdast }) => {
 }
 
 (async () => {
-  const tsTree = await summaryToUrlTree({
-    url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md",
-    userFunction: headersFunction
-  })
+  // const tsTree = await summaryToUrlTree({
+  //   url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md",
+  //   userFunction: headersFunction
+  // })
   // const osTree = await summaryToUrlTree({
   //   url: "https://github.com/Open-EdTech/library/blob/main/OMSCS-OS.md",
   //   userFunction: headersFunction
@@ -37,7 +37,7 @@ const headersFunction: UserFunction = ({ treeNode, mdast }) => {
   })
   fs.writeFileSync('bookPageHeadings.json', JSON.stringify(allHeaders))
   // fs.writeFileSync('bookConfig.json', JSON.stringify([bibleTree, osTree, tsTree]))
-  fs.writeFileSync('bookConfig.json', JSON.stringify([tsTree, bibleTree]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([bibleTree]))
 })();
 
 

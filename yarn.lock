@@ -2749,10 +2749,10 @@ git-url-parse@^11.4.3:
   dependencies:
     git-up "^4.0.0"
 
-github-books@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/github-books/-/github-books-0.3.5.tgz#20a6d106c3d54aa39f56133ae7cf1dbedefb3b3f"
-  integrity sha512-OqKF7vvOtbtmIn4ttad26GkwqWnmeaWmv/QNE5sfP4+nYMCQn9hvGSlTrvvemSIXJm+rIq+0F0Wo18YTe92CIA==
+github-books@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/github-books/-/github-books-0.3.6.tgz#fc2ac8e5af5afc7109926c3b44e6fde253e2d6d5"
+  integrity sha512-xZ3MQU7EFlq/3nPZ2J86pqb2P1RRrArPA6KexHcBxFPP6yEf5a6FECci+P30P62yzjm2zi6xCZaCrAW1h/mmGQ==
   dependencies:
     "@types/git-url-parse" "^9.0.0"
     "@types/github-slugger" "^1.3.0"
