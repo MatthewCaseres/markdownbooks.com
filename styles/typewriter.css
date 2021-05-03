@@ -1,0 +1,36 @@
+div.typewriter {
+  margin-left: auto;
+}
+
+@media screen and (min-width: 640px) {
+  span.Typewriter__wrapper {
+    font-size: 4.5rem/* 72px */;
+    line-height: 1;
+    font-weight:700;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  span.Typewriter__cursor {
+    font-size: 4.5rem/* 72px */;
+    line-height: 1;
+    font-weight:700;
+  }
+}
+
+.Typewriter__wrapper {
+  font-weight:700;
+  font-size: 3rem/* 48px */;
+  line-height: 1;
+}
+
+.Typewriter__cursor {
+  font-weight:300;
+  font-size: 3rem/* 72px */;
+  line-height: 1;
+}
+
+.typewriter_link .Typewriter__wrapper {
+  color: rgba(99, 102, 241,1);
+  text-decoration: underline;
+}
