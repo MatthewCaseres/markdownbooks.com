@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import "../styles/tailwind.css";
 import 'instantsearch.css/themes/satellite.css';
+import '../styles/typewriter.css'
+
 import router from "next/router";
 import { useEffect } from "react";
 import TopNav from "../components/TopNav";
@@ -15,7 +17,7 @@ function MyApp({ Component, pageProps }) {
         } else {
           window.scrollTo(0, 0);
         }
-      }, 300);
+      }, 70);
     };
     const handleHashChange = (url) => {
       if (!url.includes("#")) {

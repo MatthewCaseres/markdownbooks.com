@@ -12,8 +12,6 @@ export default function TopNav() {
       <div className="ml-2.5">
         <Logo isLink={true} scale="1" />
       </div>
-      <div className="ml-8 mx-3 font-semibold text-gray-700">Docs</div>
-      <div className="mx-3 font-semibold text-gray-700">Learn AWS</div>
       <div className="ml-auto flex justify-center mr-2">
         <SvgGithub className="mr-5 w-7 h-7"/>
         <DarkToggle />

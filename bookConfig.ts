@@ -7,6 +7,7 @@ let allHeaders: Record<string, any> = {}
 export type HeadersConfig = {depth: number, title: string, slug: string}[]
 
 const headersFunction: UserFunction = ({ treeNode, mdast }) => {
+  console.log(treeNode)
   const routePrefix = treeNode.route;
   var slugger = new GithubSlugger();
   const headers: HeadersConfig = []
@@ -30,12 +31,13 @@ const headersFunction: UserFunction = ({ treeNode, mdast }) => {
   //   url: "https://github.com/Open-EdTech/library/blob/main/OMSCS-OS.md",
   //   userFunction: headersFunction
   // })
-  // const bibleTree = await summaryToUrlTree({
-  //   url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
-  // })
+  const bibleTree = await summaryToUrlTree({
+    url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
+    userFunction: headersFunction
+  })
   fs.writeFileSync('bookPageHeadings.json', JSON.stringify(allHeaders))
   // fs.writeFileSync('bookConfig.json', JSON.stringify([bibleTree, osTree, tsTree]))
-  fs.writeFileSync('bookConfig.json', JSON.stringify([tsTree]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([tsTree, bibleTree]))
 })();
 
 
