@@ -8,6 +8,7 @@ import bookConfig from "../bookConfig.json";
 import bookPageHeadings from '../bookPageHeadings.json'
 import matter from "gray-matter";
 import slug from "remark-slug";
+import withNextImages from '../remark/withNextImages'
 
 
 const getProvider = (urlTree) => ({
@@ -40,11 +41,11 @@ export const getStaticProps = async ({ params }) => {
 
   const prevNext = { prev: prev ?? null, next: next ?? null };
   const urlTree = bookConfig[nodeIndex];
-  const source = await getMdSource(flatNode);
+  const source = await getMdSource(flatNode, true);
   const { content } = matter(source);
   const mdxSource = await renderToString(content, {
     mdxOptions: {
-      remarkPlugins: [slug],
+      remarkPlugins: [slug, withNextImages],
     },
     provider: getProvider(urlTree),
   });
@@ -84,22 +85,22 @@ function Card({ left, info }) {
     !!info && (
       <Link href={info.route}>
         <a>
-          <div className="p-4 m-2  border rounded-md flex flex-row items-center shadow-lg hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900">
+          <div className="p-4 m-2  border rounded-md flex flex-row items-center shadow-lg hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900">
             {left && (
-              <div className=" mr-2">
+              <div className="dark:text-gray-100 mr-2">
                 <Arrow left />
               </div>
             )}
             <div
-              className={`${left ? "text-right ml-auto" : "text-left mr-auto"}`}
+              className={`${left ? "text-left mr-auto" : "text-right ml-auto"}`}
             >
               <div className="text-gray-600 dark:text-gray-400 text-sm ">
-                {left ? <div >Previous</div> : "Next"}
+                {left ? "Previous" : "Next"}
               </div>
               <div className="text-black dark:text-gray-100">{info.title}</div>
             </div>
             {!left && (
-              <div className=" ml-2">
+              <div className="dark:text-gray-100 ml-2">
                 <Arrow />
               </div>
             )}
@@ -113,37 +114,15 @@ function Card({ left, info }) {
 function Arrow({ left }) {
   if (left) {
     return (
-      <svg
-        className="h-5 w-5 dark:text-gray-100"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M10 19l-7-7m0 0l7-7m-7 7h18"
-        />
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+</svg>
     );
   } else {
     return (
-      <svg
-        className="h-5 w-5 dark:text-gray-100"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M14 5l7 7m0 0l-7 7m7-7H3"
-        />
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+</svg>
     );
   }
 }

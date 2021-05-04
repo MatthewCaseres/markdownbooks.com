@@ -27,17 +27,22 @@ const headersFunction: UserFunction = ({ treeNode, mdast }) => {
   //   url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md",
   //   userFunction: headersFunction
   // })
-  // const osTree = await summaryToUrlTree({
-  //   url: "https://github.com/Open-EdTech/library/blob/main/OMSCS-OS.md",
-  //   userFunction: headersFunction
-  // })
-  const bibleTree = await summaryToUrlTree({
-    url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
+  const osTree = await summaryToUrlTree({
+    url: "https://github.com/Open-EdTech/library/blob/main/OMSCS-OS.md",
     userFunction: headersFunction
   })
+  const awsTree = await summaryToUrlTree({
+    url: "https://github.com/Open-EdTech/AWS-Associate-Notes/blob/main/00-index.md",
+    localPath: '/Users/matthewcaseres/Documents/GitHub/AWS-Associate-Notes/00-index.md',
+    userFunction: headersFunction
+  })
+  const bibleTree = await summaryToUrlTree({
+    url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
+    userFunction: headersFunction,
+  })
   fs.writeFileSync('bookPageHeadings.json', JSON.stringify(allHeaders))
-  // fs.writeFileSync('bookConfig.json', JSON.stringify([bibleTree, osTree, tsTree]))
-  fs.writeFileSync('bookConfig.json', JSON.stringify([bibleTree]))
+  fs.writeFileSync('bookConfig.json', JSON.stringify([osTree, bibleTree, awsTree]))
+  // fs.writeFileSync('bookConfig.json', JSON.stringify([awsTree]))
 })();
 
 

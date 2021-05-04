@@ -21,7 +21,7 @@ const cardsInfo = [
     resource: "/operating-system.svg",
     title: "Operating Systems",
     owner: "Matt Schlenker",
-    route: "arleym/kjv-markdown/01 - Genesis - KJV.md",
+    route: "m4ttsch/omscs-notes-notes/operating-systems/introduction-to-operating-systems.md",
   },
 ];
 function Card({ resource, owner, title, route }: CardProps) {
@@ -187,7 +187,6 @@ export default function Index() {
         <div className="self-center mx-5 text-center my-6 text-lg font-light dark:text-white">
           <div>A new type of electronic book. </div>
           <div>Built for the web.</div>
-          <div>Great for online courses.</div>
         </div>
         <div className="mx-5">
           <BigCard
@@ -195,7 +194,7 @@ export default function Index() {
               resource: "/cloud-network2.svg",
               title: "AWS Study Guide",
               owner: "Open EdTech",
-              route: "arleym/kjv-markdown/01 - Genesis - KJV.md",
+              route: "Open-EdTech/AWS-Associate-Notes/EC2.md",
             }}
           />
         </div>
@@ -213,9 +212,13 @@ export default function Index() {
         <div className="font-extralight self-center text-center mt-8">
           Like the site? Build your own.
         </div>
-        <button className="mt-3 mb-12 self-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/MatthewCaseres/markdownbooks.com"
+          className="mt-3 mb-12 self-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
           View on GitHub
-        </button>
+        </a>
       </div>
     </div>
   );
