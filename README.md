@@ -1,5 +1,5 @@
-# Educational Platform
+# Markdown Books
 
-Visit us at [openedtech.dev](https://www.openedtech.dev/). This site is where we try out new ideas for MDX and books. Routes for books are generated with next-mdx-books. Styling in TailwindCSS.
+This is a Docusaurus clone Next.js template that uses the github-books npm package.
 
-If you like it fork it :D
+The code is in the public domain so do whatever you want with it. If you do something cool be sure to send me an email about your project.
