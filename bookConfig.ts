@@ -33,7 +33,6 @@ const headersFunction: UserFunction = ({ treeNode, mdast }) => {
   })
   const awsTree = await summaryToUrlTree({
     url: "https://github.com/Open-EdTech/AWS-Associate-Notes/blob/main/00-index.md",
-    localPath: '/Users/matthewcaseres/Documents/GitHub/AWS-Associate-Notes/00-index.md',
     userFunction: headersFunction
   })
   const bibleTree = await summaryToUrlTree({
