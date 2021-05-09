@@ -1,29 +1,24 @@
 import { SideBarProvider } from "../components/SideBar/SideBarContext";
 import SideBar from "../components/SideBar/SideBar";
 import { getMdSource, getAllRoutesInfo } from "github-books";
-import renderToString from "next-mdx-remote/render-to-string";
 import Link from "next/link";
-import hydrate from "next-mdx-remote/hydrate";
 import bookConfig from "../bookConfig.json";
 import bookPageHeadings from '../bookPageHeadings.json'
 import matter from "gray-matter";
 import slug from "remark-slug";
+import ReactMarkdown from 'react-markdown';
 import withNextImages from '../remark/withNextImages'
 
-
-const getProvider = (urlTree) => ({
-  component: (props) => (
-    <SideBarProvider {...props} config={urlTree.children} />
-  ),
-});
-
-function Post({ urlTree, mdxSource, ghUrl, treePath, prevNext, headings }) {
-  const content = hydrate(mdxSource, { provider: getProvider(urlTree) });
+function Post({ urlTree, content, ghUrl, treePath, prevNext, headings }) {
+  // const content = hydrate(mdxSource, { provider: getProvider(urlTree) });
   return (
     <SideBarProvider config={urlTree.children}>
       <SideBar ghUrl={ghUrl} treePath={treePath} headings={headings}>
         <div className="my-5 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl max-w-2xl">
-          <div className="prose dark:prose-dark">{content}</div>
+          <div className="prose dark:prose-dark">
+          <ReactMarkdown remarkPlugins={[withNextImages, slug]} children={content}/>
+          </div>
+          {/* <div className="prose dark:prose-dark">{content}</div> */}
           <Cards prevNext={prevNext} />
         </div>
       </SideBar>
@@ -43,14 +38,8 @@ export const getStaticProps = async ({ params }) => {
   const urlTree = bookConfig[nodeIndex];
   const source = await getMdSource(flatNode, false);
   const { content } = matter(source);
-  const mdxSource = await renderToString(content, {
-    mdxOptions: {
-      remarkPlugins: [slug, withNextImages],
-    },
-    provider: getProvider(urlTree),
-  });
   return {
-    props: { urlTree, mdxSource, ghUrl, treePath, prevNext, headings }, // will be passed to the page component as props
+    props: { urlTree, content, ghUrl, treePath, prevNext, headings }, // will be passed to the page component as props
   };
 };
 

@@ -28,6 +28,7 @@
     "react-dom": "17.0.1",
     "react-icons": "^4.2.0",
     "react-instantsearch-dom": "^6.10.3",
+    "react-markdown": "^6.0.2",
     "react-scrollspy": "^3.4.3",
     "react-scrollspy-nav": "^1.2.4",
     "react-waypoint": "^10.1.0",
