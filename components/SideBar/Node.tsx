@@ -61,7 +61,7 @@ export default function Node2({
       }}
     >   
         {node.route ?
-          <Link href={node.route} scroll={false}>
+          <Link href={node.route}>
             <a className={`flex-1 hover:text-indigo-400 hover:underline dark:text-gray-300 text-gray-600 text-lg ${highlighted && "text-indigo-500 dark:text-indigo-500"}`}>
               {node.title}
             </a>
