@@ -8,15 +8,17 @@ import matter from "gray-matter";
 import slug from "remark-slug";
 import ReactMarkdown from 'react-markdown';
 import withNextImages from '../remark/withNextImages'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
-function Post({ urlTree, content, ghUrl, treePath, prevNext, headings }) {
-  // const content = hydrate(mdxSource, { provider: getProvider(urlTree) });
+function Post({ urlTree, mdxSource, ghUrl, treePath, prevNext, headings }) {
   return (
     <SideBarProvider config={urlTree.children}>
       <SideBar ghUrl={ghUrl} treePath={treePath} headings={headings}>
         <div className="my-5 px-8 pt-5 pb-2 bg-white shadow-md dark:bg-gray-900 rounded-xl max-w-2xl">
           <div className="prose dark:prose-dark">
-          <ReactMarkdown remarkPlugins={[withNextImages, slug]} children={content}/>
+          <MDXRemote {...mdxSource} />
+          {/* <ReactMarkdown remarkPlugins={[withNextImages, slug]} children={content}/> */}
           </div>
           {/* <div className="prose dark:prose-dark">{content}</div> */}
           <Cards prevNext={prevNext} />
@@ -30,16 +32,26 @@ export const getStaticProps = async ({ params }) => {
   const allRoutesInfo = getAllRoutesInfo(bookConfig);
   const stringRoute = params.id.join("/");
   const flatNode = allRoutesInfo[stringRoute];
+  if (flatNode === undefined){
+    return {
+      notFound: true
+    }
+  }
   const { index: nodeIndex, ghUrl, treePath, prev, next, route} = flatNode;
 
   const headings = bookPageHeadings[route]
 
   const prevNext = { prev: prev ?? null, next: next ?? null };
   const urlTree = bookConfig[nodeIndex];
-  const source = await getMdSource(flatNode, false);
+  const source = await getMdSource(flatNode, true);
   const { content } = matter(source);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [withNextImages, slug]
+    }
+  })
   return {
-    props: { urlTree, content, ghUrl, treePath, prevNext, headings }, // will be passed to the page component as props
+    props: { urlTree, mdxSource, ghUrl, treePath, prevNext, headings }, // will be passed to the page component as props
   };
 };
 
@@ -51,7 +63,7 @@ export const getStaticPaths = async () => {
         id: routeString.split("/"),
       },
     })),
-    fallback: false,
+    fallback: false
   };
 };
 
