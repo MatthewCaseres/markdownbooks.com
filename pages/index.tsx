@@ -60,7 +60,7 @@ function BigCard({ resource, owner, title, route }: CardProps) {
         <a className="dark:hover:bg-indigo-900 flex flex-row justify-evenly px-4 py-6">
           <Image src={resource} width="85" height="85" />
           <div className="text-3xl text-center font-bold text-gray-700 dark:text-white self-center">
-            Balls{title}
+            {title}
           </div>
         </a>
       </Link>
