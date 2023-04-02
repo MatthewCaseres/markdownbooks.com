@@ -36,7 +36,7 @@
     "pages/api/auth/[...nextauth].js",
     "pages/index.js",
     "bookConfig.js"
-  ],
+, "gitBookConfig.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,13 +1,14 @@
-import { summaryToUrlTree, UserFunction, getAllRoutesInfo } from "github-books";
+import { summaryToUrlTree, UserFunction } from "@brainfried/github-books";
 import fs from "fs";
 import visit from "unist-util-visit";
 import GithubSlugger from "github-slugger";
 
 let allHeaders: Record<string, any> = {};
+let headers: any[] = [];
 export type HeadersConfig = { depth: number; title: string; slug: string }[];
 
-const headersFunction: UserFunction = ({ treeNode, mdast }) => {
-  console.log("treeNode: " + treeNode);
+const headersFunction: UserFunction = ({ treeNode, mdast, frontMatter }) => {
+  console.log("treeNode: " + JSON.stringify(treeNode) + "\n");
   const routePrefix = treeNode.route;
   var slugger = new GithubSlugger();
   const headers: HeadersConfig = [];
@@ -22,25 +23,34 @@ const headersFunction: UserFunction = ({ treeNode, mdast }) => {
   allHeaders[routePrefix] = headers;
 };
 
+// const userFunction: UserFunction = ({ treeNode, mdast, frontMatter }) => {
+//   console.log("TreeNode: " + JSON.stringify(treeNode) + "\n");
+//   const routePrefix = treeNode.route;
+//   var slugger = new GithubSlugger();
+//   // let headers: any[] = [];
+//   visit(mdast, "heading", (mdNode: any) => {
+//     if (mdNode.depth === 2) {
+//       let header: any = {};
+//       header.title = mdNode.children[0].value;
+//       header.route = routePrefix + "/#" + slugger.slug(header.title);
+//       header.type = "heading";
+//       headers.push(header);
+//     }
+//   });
+//   if (headers.length > 0) {
+//     treeNode.headers = headers;
+//   }
+//   if (Object.keys(frontMatter).length > 0) {
+//     treeNode.frontMatter = frontMatter;
+//   }
+// };
+
 (async () => {
-  // const tsTree = await summaryToUrlTree({
-  //   url: "https://github.com/basarat/typescript-book/blob/master/SUMMARY.md",
-  //   userFunction: headersFunction
-  // })
-  // const osTree = await summaryToUrlTree({
-  //   url: "https://github.com/MatthewCaseres/AWS-Notes/tree/main/source/OMSCS-OS.md",
-  //   userFunction: headersFunction,
-  // });
   const awsTree = await summaryToUrlTree({
-    url: "https://raw.githubusercontent.com/MatthewCaseres/AWS-Notes/main/source/00-index.md",
+    url: "https://github.com/dylviz/site/blob/main/README.md",
     userFunction: headersFunction,
   });
-  // const bibleTree = await summaryToUrlTree({
-  //   url: "https://github.com/Open-EdTech/library/blob/main/Bible-KJV.md",
-  //   userFunction: headersFunction,
-  // });
-  fs.writeFileSync("bookPageHeadings.json", JSON.stringify(allHeaders));
 
+  fs.writeFileSync("bookPageHeadings.json", JSON.stringify(allHeaders));
   fs.writeFileSync("bookConfig.json", JSON.stringify([awsTree]));
-  // fs.writeFileSync('bookConfig.json', JSON.stringify([awsTree]))
 })();
