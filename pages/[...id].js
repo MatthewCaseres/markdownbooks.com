@@ -1,6 +1,6 @@
 import { SideBarProvider } from "../components/SideBar/SideBarContext";
 import SideBar from "../components/SideBar/SideBar";
-import { getMdSource, getAllRoutesInfo } from "github-books";
+import { getMdSource, getAllRoutesInfo } from "@brainfried/github-books";
 import Link from "next/link";
 import bookConfig from "../bookConfig.json";
 import bookPageHeadings from '../bookPageHeadings.json'
@@ -57,6 +57,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const allRoutesInfo = getAllRoutesInfo(bookConfig);
+  console.log("All routes:" + JSON.stringify(allRoutesInfo, null, 2));
   return {
     paths: Object.keys(allRoutesInfo).map((routeString) => ({
       params: {

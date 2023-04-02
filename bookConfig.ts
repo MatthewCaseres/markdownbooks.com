@@ -4,7 +4,7 @@ import visit from "unist-util-visit";
 import GithubSlugger from "github-slugger";
 
 let allHeaders: Record<string, any> = {};
-let headers: any[] = [];
+// let headers: any[] = [];
 export type HeadersConfig = { depth: number; title: string; slug: string }[];
 
 const headersFunction: UserFunction = ({ treeNode, mdast, frontMatter }) => {
@@ -52,5 +52,5 @@ const headersFunction: UserFunction = ({ treeNode, mdast, frontMatter }) => {
   });
 
   fs.writeFileSync("bookPageHeadings.json", JSON.stringify(allHeaders));
-  fs.writeFileSync("bookConfig.json", JSON.stringify([awsTree]));
+  fs.writeFileSync("bookConfig.json", JSON.stringify(awsTree));
 })();
