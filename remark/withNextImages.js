@@ -1,4 +1,5 @@
-const visit = require('unist-util-visit')
+//const visit = require('unist-util-visit')
+import visit from "unist-util-visit";
 
 export default function nextImages () {
   return (tree) => {

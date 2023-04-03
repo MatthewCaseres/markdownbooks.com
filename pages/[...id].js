@@ -1,6 +1,6 @@
 import { SideBarProvider } from "../components/SideBar/SideBarContext";
 import SideBar from "../components/SideBar/SideBar";
-import { getMdSource, getAllRoutesInfo } from "github-books";
+import { getMdSource, getAllRoutesInfo } from "@brainfried/github-books";
 import Link from "next/link";
 import bookConfig from "../bookConfig.json";
 import bookPageHeadings from '../bookPageHeadings.json'

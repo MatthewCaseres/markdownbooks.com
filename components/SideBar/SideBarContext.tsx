@@ -7,7 +7,7 @@ import {
   Dispatch,
 } from "react";
 import produce, { Draft } from "immer";
-import { UrlNode } from "github-books";
+import { UrlNode } from "@brainfried/github-books";
 export type UserInfo = { completed: boolean; flagged: number };
 export type IdMap = Partial<Record<string, UserInfo>>;
 export type StatefulNode = Readonly<Omit<UrlNode, "children" | "treePath">> &
@@ -22,7 +22,8 @@ type StatefulNodes = ReadonlyArray<StatefulNode>;
 type Action =
   | { type: "open"; path: readonly number[] }
   | { type: "close"; path: readonly number[] }
-  | {type: "expand"} | {type: "collapse"}
+  | { type: "expand" }
+  | { type: "collapse" };
 type SideBarDispatch = (action: Action) => void;
 const SideBarVisibleContext = createContext<
   [boolean, Dispatch<SetStateAction<boolean>>] | undefined
@@ -60,11 +61,10 @@ const sideBarReducer = produce(
   }
 );
 
-const SideBarProvider: React.FC<{ config: StatefulNodes, treePath: readonly number[] }> = ({
-  children,
-  config,
-  treePath
-}) => {
+const SideBarProvider: React.FC<{
+  config: StatefulNodes;
+  treePath: readonly number[];
+}> = ({ children, config, treePath }) => {
   const [state, dispatch] = useReducer(sideBarReducer, config);
   const [visible, setVisible] = useState(true);
   // const { loading, error, data } = useQuery(GET_PROBLEMS);
@@ -72,7 +72,7 @@ const SideBarProvider: React.FC<{ config: StatefulNodes, treePath: readonly numb
     <SideBarStateContext.Provider value={state}>
       <SideBarDispatchContext.Provider value={dispatch}>
         <SideBarVisibleContext.Provider value={[visible, setVisible]}>
-              {children}
+          {children}
         </SideBarVisibleContext.Provider>
       </SideBarDispatchContext.Provider>
     </SideBarStateContext.Provider>
@@ -94,8 +94,4 @@ function useSideBarDispatch() {
   return context;
 }
 
-export {
-  SideBarProvider,
-  useSideBarState,
-  useSideBarDispatch,
-};
+export { SideBarProvider, useSideBarState, useSideBarDispatch };

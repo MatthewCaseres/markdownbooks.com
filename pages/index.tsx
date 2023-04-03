@@ -21,7 +21,8 @@ const cardsInfo = [
     resource: "/operating-system.svg",
     title: "Operating Systems",
     owner: "Matt Schlenker",
-    route: "m4ttsch/omscs-notes-notes/operating-systems/introduction-to-operating-systems.md",
+    route:
+      "m4ttsch/omscs-notes-notes/operating-systems/introduction-to-operating-systems.md",
   },
 ];
 function Card({ resource, owner, title, route }: CardProps) {
@@ -194,7 +195,7 @@ export default function Index() {
               resource: "/cloud-network2.svg",
               title: "AWS Study Guide",
               owner: "Open EdTech",
-              route: "Open-EdTech/AWS-Associate-Notes/EC2.md",
+              route: "MatthewCaseres/AWS-Notes/main/source/00-index.md/EC2.md",
             }}
           />
         </div>
@@ -204,11 +205,11 @@ export default function Index() {
             You don't even have to make a fork.
           </div>
         </div>
-        <div className="grid md:grid-cols-2 grid-cols-1 mx-5 max-w-xl">
+        {/* <div className="grid md:grid-cols-2 grid-cols-1 mx-5 max-w-xl">
           {cardsInfo.map((props) => (
             <Card {...props} />
           ))}
-        </div>
+        </div> */}
         <div className="font-extralight self-center text-center mt-8">
           Like the site? Build your own.
         </div>
@@ -216,7 +217,8 @@ export default function Index() {
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/MatthewCaseres/markdownbooks.com"
-          className="mt-3 mb-12 self-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          className="mt-3 mb-12 self-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+        >
           View on GitHub
         </a>
       </div>
