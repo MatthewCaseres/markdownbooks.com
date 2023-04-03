@@ -57,7 +57,6 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const allRoutesInfo = getAllRoutesInfo(bookConfig);
-  console.log("All routes:" + JSON.stringify(allRoutesInfo, null, 2));
   return {
     paths: Object.keys(allRoutesInfo).map((routeString) => ({
       params: {
